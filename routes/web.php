@@ -19,6 +19,7 @@ Route::get('/dashboard', function () {
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/', 'App\Http\Controllers\DavuradminController@dashboard_1');
+    Route::get('/index', 'App\Http\Controllers\DavuradminController@dashboard_1');
     Route::get('/dashboard', 'App\Http\Controllers\DavuradminController@dashboard_1');
     /* Route::get('/index', 'App\Http\Controllers\DavuradminController@dashboard_1'); */
     Route::get('/page-analytics', 'App\Http\Controllers\DavuradminController@analytics');

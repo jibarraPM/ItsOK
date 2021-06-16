@@ -330,7 +330,7 @@
 										</div>
 									</div>
 									<div class="card-footer border-0 pt-0 text-center">
-										<a href="javascript:void(0);" class="btn-link">View more <i class="fa fa-angle-down ml-2 scale-2"></i></a>
+										<a href="javascript:void(0);" class="btn-link">Ver Más <i class="fa fa-angle-down ml-2 scale-2"></i></a>
 									</div>
 								</div>
 							</div>

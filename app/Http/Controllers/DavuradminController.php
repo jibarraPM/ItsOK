@@ -303,6 +303,7 @@ class DavuradminController extends Controller
 
         return view('form.element', compact('page_title', 'page_description','action'));
     }
+
 	
 	    // Form Pickers
     public function form_pickers()
