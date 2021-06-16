@@ -22,9 +22,8 @@ Route::group([
     'prefix' => 'desarrollador'
 ], function ($router) {
     Route::get('/', 'App\Http\Controllers\DavuradminController@dashboard_1');
-    Route::get('/index', 'App\Http\Controllers\DavuradminController@dashboard_1');
     Route::get('/dashboard', 'App\Http\Controllers\DavuradminController@dashboard_1');
-        Route::get('/page-analytics', 'App\Http\Controllers\DavuradminController@analytics');
+    Route::get('/page-analytics', 'App\Http\Controllers\DavuradminController@analytics');
     Route::get('/page-order', 'App\Http\Controllers\DavuradminController@order');
     Route::get('/page-order-list', 'App\Http\Controllers\DavuradminController@order_list');
     Route::get('/page-review', 'App\Http\Controllers\DavuradminController@review');
