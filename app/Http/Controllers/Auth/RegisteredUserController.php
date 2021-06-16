@@ -51,13 +51,13 @@ class RegisteredUserController extends Controller
 
         $user = Auth::user();
         if ($user->role != 1) {
-            return redirect("/desarrollador/dashboard");
+            return redirect("/desarrollador");
         }
         if ($user->role != 2) {
-            return redirect("/administrador/dashboard");
+            return redirect("/administrador");
         }
         if ($user->role != 3) {
-            return redirect("/usuario/dashboard");
+            return redirect("/usuario");
         }
     }
 }
