@@ -51,7 +51,7 @@
                             </div>
                         </form>
                         <div class="new-account mt-3">
-                            <p>No tienes cuenta,  <a class="text-primary" href="{!! url('/page-register'); !!}">Registrarse</a></p>
+                            <p>No tienes cuenta,  <a class="text-primary" href="{!! url('/register'); !!}">Registrarse</a></p>
                         </div>
                     </div>
                 </div>
