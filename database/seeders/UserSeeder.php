@@ -28,7 +28,7 @@ class UserSeeder extends Seeder
 
         User::create([
             'name' => 'Javier Ibarra',
-            'email' => 'jibarra@proyectomapache.com',
+            'email' => 'jibarra@proyectomapache.cl',
             'password' => bcrypt('Sterek64'),
             'role' => 1,
             'apellido' => 'Ibarra',
@@ -40,7 +40,7 @@ class UserSeeder extends Seeder
 
         User::create([
             'name' => 'Administrador',
-            'email' => 'gerente@proyectomapache.com',
+            'email' => 'administrador@proyectomapache.cl',
             'password' => bcrypt('Sterek64'),
             'role' => 2,
             'apellido' => 'Administrador',
@@ -52,7 +52,7 @@ class UserSeeder extends Seeder
 
         User::create([
             'name' => 'Usuario',
-            'email' => 'usuario@proyectomapache.com',
+            'email' => 'usuario@proyectomapache.cl',
             'password' => bcrypt('Sterek64'),
             'role' => 3,
             'apellido' => 'Usuario',
