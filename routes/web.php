@@ -17,11 +17,12 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 */
 
-Route::middleware(['auth'])->group(function () {
+Route::group([
+    'middleware' => ['auth', 'desarrollador'],
+    'prefix' => 'desarrollador'
+], function ($router) {
     Route::get('/', 'App\Http\Controllers\DavuradminController@dashboard_1');
-    Route::get('/index', 'App\Http\Controllers\DavuradminController@dashboard_1');
     Route::get('/dashboard', 'App\Http\Controllers\DavuradminController@dashboard_1');
-    /* Route::get('/index', 'App\Http\Controllers\DavuradminController@dashboard_1'); */
     Route::get('/page-analytics', 'App\Http\Controllers\DavuradminController@analytics');
     Route::get('/page-order', 'App\Http\Controllers\DavuradminController@order');
     Route::get('/page-order-list', 'App\Http\Controllers\DavuradminController@order_list');
@@ -83,6 +84,23 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/ui-tab', 'App\Http\Controllers\DavuradminController@ui_tab');
     Route::get('/ui-typography', 'App\Http\Controllers\DavuradminController@ui_typography');
     Route::get('/widget-basic', 'App\Http\Controllers\DavuradminController@widget_basic');
+});
+
+Route::group([
+    'middleware' => ['auth', 'administrador'],
+    'prefix' => 'administrador'
+], function ($router) {
+    Route::get('/', 'App\Http\Controllers\DavuradminController@dashboard_1');
+    Route::get('/dashboard', 'App\Http\Controllers\DavuradminController@dashboard_1');
+   
+});
+
+Route::group([
+    'middleware' => ['auth', 'usuario'],
+    'prefix' => 'usuario'
+], function ($router) {
+    Route::get('/', 'App\Http\Controllers\DavuradminController@app_profile');
+    Route::get('/app-profile', 'App\Http\Controllers\DavuradminController@app_profile');
 });
 
 
