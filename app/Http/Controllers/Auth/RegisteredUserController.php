@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
+use App\Http\Controllers\DavuradminController;
 
 class RegisteredUserController extends Controller
 {
@@ -20,7 +21,8 @@ class RegisteredUserController extends Controller
      */
     public function create()
     {
-        return view('auth.register');
+        $controlador = new DavuradminController();
+        return $controlador->page_register();
     }
 
     /**
@@ -35,12 +37,21 @@ class RegisteredUserController extends Controller
     {
         $request->validate([
             'name' => 'required|string|max:255',
+            'apellido' => 'required|string|max:255',
+            'apodo' => 'required|string|max:255',
+            'nacimiento' => 'required|date',
+            'telefono' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 
         $user = User::create([
             'name' => $request->name,
+            'apellido' => $request->apellido,
+            'apodo' => $request->apodo,
+            'role' => 3,
+            'nacimiento' => $request->nacimiento,
+            'telefono' => $request->telefono,
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);
