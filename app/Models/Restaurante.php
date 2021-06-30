@@ -17,11 +17,16 @@ class Restaurante extends Model
     protected $fillable = [
         'nombre',
         'rut',
+        'razonSocial',
+        'giro',
+        'correo',
         'descripcion',
         'direccion',
-        'horaApertura',
-        'horaCierre',
+        'horarioAtencion',
         'ubicacionGps',
         'logo',
+        'entidadFinanciera',
+        'tipoCuenta',
+        'numeroCuenta',
     ];
 }

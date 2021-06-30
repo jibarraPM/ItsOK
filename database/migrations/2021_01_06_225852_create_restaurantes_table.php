@@ -17,12 +17,17 @@ class CreateRestaurantesTable extends Migration
             $table->id();
             $table->string('nombre');
             $table->string('rut');
+            $table->string('razonSocial');
+            $table->string('giro');
+            $table->string('correo');
             $table->string('descripcion');
             $table->string('direccion');
-            $table->string('horaApertura');
-            $table->string('horaCierre');
+            $table->string('horarioAtencion');
             $table->string('ubicacionGps');
             $table->string('logo');
+            $table->string('entidadFinanciera');
+            $table->string('tipoCuenta');
+            $table->string('numeroCuenta');
             $table->timestamps();
         });
     }

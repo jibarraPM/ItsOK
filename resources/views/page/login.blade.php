@@ -41,7 +41,7 @@
                                 <div class="form-group">
                                     @if (Route::has('password.request'))
                                         <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
-                                            {{ __('Forgot your password?') }}
+                                            {{ __('Recuperar Contraseña') }}
                                         </a>
                                     @endif
                                 </div>
@@ -51,7 +51,7 @@
                             </div>
                         </form>
                         <div class="new-account mt-3">
-                            <p>No tienes cuenta,  <a class="text-primary" href="{!! url('/page-register'); !!}">Registrarse</a></p>
+                            <p>No tienes cuenta,  <a class="text-primary" href="{!! url('/register'); !!}">Registrate</a></p>
                         </div>
                     </div>
                 </div>
