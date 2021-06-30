@@ -303,6 +303,25 @@ class DavuradminController extends Controller
 
         return view('form.element', compact('page_title', 'page_description','action'));
     }
+    public function agregar_producto()
+    {
+        $page_title = 'Form Element';
+        $page_description = 'Some description for the page';
+		
+		$action = __FUNCTION__;
+
+        return view('form.agregar_producto', compact('page_title', 'page_description','action'));
+    }
+
+    public function agregar_agregado()
+    {
+        $page_title = 'Form Element';
+        $page_description = 'Some description for the page';
+		
+		$action = __FUNCTION__;
+
+        return view('form.agregar_agregado', compact('page_title', 'page_description','action'));
+    }
 
 	
 	    // Form Pickers

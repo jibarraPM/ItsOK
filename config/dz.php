@@ -135,8 +135,14 @@ return [
 				'form_element' => [
               'vendor/bootstrap-select/dist/css/bootstrap-select.min.css',
 				],
+				'agregar_producto' => [
+					'vendor/bootstrap-select/dist/css/bootstrap-select.min.css',
+					  ],
+				'agregar_agregado' => [
+				'vendor/bootstrap-select/dist/css/bootstrap-select.min.css',
+					],
 				'form_pickers' => [
-              'vendor/bootstrap-select/dist/css/bootstrap-select.min.css',
+             	'vendor/bootstrap-select/dist/css/bootstrap-select.min.css',
 							'vendor/bootstrap-daterangepicker/daterangepicker.css',
 							'vendor/clockpicker/css/bootstrap-clockpicker.min.css',
 							'vendor/jquery-asColorPicker/css/asColorPicker.min.css',
@@ -461,6 +467,23 @@ return [
               'js/custom.min.js',
               'js/deznav-init.js',
 				],
+
+			'agregar_producto' => [
+				'vendor/bootstrap-select/dist/js/bootstrap-select.min.js',
+				'vendor/chart.js/Chart.bundle.min.js',
+				'vendor/apexchart/apexchart.js',
+				'js/custom.min.js',
+				'js/deznav-init.js',
+					],
+
+				'agregar_agregado' => [
+				'vendor/bootstrap-select/dist/js/bootstrap-select.min.js',
+				'vendor/chart.js/Chart.bundle.min.js',
+				'vendor/apexchart/apexchart.js',
+				'js/custom.min.js',
+				'js/deznav-init.js',
+					],
+
 				'form_pickers' => [
               'vendor/bootstrap-select/dist/js/bootstrap-select.min.js',
               'vendor/chart.js/Chart.bundle.min.js',
