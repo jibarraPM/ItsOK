@@ -71,7 +71,7 @@
                                                 </th>
                                                 <th class="align-middle">Ticket ID</th>
                                                 <th class="align-middle pr-7">Fecha</th>
-                                                <th class="align-middle" style="min-width: 12.5rem;">Nota</th>
+                                                <th class="align-middle" style="min-width: 12.5rem;">Local</th>
 												<th class="align-middle" style="min-width: 12.5rem;">Tipo de Compra</th>
                                                 <th class="align-middle text-right">Estado</th>
                                                 <th class="align-middle text-right">Valor</th>
@@ -90,7 +90,8 @@
                                                     <a href="#">
                                                         <strong>#21554</strong></a></td>
                                                 <td class="py-2">20/06/2021</td>
-                                                <td class="py-2">Este pedido no presenta ninguna nota
+                                                <td class="py-2"><a href="#">
+                                                        <strong>#53645</strong></a> - Nombre del Local
                                                     
                                                 </td>
 												<td>Delivery</td>

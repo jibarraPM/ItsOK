@@ -1,17 +1,76 @@
 <div class="deznav">
             <div class="deznav-scroll">
 				<ul class="metismenu" id="menu">
+
+                <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+							<i class="flaticon-381-television"></i>
+							<span class="nav-text">Desarrollo</span>
+						</a>
+                        <ul aria-expanded="false">
+                            <li><a href="{!! url('/desarrollador/app-profile'); !!}">Perfil Administrador</a></li>
+                            <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Menus</a>
+                                <ul aria-expanded="false">
+                                <li><a href="{!! url('/desarrollador/agregar_producto'); !!}">Menus</a></li>
+                                    <li><a href="{!! url('/desarrollador/agregar_producto'); !!}">Agregar Menu</a></li>
+                                    <li><a href="{!! url('/desarrollador/agregar_producto'); !!}">Editar Menu</a></li>>
+                                </ul>
+                            </li>
+                            <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Agregados</a>
+                                <ul aria-expanded="false">
+                                     <li><a href="{!! url('/desarrollador/agregar_agregado'); !!}">Agregados</a></li>
+                                    <li><a href="{!! url('/desarrollador/agregar_agregado'); !!}">Agregar Agregado</a></li>
+                                    <li><a href="{!! url('/desarrollador/agregar_agregado'); !!}">Editar Agregado</a></li>>
+                                </ul>
+                            </li>
+                            <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Locales</a>
+                                <ul aria-expanded="false">
+                                    <li><a href="{!! url('/desarrollador/agregar_local'); !!}">Locales</a></li>
+                                    <li><a href="{!! url('/desarrollador/agregar_local'); !!}">Agregar Local</a></li>
+                                    <li><a href="{!! url('/desarrollador/agregar_local'); !!}">Editar Local</a></li>>
+                                </ul>
+                            </li>
+                            <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Categorias Globales</a>
+                                <ul aria-expanded="false">
+                                    <li><a href="{!! url('/desarrollador/agregar_local'); !!}">Categorias Globales</a></li>
+                                    <li><a href="{!! url('/desarrollador/agregar_local'); !!}">Agregar Categoria Global</a></li>
+                                    <li><a href="{!! url('/desarrollador/agregar_local'); !!}">Editar Categoria Global</a></li>>
+                                </ul>
+                            </li>
+                            <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Categorias Restaurantes</a>
+                                <ul aria-expanded="false">
+                                    <li><a href="{!! url('/desarrollador/agregar_local'); !!}">Categorias Restaurantes</a></li>
+                                    <li><a href="{!! url('/desarrollador/agregar_local'); !!}">Agregar Restaurantes</a></li>
+                                    <li><a href="{!! url('/desarrollador/agregar_local'); !!}">Editar Restaurantes</a></li>>
+                                </ul>
+                            </li>
+                            <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Categorias Menus</a>
+                                <ul aria-expanded="false">
+                                    <li><a href="{!! url('/desarrollador/agregar_local'); !!}">Categorias Menus</a></li>
+                                    <li><a href="{!! url('/desarrollador/agregar_local'); !!}">Agregar Categoria Menu</a></li>
+                                    <li><a href="{!! url('/desarrollador/agregar_local'); !!}">Editar Categoria Menu</a></li>>
+                                </ul>
+                            </li>
+                            <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Categorias Menus</a>
+                                <ul aria-expanded="false">
+                                    <li><a href="{!! url('/desarrollador/agregar_local'); !!}">Categorias Menus</a></li>
+                                    <li><a href="{!! url('/desarrollador/agregar_local'); !!}">Agregar Categoria Menu</a></li>
+                                    <li><a href="{!! url('/desarrollador/agregar_local'); !!}">Editar Categoria Menu</a></li>>
+                                </ul>
+                            </li>
+
+                        </ul>
+                    </li>
                     <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
 							<i class="flaticon-381-networking"></i>
 							<span class="nav-text">Inicio</span>
 						</a>
                         <ul aria-expanded="false">
-							<li><a href="{!! url('/index'); !!}">Inicio</a></li>
-							<li><a href="{!! url('/page-analytics'); !!}">Análisis</a></li>
-							<li><a href="{!! url('/page-review'); !!}">Reseñas</a></li>
-							<li><a href="{!! url('/page-order'); !!}">Detalle Orden</a></li>
-							<li><a href="{!! url('/page-order-list'); !!}">Tickets</a></li>
-							<li><a href="{!! url('/page-general-customers'); !!}">General Clientes</a></li>
+							<li><a href="{!! url('/desarrollador/'); !!}">Inicio</a></li>
+							<li><a href="{!! url('/desarrollador/page-analytics'); !!}">Análisis</a></li>
+							<li><a href="{!! url('/desarrollador/page-review'); !!}">Reseñas</a></li>
+							<li><a href="{!! url('/desarrollador/page-order'); !!}">Detalle Orden</a></li>
+							<li><a href="{!! url('/desarrollador/page-order-list'); !!}">Tickets</a></li>
+							<li><a href="{!! url('/desarrollador/page-general-customers'); !!}">Clientes</a></li>
 						</ul>
                     </li>
                     <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
@@ -19,24 +78,24 @@
 							<span class="nav-text">Apps</span>
 						</a>
                         <ul aria-expanded="false">
-                            <li><a href="{!! url('/app-profile'); !!}">Profile</a></li>
-                            <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Email</a>
+                            <li><a href="{!! url('/desarrollador/app-profile'); !!}">Profile</a></li>
+                            <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Mensajes</a>
                                 <ul aria-expanded="false">
-                                    <li><a href="{!! url('/email-compose'); !!}">Compose</a></li>
-                                    <li><a href="{!! url('/email-inbox'); !!}">Inbox</a></li>
-                                    <li><a href="{!! url('/email-read'); !!}">Read</a></li>
+                                    <li><a href="{!! url('/desarrollador/email-compose'); !!}">Crear</a></li>
+                                    <li><a href="{!! url('/desarrollador/email-inbox'); !!}">Mensajes</a></li>
+                                    <li><a href="{!! url('/desarrollador/email-read'); !!}">Leer</a></li>
                                 </ul>
                             </li>
-                            <li><a href="{!! url('/app-calender'); !!}">Calendar</a></li>
-							<li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Shop</a>
+                            <li><a href="{!! url('/desarrollador/app-calender'); !!}">Calendar</a></li>
+							<li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Lista de Productos</a>
                                 <ul aria-expanded="false">
-                                    <li><a href="{!! url('/ecom-product-grid'); !!}">Product Grid</a></li>
-									<li><a href="{!! url('/ecom-product-list'); !!}">Product List</a></li>
-									<li><a href="{!! url('/ecom-product-detail'); !!}">Product Details</a></li>
-									<li><a href="{!! url('/ecom-product-order'); !!}">Order</a></li>
-									<li><a href="{!! url('/ecom-checkout'); !!}">Checkout</a></li>
-									<li><a href="{!! url('/ecom-invoice'); !!}">Invoice</a></li>
-									<li><a href="{!! url('/ecom-customers'); !!}">Customers</a></li>
+                                    <li><a href="{!! url('/desarrollador/ecom-product-grid'); !!}">Productos</a></li>
+									<li><a href="{!! url('/desarrollador/ecom-product-list'); !!}">Productos con detalles</a></li>
+									<li><a href="{!! url('/desarrollador/ecom-product-detail'); !!}">Detalles del Producto</a></li>
+									<li><a href="{!! url('/desarrollador/ecom-product-order'); !!}">Lista de Tickets</a></li>
+									<li><a href="{!! url('/desarrollador/ecom-checkout'); !!}">Pago (Trabajando)</a></li>
+									<li><a href="{!! url('/desarrollador/ecom-invoice'); !!}">Detalle Tickets</a></li>
+									<li><a href="{!! url('/desarrollador/ecom-customers'); !!}">Clientes</a></li>
                                 </ul>
                             </li>
                         </ul>
