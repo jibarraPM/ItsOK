@@ -109,6 +109,9 @@ return [
 				'ecom_invoice' => [
 							'vendor/bootstrap-select/dist/css/bootstrap-select.min.css',
 				],
+				'recibo' => [
+					'vendor/bootstrap-select/dist/css/bootstrap-select.min.css',
+		],
 				'ecom_product_detail' => [
 							'vendor/bootstrap-select/dist/css/bootstrap-select.min.css',
 				],
@@ -417,6 +420,14 @@ return [
               'js/custom.min.js',
               'js/deznav-init.js',
 				],
+			'recibo' => [
+				'vendor/bootstrap-select/dist/js/bootstrap-select.min.js',
+				'vendor/chart.js/Chart.bundle.min.js',
+				'vendor/apexchart/apexchart.js',
+								'vendor/highlightjs/highlight.pack.min.js',
+				'js/custom.min.js',
+				'js/deznav-init.js',
+					],
 				'ecom_product_detail' => [
               'vendor/bootstrap-select/dist/js/bootstrap-select.min.js',
               'vendor/chart.js/Chart.bundle.min.js',

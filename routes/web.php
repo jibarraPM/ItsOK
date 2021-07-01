@@ -30,6 +30,7 @@ Route::group([
     Route::get('/productos_local', 'App\Http\Controllers\Desarrollador\DesarrolladorController@productos_local');
     Route::get('/producto_detalle', 'App\Http\Controllers\Desarrollador\DesarrolladorController@producto_detalle');
     Route::get('/pedido', 'App\Http\Controllers\Desarrollador\DesarrolladorController@pedido');
+    Route::get('/recibo', 'App\Http\Controllers\Desarrollador\DesarrolladorController@recibo');
 });
 
 Route::group([

@@ -98,5 +98,14 @@ class DesarrolladorController extends Controller
 
         return view('Desarrollador.pedido',compact('page_title', 'page_description','action') );
     }
+    public function recibo()
+    {
+        $page_title = 'Detalle Recibo';
+        $page_description = 'Detalle del Recibo';
+		
+		$action = __FUNCTION__;
+
+        return view('Desarrollador.recibo',compact('page_title', 'page_description','action') );
+    }
 
 }
