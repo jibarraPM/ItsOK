@@ -23,7 +23,6 @@ class CreateUsersTable extends Migration
             $table->foreign('role')->references('id')->on('roles');
             $table->string('apellido');
             $table->string('telefono');
-            $table->string('apodo');
             $table->date('nacimiento');
             $table->string('imagen')->nullable();
             $table->rememberToken();

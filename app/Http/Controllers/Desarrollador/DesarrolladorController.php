@@ -3,6 +3,9 @@
 namespace App\Http\Controllers\Desarrollador;
 
 use App\Http\Controllers\Controller;
+use App\Models\Menu;
+use App\Models\Atencion;
+use App\Models\User;
 
 class DesarrolladorController extends Controller
 {
@@ -16,8 +19,19 @@ class DesarrolladorController extends Controller
         $logo = "images/logo.png";
         $logoText = "images/logo-text.png";
         $action = __FUNCTION__;
-		
-        return view('dashboard.index', compact('page_title', 'page_description','action','logo','logoText'));
+
+        $cantidadMenus = Menu::all()->count();
+        $cantidadAtenciones = Atencion::all()->count();
+        $valorAtenciones = Atencion::all()->sum('valorAtencion');
+		$cantidadUsuario = User::where('role', 3)->count();
+        $data = [
+            'cantidadMenus' => $cantidadMenus,
+            'cantidadAtenciones' => $cantidadAtenciones,
+            'valorAtenciones' => $valorAtenciones,
+            'cantidadUsuario' => $cantidadUsuario
+        ];
+
+        return view('Desarrollador.index', compact('page_title', 'page_description','action','logo','logoText', 'data'));
     }
 
     public function form_element()

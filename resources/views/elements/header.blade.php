@@ -21,9 +21,13 @@
                             <li class="nav-item dropdown header-profile">
                                 <a class="nav-link" href="#" role="button" data-toggle="dropdown">
 									<div class="header-info">
-										<span>Bienvenido, <strong>Samuel</strong></span>
+										<span>Bienvenido, <strong>{{Auth::user()->name}}</strong></span>
 									</div>
-                                    <img src="{{ asset('images/profile/pic1.jpg') }}" width="20" alt=""/>
+                                    @if (Auth::user()->foto == null)
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/99/Sample_User_Icon.png" width="20" alt=""/>
+                                    @else
+                                        <img src="{{ Auth::user()->foto }}" width="20" alt=""/>
+                                    @endif
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right">
                                     <a href="{!! url('/app-profile'); !!}" class="dropdown-item ai-icon">

@@ -21,9 +21,7 @@ class UserSeeder extends Seeder
             'role' => 1,
             'apellido' => 'Ibarra',
             'telefono' => '+5699404978 9',
-            'apodo' => 'SrDeLorean',
-            'nacimiento' => '1996-09-06',
-            'imagen' => 'hola'
+            'nacimiento' => '1996-09-06'
         ]);
 
         User::create([
@@ -33,9 +31,7 @@ class UserSeeder extends Seeder
             'role' => 1,
             'apellido' => 'Ibarra',
             'telefono' => '+56994049789',
-            'apodo' => 'JavierInuzuka',
-            'nacimiento' => '1992-07-08',
-            'imagen' => 'hola'
+            'nacimiento' => '1992-07-08'
         ]);
 
         User::create([
@@ -45,9 +41,7 @@ class UserSeeder extends Seeder
             'role' => 2,
             'apellido' => 'Administrador',
             'telefono' => '+56994049789',
-            'apodo' => 'gerente',
-            'nacimiento' => '1996-09-06',
-            'imagen' => 'hola'
+            'nacimiento' => '1996-09-06'
         ]);
 
         User::create([
@@ -57,9 +51,7 @@ class UserSeeder extends Seeder
             'role' => 3,
             'apellido' => 'Usuario',
             'telefono' => '+56994049789',
-            'apodo' => 'usuario',
-            'nacimiento' => '1996-09-06',
-            'imagen' => 'hola'
+            'nacimiento' => '1996-09-06'
         ]);
     }
 }
