@@ -1,13 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\Desarrollador;
+namespace App\Http\Controllers\Usuario;
 
 use App\Http\Controllers\Controller;
-use App\Models\Menu;
-use App\Models\Atencion;
-use App\Models\User;
 
-class DesarrolladorController extends Controller
+class UsuarioController extends Controller
 {
 	
     public function dashboard_1()
@@ -19,19 +16,8 @@ class DesarrolladorController extends Controller
         $logo = "images/logo.png";
         $logoText = "images/logo-text.png";
         $action = __FUNCTION__;
-
-        $cantidadMenus = Menu::all()->count();
-        $cantidadAtenciones = Atencion::all()->count();
-        $valorAtenciones = Atencion::all()->sum('valorAtencion');
-		$cantidadUsuario = User::where('role', 3)->count();
-        $data = [
-            'cantidadMenus' => $cantidadMenus,
-            'cantidadAtenciones' => $cantidadAtenciones,
-            'valorAtenciones' => $valorAtenciones,
-            'cantidadUsuario' => $cantidadUsuario
-        ];
-
-        return view('Desarrollador.index', compact('page_title', 'page_description','action','logo','logoText', 'data'));
+		
+        return view('dashboard.index', compact('page_title', 'page_description','action','logo','logoText'));
     }
 
     public function form_element()

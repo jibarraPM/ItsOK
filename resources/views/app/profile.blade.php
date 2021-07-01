@@ -31,16 +31,20 @@
                                 </div>
                                 <div class="profile-info">
 									<div class="profile-photo">
-										<img src="{{ asset('images/profile/profile.png') }}" class="img-fluid rounded-circle" alt="">
+                                        @if (Auth::user()->foto == null)
+										    <img src="https://upload.wikimedia.org/wikipedia/commons/9/99/Sample_User_Icon.png" class="img-fluid rounded-circle" alt="">
+                                        @else
+										    <img src="{{ Auth::user()->foto }}" class="img-fluid rounded-circle" alt="">
+                                        @endif
 									</div>
 									<div class="profile-details">
 										<div class="profile-name px-3 pt-2">
-											<h4 class="text-primary mb-0">Nombre Usuario</h4>
-											<p>ID Cliente</p>
+											<h4 class="text-primary mb-0">{{ Auth::user()->name." ".Auth::user()->apellido  }}</h4>
+											<p>{{ Auth::user()->id }}</p>
 										</div>
 										<div class="profile-email px-2 pt-2">
-											<h4 class="text-muted mb-0">hola@correo.com</h4>
-											<p>+569 94988986</p>
+											<h4 class="text-muted mb-0">{{ Auth::user()->email }}</h4>
+											<p>{{ Auth::user()->telefono }}</p>
 										</div>
 										<div class="dropdown ml-auto">
 											<a href="#" class="btn btn-primary light sharp" data-toggle="dropdown" aria-expanded="true"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18px" height="18px" viewBox="0 0 24 24" version="1.1"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><circle fill="#000000" cx="5" cy="12" r="2"></circle><circle fill="#000000" cx="12" cy="12" r="2"></circle><circle fill="#000000" cx="19" cy="12" r="2"></circle></g></svg></a>
