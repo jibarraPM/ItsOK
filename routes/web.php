@@ -26,6 +26,11 @@ Route::group([
     Route::get('/agregar_local', 'App\Http\Controllers\Desarrollador\DesarrolladorController@form_element');
     Route::get('/agregar_producto', 'App\Http\Controllers\Desarrollador\DesarrolladorController@agregar_producto');
     Route::get('/agregar_agregado', 'App\Http\Controllers\Desarrollador\DesarrolladorController@agregar_agregado');
+    Route::get('/locales', 'App\Http\Controllers\Desarrollador\DesarrolladorController@locales');
+    Route::get('/productos_local', 'App\Http\Controllers\Desarrollador\DesarrolladorController@productos_local');
+    Route::get('/producto_detalle', 'App\Http\Controllers\Desarrollador\DesarrolladorController@producto_detalle');
+    Route::get('/pedido', 'App\Http\Controllers\Desarrollador\DesarrolladorController@pedido');
+
 
 
 

@@ -48,5 +48,41 @@ class DesarrolladorController extends Controller
 
         return view('Desarrollador.agregar_agregado',compact('page_title', 'page_description','action') );
     }
+    public function locales()
+    {
+        $page_title = 'Locales';
+        $page_description = 'Locales Disponibles';
+		
+		$action = __FUNCTION__;
+
+        return view('Desarrollador.locales',compact('page_title', 'page_description','action') );
+    }
+    public function productos_local()
+    {
+        $page_title = 'Productos Local';
+        $page_description = 'Productos Disponibles';
+		
+		$action = __FUNCTION__;
+
+        return view('Desarrollador.productos_local',compact('page_title', 'page_description','action') );
+    }
+    public function producto_detalle()
+    {
+        $page_title = 'Detalle Productos';
+        $page_description = 'Detalle del productos';
+		
+		$action = __FUNCTION__;
+
+        return view('Desarrollador.producto_detalle',compact('page_title', 'page_description','action') );
+    }
+    public function pedido()
+    {
+        $page_title = 'Detalle Pedido';
+        $page_description = 'Detalle del Pedido';
+		
+		$action = __FUNCTION__;
+
+        return view('Desarrollador.pedido',compact('page_title', 'page_description','action') );
+    }
 
 }
