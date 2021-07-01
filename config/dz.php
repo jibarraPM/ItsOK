@@ -103,25 +103,20 @@ return [
 				'ecom_customers' => [
 							'vendor/bootstrap-select/dist/css/bootstrap-select.min.css',
 				],
-				'pedidos' => [
-					'vendor/bootstrap-select/dist/css/bootstrap-select.min.css',
-		],
 				'ecom_invoice' => [
 							'vendor/bootstrap-select/dist/css/bootstrap-select.min.css',
 				],
 				'ecom_product_detail' => [
 							'vendor/bootstrap-select/dist/css/bootstrap-select.min.css',
 				],
-				'producto_detalle' => [
-					'vendor/bootstrap-select/dist/css/bootstrap-select.min.css',
-		],
+
 				'ecom_product_grid' => [
 							'vendor/bootstrap-select/dist/css/bootstrap-select.min.css',
 				],
-				'locales' => [
+				'index' => [
 					'vendor/bootstrap-select/dist/css/bootstrap-select.min.css',
 				],
-				'productos_local' => [
+				'show' => [
 					'vendor/bootstrap-select/dist/css/bootstrap-select.min.css',
 				],
 				'ecom_product_list' => [
@@ -147,11 +142,8 @@ return [
 				'form_element' => [
               'vendor/bootstrap-select/dist/css/bootstrap-select.min.css',
 				],
-				'agregar_producto' => [
+				'create' => [
 					'vendor/bootstrap-select/dist/css/bootstrap-select.min.css',
-					  ],
-				'agregar_agregado' => [
-				'vendor/bootstrap-select/dist/css/bootstrap-select.min.css',
 					],
 				'form_pickers' => [
              	'vendor/bootstrap-select/dist/css/bootstrap-select.min.css',
@@ -393,14 +385,6 @@ return [
               'js/custom.min.js',
               'js/deznav-init.js',
 				],
-				'pedido' => [
-					'vendor/bootstrap-select/dist/js/bootstrap-select.min.js',
-					'vendor/chart.js/Chart.bundle.min.js',
-					'vendor/apexchart/apexchart.js',
-								  'vendor/highlightjs/highlight.pack.min.js',
-					'js/custom.min.js',
-					'js/deznav-init.js',
-					  ],
 				'ecom_customers' => [
               'vendor/bootstrap-select/dist/js/bootstrap-select.min.js',
               'vendor/chart.js/Chart.bundle.min.js',
@@ -425,14 +409,6 @@ return [
               'js/custom.min.js',
               'js/deznav-init.js',
 				],
-			'producto_detalle' => [
-				'vendor/bootstrap-select/dist/js/bootstrap-select.min.js',
-				'vendor/chart.js/Chart.bundle.min.js',
-				'vendor/apexchart/apexchart.js',
-								'vendor/highlightjs/highlight.pack.min.js',
-				'js/custom.min.js',
-				'js/deznav-init.js',
-					],
 			  'ecom_product_grid' => [
               'vendor/bootstrap-select/dist/js/bootstrap-select.min.js',
               'vendor/chart.js/Chart.bundle.min.js',
@@ -441,7 +417,7 @@ return [
               'js/custom.min.js',
               'js/deznav-init.js',
 				],
-			'locales' => [
+			'index' => [
 				'vendor/bootstrap-select/dist/js/bootstrap-select.min.js',
 				'vendor/chart.js/Chart.bundle.min.js',
 				'vendor/apexchart/apexchart.js',
@@ -449,7 +425,7 @@ return [
 				'js/custom.min.js',
 				'js/deznav-init.js',
 					],
-			'productos_local' => [
+			'show' => [
 				'vendor/bootstrap-select/dist/js/bootstrap-select.min.js',
 				'vendor/chart.js/Chart.bundle.min.js',
 				'vendor/apexchart/apexchart.js',
@@ -512,15 +488,7 @@ return [
               'js/deznav-init.js',
 				],
 
-			'agregar_producto' => [
-				'vendor/bootstrap-select/dist/js/bootstrap-select.min.js',
-				'vendor/chart.js/Chart.bundle.min.js',
-				'vendor/apexchart/apexchart.js',
-				'js/custom.min.js',
-				'js/deznav-init.js',
-					],
-
-				'agregar_agregado' => [
+			'create' => [
 				'vendor/bootstrap-select/dist/js/bootstrap-select.min.js',
 				'vendor/chart.js/Chart.bundle.min.js',
 				'vendor/apexchart/apexchart.js',
