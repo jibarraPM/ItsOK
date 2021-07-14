@@ -56,10 +56,19 @@
                                                 </div>
                                                 <span class="text-muted">$9.990</span>
                                             </li>
+                                            <li class="list-group-item d-flex justify-content-between">
+                                                <span>Sub Total</span>
+                                                <strong>$29.970</strong>
+                                            </li>
+
+                                            <li class="list-group-item d-flex justify-content-between">
+                                                <span>Cobro por servicio</span>
+                                                <strong>$1.499</strong>
+                                            </li>
 
                                             <li class="list-group-item d-flex justify-content-between">
                                                 <span>Total (CLP)</span>
-                                                <strong>$29.970</strong>
+                                                <strong>$31.469</strong>
                                             </li>
                                             <a class="btn btn-primary"  href="https://www.transbankdevelopers.cl/">Pagar</a>
                                             <hr class="mb-1">

@@ -4,11 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Symfony\Component\HttpFoundation\Request;
-use App\Models\Menu;
+use App\Models\CategoriaGlobal;
 use App\Models\Atencion;
 use App\Models\User;
 
-class MenuController extends Controller
+class CategoriaGlobalController extends Controller
 {
 
     /**
@@ -24,12 +24,13 @@ class MenuController extends Controller
      * Se debe tener el formulario para crear un restaurante
      */
     public function create(){
-        $page_title = 'Form Element';
+        $page_title = 'Agregar Categoría Local';
         $page_description = 'Some description for the page';
 		
 		$action = __FUNCTION__;
 
-        return view('Desarrollador.agregar_producto',compact('page_title', 'page_description','action') );
+        return view('Desarrollador.agregar_categoriaGlobal',compact('page_title', 'page_description','action') );
+
     }
 
     /**
@@ -37,23 +38,7 @@ class MenuController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'first_name'=>'required',
-            'last_name'=>'required',
-            'email'=>'required'
-        ]);
 
-        $contact = new Contact([
-            'first_name' => $request->get('first_name'),
-            'last_name' => $request->get('last_name'),
-            'email' => $request->get('email'),
-            'job_title' => $request->get('job_title'),
-            'city' => $request->get('city'),
-            'country' => $request->get('country')
-        ]);
-        $contact->save();
-
-        $this->create();
     }
 
     /**
@@ -61,12 +46,7 @@ class MenuController extends Controller
      * Se debe mostrar la lista de restaurantes del sistema
      */
     public function show(){
-        $page_title = 'Detalle Productos';
-        $page_description = 'Detalle del productos';
-		
-		$action = __FUNCTION__;
 
-        return view('Desarrollador.menu_mostrar',compact('page_title', 'page_description','action') );
     }
 
     /**
@@ -74,12 +54,12 @@ class MenuController extends Controller
      */
     public function edit(Request $request)
     {
-        $page_title = 'Editar Menu';
-        $page_description = 'Detalle del productos';
+        $page_title = 'Editar Categoría Global';
+        $page_description = 'Some description for the page';
 		
 		$action = __FUNCTION__;
 
-        return view('Desarrollador.editar_producto',compact('page_title', 'page_description','action') );
+        return view('Desarrollador.editar_categoria_global',compact('page_title', 'page_description','action') );
 
     }
 

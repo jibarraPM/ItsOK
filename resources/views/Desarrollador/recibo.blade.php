@@ -31,24 +31,24 @@
                                 <div class="row mb-5">
                                     <div class="mt-4 col-xl-3 col-lg-3 col-md-6 col-sm-12">
                                         <h6>De:</h6>
-                                        <div> <strong>Nombre</strong> </div>
-                                        <div>Madalinskiego 8</div>
-                                        <div>71-101 Szczecin, Poland</div>
-                                        <div>Email: info@webz.com.pl</div>
-                                        <div>Phone: +48 444 666 3333</div>
+                                        <div> <strong>Nombre Local</strong> </div>
+                                        <div>Id Local</div>
+                                        <div>Giro</div>
+                                        <div>Correo: info@webz.com.pl</div>
+                                        <div>Telefono: +48 444 666 3333</div>
                                     </div>
                                     <div class="mt-4 col-xl-3 col-lg-3 col-md-6 col-sm-12">
                                         <h6>Para:</h6>
-                                        <div> <strong>Bob Mart</strong> </div>
-                                        <div>Attn: Daniel Marek</div>
-                                        <div>43-190 Mikolow, Poland</div>
-                                        <div>Email: marek@daniel.com</div>
-                                        <div>Phone: +48 123 456 789</div>
+                                        <div> <strong>Nombre Cliente</strong> </div>
+                                        <div>ID Cliente</div>
+                                        <div>Direccion</div>
+                                        <div>Correo: marek@daniel.com</div>
+                                        <div>Telefono: +48 123 456 789</div>
                                     </div>
                                     <div class="mt-4 col-xl-6 col-lg-6 col-md-12 col-sm-12 d-flex justify-content-lg-end justify-content-md-center justify-content-xs-start">
                                         <div class="row align-items-center" style="font-size: 0.9rem;">
                                             <div class="col-auto"> <img src="https://scontent.fscl9-1.fna.fbcdn.net/v/t1.6435-9/96774015_3630861740263670_1323190908916596736_n.jpg?_nc_cat=111&ccb=1-3&_nc_sid=973b4a&_nc_ohc=4yK83J35i1gAX_F4qCg&_nc_ht=scontent.fscl9-1.fna&oh=61028eb6f28c4a81eaba58a3084c5d62&oe=60E2C706" class="img-fluid mb-3" style="max-height: 100px;" alt=""><br>
-
+                                                
                                             </div>
                                             <div class="col-auto"> <img src="https://apirone.com/api/v1/qr?message=bitcoin%3A1DonateWffyhwAjskoEwXt83pHZxhLTr8H%3Famount%3D0.15050000" class="img-fluid" alt="" style="max-width: 114px;"> </div>
                                         </div>
@@ -59,46 +59,39 @@
                                         <thead>
                                             <tr>
                                                 <th class="center">#</th>
-                                                <th>Item</th>
-                                                <th>Description</th>
-                                                <th class="right">Unit Cost</th>
-                                                <th class="center">Qty</th>
+                                                <th>ID Menu</th>
+                                                <th>Nombre</th>
+                                                <th class="right">Costo Unitario</th>
+                                                <th class="center">Cantidad</th>
                                                 <th class="right">Total</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
                                                 <td class="center">1</td>
-                                                <td class="left strong">Origin License</td>
-                                                <td class="left">Extended License</td>
-                                                <td class="right">$999,00</td>
+                                                <td class="left strong">5698</td>
+                                                <td class="left">Pizza Clasica</td>
+                                                <td class="right">$9.990</td>
                                                 <td class="center">1</td>
-                                                <td class="right">$999,00</td>
+                                                <td class="right">$9.990</td>
                                             </tr>
                                             <tr>
                                                 <td class="center">2</td>
-                                                <td class="left">Custom Services</td>
-                                                <td class="left">Instalation and Customization (cost per hour)</td>
-                                                <td class="right">$150,00</td>
-                                                <td class="center">20</td>
-                                                <td class="right">$3.000,00</td>
+                                                <td class="left">7985</td>
+                                                <td class="left">Pizza Vegetariana</td>
+                                                <td class="right">$9.990</td>
+                                                <td class="center">1</td>
+                                                <td class="right">$9.990</td>
                                             </tr>
                                             <tr>
                                                 <td class="center">3</td>
-                                                <td class="left">Hosting</td>
-                                                <td class="left">1 year subcription</td>
-                                                <td class="right">$499,00</td>
+                                                <td class="left">4659</td>
+                                                <td class="left">Pizza Sin Gluten</td>
+                                                <td class="right">$9.990</td>
                                                 <td class="center">1</td>
-                                                <td class="right">$499,00</td>
+                                                <td class="right">$9.990</td>
                                             </tr>
-                                            <tr>
-                                                <td class="center">4</td>
-                                                <td class="left">Platinum Support</td>
-                                                <td class="left">1 year subcription 24/7</td>
-                                                <td class="right">$3.999,00</td>
-                                                <td class="center">1</td>
-                                                <td class="right">$3.999,00</td>
-                                            </tr>
+
                                         </tbody>
                                     </table>
                                 </div>
@@ -109,20 +102,12 @@
                                             <tbody>
                                                 <tr>
                                                     <td class="left"><strong>Subtotal</strong></td>
-                                                    <td class="right">$8.497,00</td>
+                                                    <td class="right">$29.970</td>
                                                 </tr>
-                                                <tr>
-                                                    <td class="left"><strong>Discount (20%)</strong></td>
-                                                    <td class="right">$1,699,40</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="left"><strong>VAT (10%)</strong></td>
-                                                    <td class="right">$679,76</td>
-                                                </tr>
+
                                                 <tr>
                                                     <td class="left"><strong>Total</strong></td>
-                                                    <td class="right"><strong>$7.477,36</strong><br>
-                                                        <strong>0.15050000 BTC</strong></td>
+                                                    <td class="right"><strong>$9.990</strong></td>
                                                 </tr>
                                             </tbody>
                                         </table>

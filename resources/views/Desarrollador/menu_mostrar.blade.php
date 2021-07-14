@@ -62,20 +62,9 @@
                                                     <span class="badge badge-primary light">Producto Express</span>
                                                 </p>
                                                 <p class="text-content">Breve descripción del producto</p>
-                                                <div class="filtaring-area my-3">
-                                                    <div class="size-filter">
-                                                        <h4 class="m-b-15">Seleccione la cantidad</h4>
-                                                        
-                                                    </div>
-                                                </div>
-                                                <!--Quantity start-->
-												<div class="col-2 px-0">
-													<input type="number" name="num" class="form-control input-btn input-number" value="1" min="0">
-												</div>
-                                                <!--Quanatity End-->
                                                 <div class="shopping-cart mt-3">
                                                     <a class="btn btn-primary btn-lg"  href="{!! url('/desarrollador/pedido/create'); !!}"><i
-                                                            class="fa fa-shopping-basket mr-2"></i>Agregar a la compra</a>
+                                                            class="fa fa-edit-basket mr-2"></i>Editar</a>
                                                 </div>
                                             </div>
                                         </div>

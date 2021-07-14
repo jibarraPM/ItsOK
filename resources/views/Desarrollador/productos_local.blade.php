@@ -19,6 +19,8 @@
                             <li class="breadcrumb-item"><a href="javascript:void(0)">Productos</a></li>
                             <li class="breadcrumb-item active"><a href="javascript:void(0)">Lista</a></li>
                         </ol>
+                        <div class="text-right"><a href="{!! url('/desarrollador/menu/create'); !!}" class="btn btn-primary ">Agregar Menu</a></div>
+                        
                         
                                     
                     </div>
@@ -31,7 +33,7 @@
                         
                             <div class="card-body">
                                 <div class="new-arrival-product">
-                                <a href="{!! url('/desarrollador/producto_detalle'); !!}">
+                                <a href="{!! url('/desarrollador/menu/show'); !!}">
                                 <div class="new-arrivals-img-contnent">
                                     
                                     <img class="img-fluid" src="{{ asset('images/product/1.jpg') }}" alt="">
