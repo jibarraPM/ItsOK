@@ -10,30 +10,37 @@
                             <li><a href="{!! url('/desarrollador/app-profile'); !!}">Perfil Administrador</a></li>
                             <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Menus</a>
                                 <ul aria-expanded="false">
-                                <li><a href="{!! url('/desarrollador/agregar_producto'); !!}">Menus</a></li>
-                                    <li><a href="{!! url('/desarrollador/agregar_producto'); !!}">Agregar Menu</a></li>
-                                    <li><a href="{!! url('/desarrollador/agregar_producto'); !!}">Editar Menu</a></li>>
+                                <li><a href="{!! url('/desarrollador/menu'); !!}">Menus</a></li>
+                                    <li><a href="{!! url('/desarrollador/menu/create'); !!}">Agregar Menu</a></li>
+                                    <li><a href="{!! url('/desarrollador/menu/edit'); !!}">Editar Menu</a></li>>
                                 </ul>
                             </li>
                             <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Agregados</a>
                                 <ul aria-expanded="false">
-                                     <li><a href="{!! url('/desarrollador/agregar_agregado'); !!}">Agregados</a></li>
-                                    <li><a href="{!! url('/desarrollador/agregar_agregado'); !!}">Agregar Agregado</a></li>
-                                    <li><a href="{!! url('/desarrollador/agregar_agregado'); !!}">Editar Agregado</a></li>>
+                                     <li><a href="{!! url('/desarrollador/agregado'); !!}">Agregados</a></li>
+                                    <li><a href="{!! url('/desarrollador/agregado/create'); !!}">Agregar Agregado</a></li>
+                                    <li><a href="{!! url('/desarrollador/agregado/edit'); !!}">Editar Agregado</a></li>>
                                 </ul>
                             </li>
-                            <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Locales</a>
+                            <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Restaurants</a>
                                 <ul aria-expanded="false">
-                                    <li><a href="{!! url('/desarrollador/agregar_local'); !!}">Locales</a></li>
-                                    <li><a href="{!! url('/desarrollador/agregar_local'); !!}">Agregar Local</a></li>
-                                    <li><a href="{!! url('/desarrollador/agregar_local'); !!}">Editar Local</a></li>>
+                                    <li><a href="{!! url('/desarrollador/restaurant'); !!}">Restaurants</a></li>
+                                    <li><a href="{!! url('/desarrollador/restaurant/create'); !!}">Agregar Restaurant</a></li>
+                                    <li><a href="{!! url('/desarrollador/restaurant/edit'); !!}">Editar Restaurant</a></li>>
+                                </ul>
+                            </li>
+                            <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Pedidos</a>
+                                <ul aria-expanded="false">
+                                    <li><a href="{!! url('/desarrollador/pedido'); !!}">Pedidos</a></li>
+                                    <li><a href="{!! url('/desarrollador/pedido/create'); !!}">Agregar Pedido</a></li>
+                                    <li><a href="{!! url('/desarrollador/pedido/edit'); !!}">Editar Pedido</a></li>>
                                 </ul>
                             </li>
                             <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Categorias Globales</a>
                                 <ul aria-expanded="false">
-                                    <li><a href="{!! url('/desarrollador/agregar_local'); !!}">Categorias Globales</a></li>
-                                    <li><a href="{!! url('/desarrollador/agregar_local'); !!}">Agregar Categoria Global</a></li>
-                                    <li><a href="{!! url('/desarrollador/agregar_local'); !!}">Editar Categoria Global</a></li>>
+                                    <li><a href="{!! url('/desarrollador'); !!}">Categorias Globales</a></li>
+                                    <li><a href="{!! url('/desarrollador'); !!}">Agregar Categoria Global</a></li>
+                                    <li><a href="{!! url('/desarrollador'); !!}">Editar Categoria Global</a></li>>
                                 </ul>
                             </li>
                             <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Categorias Restaurantes</a>
