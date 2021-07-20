@@ -14,8 +14,8 @@ class DesarrolladorController extends Controller
     {
       
      
-        $page_title = 'Dashboard';
-        $page_description = 'Some description for the page';
+        $page_title = 'Inicio Perfil Desarrollo';
+        $page_description = 'En este perfil se podra acceder a todo el contenido del sistema';
         $logo = "images/logo.png";
         $logoText = "images/logo-text.png";
         $action = __FUNCTION__;
@@ -97,6 +97,71 @@ class DesarrolladorController extends Controller
 		$action = __FUNCTION__;
 
         return view('Desarrollador.pedido',compact('page_title', 'page_description','action') );
+    }
+    public function recibo()
+    {
+        $page_title = 'Detalle Recibo';
+        $page_description = 'Detalle del Recibo';
+		
+		$action = __FUNCTION__;
+
+        return view('Desarrollador.recibo',compact('page_title', 'page_description','action') );
+    }
+    public function menus_lista()
+    {
+        $page_title = 'Menus Disponibles';
+        $page_description = 'Menus ingresados en el sistema';
+		
+		$action = __FUNCTION__;
+
+        return view('Desarrollador.menus_lista',compact('page_title', 'page_description','action') );
+    }
+
+    public function perfil_desarrollo()
+    {
+        $page_title = 'Perfil del desarrollador';
+        $page_description = 'En este perfil encontraras tu informacion personal y los distintos restaurantes ingresados en el sistema';
+		
+		$action = __FUNCTION__;
+
+        return view('Desarrollador.perfil_desarrollo',compact('page_title', 'page_description','action') );
+    }
+    public function index_local()
+    {
+        $page_title = 'Index Local';
+        $page_description = 'En esta pagina encontraras la información resumida del local seleccionado';
+		
+		$action = __FUNCTION__;
+
+        return view('Desarrollador.index_local',compact('page_title', 'page_description','action') );
+    }
+    public function categorias_local_lista()
+    {
+        $page_title = 'Categoria Local';
+        $page_description = 'En esta pagina encontraras la información resumida del local seleccionado';
+		
+		$action = __FUNCTION__;
+
+        return view('Desarrollador.categorias_local_lista',compact('page_title', 'page_description','action') );
+    }
+    public function categorias_global_lista()
+    {
+        $page_title = 'Categoria Local';
+        $page_description = 'En esta pagina encontraras la información resumida del local seleccionado';
+		
+		$action = __FUNCTION__;
+
+        return view('Desarrollador.categorias_global_lista',compact('page_title', 'page_description','action') );
+    }
+
+    public function atenciones_lista()
+    {
+        $page_title = 'Atenciones';
+        $page_description = 'Menus ingresados en el sistema';
+		
+		$action = __FUNCTION__;
+
+        return view('Desarrollador.atenciones_lista',compact('page_title', 'page_description','action') );
     }
 
 }

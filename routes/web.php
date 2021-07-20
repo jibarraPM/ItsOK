@@ -3,8 +3,11 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RestauranteController;
 use App\Http\Controllers\MenuController;
+use App\Http\Controllers\CategoriaLocalController;
+use App\Http\Controllers\CategoriaGlobalController;
 use App\Http\Controllers\PedidoController;
 use App\Http\Controllers\AgregadoController;
+use App\Http\Controllers\Usuario\UsuarioController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,12 +30,30 @@ Route::group([
 ], function ($router) {
     Route::get('/', 'App\Http\Controllers\Desarrollador\DesarrolladorController@dashboard_1');
     Route::get('/dashboard', 'App\Http\Controllers\Desarrollador\DesarrolladorController@dashboard_1');
+    Route::get('menus_lista', 'App\Http\Controllers\Desarrollador\DesarrolladorController@menus_lista');
+    Route::get('productos_local', 'App\Http\Controllers\Desarrollador\DesarrolladorController@productos_local');
+    Route::get('perfil_desarrollo', 'App\Http\Controllers\Desarrollador\DesarrolladorController@perfil_desarrollo');
+    Route::get('menu_mostrar', 'App\Http\Controllers\Desarrollador\DesarrolladorController@menu_mostrar');
+    Route::get('index_local', 'App\Http\Controllers\Desarrollador\DesarrolladorController@index_local');
+    Route::get('editar_producto', 'App\Http\Controllers\Desarrollador\DesarrolladorController@editar_producto');
+    Route::get('atenciones_lista', 'App\Http\Controllers\Desarrollador\DesarrolladorController@atenciones_lista');
+
+    Route::get('categorias_local_lista', 'App\Http\Controllers\Desarrollador\DesarrolladorController@categorias_local_lista');
+    Route::get('categorias_global_lista', 'App\Http\Controllers\Desarrollador\DesarrolladorController@categorias_global_lista');
+
+    
+
+
+
 
     //Rutas de restaurante controller
     Route::resource('restaurant', RestauranteController::class);
     Route::resource('menu', MenuController::class);
+    Route::resource('categoria_local', CategoriaLocalController::class);
+    Route::resource('categoria_global', CategoriaGlobalController::class);
     Route::resource('pedido', PedidoController::class);
     Route::resource('agregado', AgregadoController::class);
+    Route::get('/recibo', 'App\Http\Controllers\Desarrollador\DesarrolladorController@recibo');
 
 });
 
@@ -48,8 +69,7 @@ Route::group([
     'middleware' => ['auth', 'usuario'],
     'prefix' => 'usuario'
 ], function ($router) {
-    Route::get('/', 'App\Http\Controllers\Usuario\DavuradminController@app_profile');
-    Route::get('/app-profile', 'App\Http\Controllers\Usuario\DavuradminController@app_profile');
+
 });
 
 

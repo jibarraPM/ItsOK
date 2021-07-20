@@ -11,12 +11,12 @@
         <div class="col-sm-6 p-md-0">
             <div class="welcome-text">
                 <h4>Hola, Bienvenido de nuevo!</h4>
-                <span>Agregar Menu</span>
+                <span>Editar Menu</span>
             </div>
         </div>
         <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="javascript:void(0)">Agregar</a></li>
+                <li class="breadcrumb-item"><a href="javascript:void(0)">Editar</a></li>
                 <li class="breadcrumb-item active"><a href="javascript:void(0)">Menu</a></li>
             </ol>
         </div>
@@ -26,7 +26,7 @@
         <div class="col-xl-12 col-lg-12">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title">Agregar Menu</h4>
+                    <h4 class="card-title">Editar Menu</h4>
                 </div>
                 <div class="card-body">
                     <div class="basic-form">
@@ -177,7 +177,7 @@
                             </div>
 
                             <div class="d-flex justify-content-end mt-3">
-                                <button type="submit" class="btn btn-primary">Agregar Menu</button>
+                                <button type="submit" class="btn btn-primary">Editar Menu</button>
                             </div>
 
                         </form>
