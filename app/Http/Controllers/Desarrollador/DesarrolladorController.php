@@ -139,10 +139,10 @@ class DesarrolladorController extends Controller
 		
 		$action = __FUNCTION__;
 
-        $restaurantes = Restaurante::all();
+        $restaurants = Restaurante::all();
 
         $data = [
-            'restaurantes' => $restaurantes,
+            'restaurants' => $restaurants,
         ];
 
         return view('Desarrollador.perfil_desarrollo',compact('page_title', 'page_description','action', 'data') );
