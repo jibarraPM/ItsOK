@@ -72,108 +72,42 @@
                                 <h4 class="card-title">Categorias Local</h4>
                             </div>
                             <div class="row mt-3">
+                                @foreach ($data['categoriasLocal'] as $item)
                                 <div class="col-4">
                                     <div class="custom-control custom-checkbox mb-3">
                                         <input type="checkbox" class="custom-control-input" id="customCheckBox3">
-                                        <label class="custom-control-label" for="customCheckBox3">cat 1</label>
+                                        <label class="custom-control-label" for="customCheckBox3">{{$item->descricion}}</label>
                                     </div>
                                 </div>
-                                <div class="col-4">
-                                    <div class="custom-control custom-checkbox mb-3 ">
-                                        <input type="checkbox" class="custom-control-input" id="customCheckBox4">
-                                        <label class="custom-control-label" for="customCheckBox4">cat 2</label>
-                                    </div>
-                                </div>
-                                <div class="col-4">
-                                    <div class="custom-control custom-checkbox mb-3">
-                                        <input type="checkbox" class="custom-control-input" id="customCheckBox5">
-                                        <label class="custom-control-label" for="customCheckBox5">cat 3</label>
-                                    </div>
-                                </div>
-                                <div class="col-4">
-                                    <div class="custom-control custom-checkbox mb-3">
-                                        <input type="checkbox" class="custom-control-input" id="customCheckBox6">
-                                        <label class="custom-control-label" for="customCheckBox6">cat 4</label>
-                                    </div>
-                                </div>
-                                <div class="col-4">
-                                    <div class="custom-control custom-checkbox mb-3">
-                                        <input type="checkbox" class="custom-control-input" id="customCheckBox7">
-                                        <label class="custom-control-label" for="customCheckBox7">cat 5</label>
-                                    </div>
-                                </div>
+                                @endforeach
                             </div>
 
                             <div class="card-header">
                                 <h4 class="card-title">Categorias Globales</h4>
                             </div>
                             <div class="row mt-3">
+                                @foreach ($data['categoriasGlobal'] as $item)
                                 <div class="col-4">
                                     <div class="custom-control custom-checkbox mb-3">
                                         <input type="checkbox" class="custom-control-input" id="customCheckBox3">
-                                        <label class="custom-control-label" for="customCheckBox3">cat 1</label>
+                                        <label class="custom-control-label" for="customCheckBox3">{{$item->descricion}}</label>
                                     </div>
                                 </div>
-                                <div class="col-4">
-                                    <div class="custom-control custom-checkbox mb-3 ">
-                                        <input type="checkbox" class="custom-control-input" id="customCheckBox4">
-                                        <label class="custom-control-label" for="customCheckBox4">cat 2</label>
-                                    </div>
-                                </div>
-                                <div class="col-4">
-                                    <div class="custom-control custom-checkbox mb-3">
-                                        <input type="checkbox" class="custom-control-input" id="customCheckBox5">
-                                        <label class="custom-control-label" for="customCheckBox5">cat 3</label>
-                                    </div>
-                                </div>
-                                <div class="col-4">
-                                    <div class="custom-control custom-checkbox mb-3">
-                                        <input type="checkbox" class="custom-control-input" id="customCheckBox6">
-                                        <label class="custom-control-label" for="customCheckBox6">cat 4</label>
-                                    </div>
-                                </div>
-                                <div class="col-4">
-                                    <div class="custom-control custom-checkbox mb-3">
-                                        <input type="checkbox" class="custom-control-input" id="customCheckBox7">
-                                        <label class="custom-control-label" for="customCheckBox7">cat 5</label>
-                                    </div>
-                                </div>
+                                @endforeach
                             </div>
 
                             <div class="card-header">
                                 <h4 class="card-title">Agregados Local</h4>
                             </div>
                             <div class="row mt-3">
+                                @foreach ($data['agregados'] as $item)
                                 <div class="col-4">
                                     <div class="custom-control custom-checkbox mb-3">
                                         <input type="checkbox" class="custom-control-input" id="customCheckBox3">
-                                        <label class="custom-control-label" for="customCheckBox3">cat 1</label>
+                                        <label class="custom-control-label" for="customCheckBox3">{{$item->nombre}}</label>
                                     </div>
                                 </div>
-                                <div class="col-4">
-                                    <div class="custom-control custom-checkbox mb-3 ">
-                                        <input type="checkbox" class="custom-control-input" id="customCheckBox4">
-                                        <label class="custom-control-label" for="customCheckBox4">cat 2</label>
-                                    </div>
-                                </div>
-                                <div class="col-4">
-                                    <div class="custom-control custom-checkbox mb-3">
-                                        <input type="checkbox" class="custom-control-input" id="customCheckBox5">
-                                        <label class="custom-control-label" for="customCheckBox5">cat 3</label>
-                                    </div>
-                                </div>
-                                <div class="col-4">
-                                    <div class="custom-control custom-checkbox mb-3">
-                                        <input type="checkbox" class="custom-control-input" id="customCheckBox6">
-                                        <label class="custom-control-label" for="customCheckBox6">cat 4</label>
-                                    </div>
-                                </div>
-                                <div class="col-4">
-                                    <div class="custom-control custom-checkbox mb-3">
-                                        <input type="checkbox" class="custom-control-input" id="customCheckBox7">
-                                        <label class="custom-control-label" for="customCheckBox7">cat 5</label>
-                                    </div>
-                                </div>
+                                @endforeach
                             </div>
 
                             <div class="d-flex justify-content-end mt-3">

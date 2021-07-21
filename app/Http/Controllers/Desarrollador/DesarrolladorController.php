@@ -112,9 +112,15 @@ class DesarrolladorController extends Controller
         $page_title = 'Menus Disponibles';
         $page_description = 'Menus ingresados en el sistema';
 		
+        $menus = Menu::all();
+
+        $data = [
+            'menus' => $menus,
+        ];
+
 		$action = __FUNCTION__;
 
-        return view('Desarrollador.menus_lista',compact('page_title', 'page_description','action') );
+        return view('Desarrollador.menus_lista',compact('page_title', 'page_description','action', 'data'));
     }
 
     public function perfil_desarrollo()
@@ -142,6 +148,12 @@ class DesarrolladorController extends Controller
 		
 		$action = __FUNCTION__;
 
+        $menus = Menu::all();
+
+        $data = [
+            'menus' => $menus,
+        ];
+
         return view('Desarrollador.categorias_local_lista',compact('page_title', 'page_description','action') );
     }
     public function categorias_global_lista()
@@ -150,6 +162,12 @@ class DesarrolladorController extends Controller
         $page_description = 'En esta pagina encontraras la información resumida del local seleccionado';
 		
 		$action = __FUNCTION__;
+
+        $menus = Menu::all();
+
+        $data = [
+            'menus' => $menus,
+        ];
 
         return view('Desarrollador.categorias_global_lista',compact('page_title', 'page_description','action') );
     }

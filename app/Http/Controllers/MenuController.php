@@ -7,6 +7,9 @@ use Symfony\Component\HttpFoundation\Request;
 use App\Models\Menu;
 use App\Models\Atencion;
 use App\Models\User;
+use App\Models\CategoriaRestaurante;
+use App\Models\CategoriaGlobal;
+use App\Models\Agregado;
 
 class MenuController extends Controller
 {
@@ -29,7 +32,17 @@ class MenuController extends Controller
 		
 		$action = __FUNCTION__;
 
-        return view('Desarrollador.agregar_producto',compact('page_title', 'page_description','action') );
+        $categoriasLocal = CategoriaRestaurante::all();
+        $categoriasGlobal = CategoriaGlobal::all();
+        $agregados = Agregado::all();
+
+        $data = [
+            'categoriasLocal' => $categoriasLocal,
+            'categoriasGlobal' => $categoriasGlobal,
+            'agregados' => $agregados,
+        ];
+
+        return view('Desarrollador.agregar_producto',compact('page_title', 'page_description','action', 'data') );
     }
 
     /**
@@ -60,13 +73,17 @@ class MenuController extends Controller
      * Pagina principal de restaurante
      * Se debe mostrar la lista de restaurantes del sistema
      */
-    public function show(){
+    public function show(Menu $menu){
         $page_title = 'Detalle Productos';
         $page_description = 'Detalle del productos';
 		
 		$action = __FUNCTION__;
 
-        return view('Desarrollador.menu_mostrar',compact('page_title', 'page_description','action') );
+        $data = [
+            'menu' => $menu
+        ];
+
+        return view('Desarrollador.menu_mostrar',compact('page_title', 'page_description','action', 'data') );
     }
 
     /**
