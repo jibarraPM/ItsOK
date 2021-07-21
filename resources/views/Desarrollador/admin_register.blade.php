@@ -71,7 +71,10 @@
                                         <div class="form-group">
                                             <input type="text" class="form-control input-rounded" placeholder="Numero de Cuenta">
                                         </div>
+                                        <div class="text-right">
                                         <button type="submit" class="btn btn-primary">Registrar Restaurante</button>
+                                        </div>
+                                        
                                     </form>
                                 </div>
                             </div>

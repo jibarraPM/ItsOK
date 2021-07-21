@@ -16,7 +16,7 @@
         </div>
         <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="javascript:void(0)">Atenciones</a></li>
+                <li class="breadcrumb-item"><a href="javascript:void(0)">Atenciones Local</a></li>
                 <li class="breadcrumb-item active"><a href="javascript:void(0)">Lista</a></li>
             </ol>
         </div>
@@ -38,10 +38,9 @@
                                 <tr>
 
                                     <th>ID Atención</th>
+                                    <th>Fecha</th>
                                     <th>Id Clientes</th>
                                     <th>Nombre Cliente</th>
-                                    <th>ID Restaurante</th>
-                                    <th>Nombre Restaurante</th>
                                     <th>Estado</th>
                                     <th>Tipo Atención</th>
                                     <th>Valor Atención</th>

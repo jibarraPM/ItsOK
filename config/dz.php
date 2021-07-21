@@ -195,7 +195,15 @@ return [
 					'vendor/bootstrap-select/dist/css/bootstrap-select.min.css',
 					'vendor/datatables/css/jquery.dataTables.min.css',
 				],
+				'clientes_lista' => [
+					'vendor/bootstrap-select/dist/css/bootstrap-select.min.css',
+					'vendor/datatables/css/jquery.dataTables.min.css',
+				],
 				'atenciones_lista' => [
+					'vendor/bootstrap-select/dist/css/bootstrap-select.min.css',
+					'vendor/datatables/css/jquery.dataTables.min.css',
+				],
+				'atenciones_local_lista' => [
 					'vendor/bootstrap-select/dist/css/bootstrap-select.min.css',
 					'vendor/datatables/css/jquery.dataTables.min.css',
 				],
@@ -703,7 +711,23 @@ return [
 					'js/deznav-init.js',
 
 				],
+				'clientes_lista' => [
+					'vendor/bootstrap-select/dist/js/bootstrap-select.min.js',
+					'vendor/datatables/js/jquery.dataTables.min.js',
+					'js/plugins-init/datatables.init.js',
+					'js/custom.min.js',
+					'js/deznav-init.js',
+
+				],
 				'atenciones_lista' => [
+					'vendor/bootstrap-select/dist/js/bootstrap-select.min.js',
+					'vendor/datatables/js/jquery.dataTables.min.js',
+					'js/plugins-init/datatables.init.js',
+					'js/custom.min.js',
+					'js/deznav-init.js',
+
+				],
+				'atenciones_local_lista' => [
 					'vendor/bootstrap-select/dist/js/bootstrap-select.min.js',
 					'vendor/datatables/js/jquery.dataTables.min.js',
 					'js/plugins-init/datatables.init.js',

@@ -37,9 +37,12 @@ Route::group([
     Route::get('index_local', 'App\Http\Controllers\Desarrollador\DesarrolladorController@index_local');
     Route::get('editar_producto', 'App\Http\Controllers\Desarrollador\DesarrolladorController@editar_producto');
     Route::get('atenciones_lista', 'App\Http\Controllers\Desarrollador\DesarrolladorController@atenciones_lista');
-
+    Route::get('atenciones_local_lista', 'App\Http\Controllers\Desarrollador\DesarrolladorController@atenciones_local_lista');
     Route::get('categorias_local_lista', 'App\Http\Controllers\Desarrollador\DesarrolladorController@categorias_local_lista');
     Route::get('categorias_global_lista', 'App\Http\Controllers\Desarrollador\DesarrolladorController@categorias_global_lista');
+    Route::get('clientes_lista', 'App\Http\Controllers\Desarrollador\DesarrolladorController@clientes_lista');
+    Route::get('admin_register', 'App\Http\Controllers\Desarrollador\DesarrolladorController@admin_register');
+
 
     
 
@@ -49,6 +52,7 @@ Route::group([
     //Rutas de restaurante controller
     Route::resource('restaurant', RestauranteController::class);
     Route::resource('menu', MenuController::class);
+    Route::resource('cliente', MenuController::class);
     Route::resource('categoria_local', CategoriaLocalController::class);
     Route::resource('categoria_global', CategoriaGlobalController::class);
     Route::resource('pedido', PedidoController::class);

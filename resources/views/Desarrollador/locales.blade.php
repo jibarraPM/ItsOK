@@ -32,7 +32,7 @@
                                 <div class="new-arrival-product"> 
                                 <a href="{!! url('/desarrollador/productos_local'); !!}">
                                 <div class="new-arrivals-img-contnent">
-                                   <img class="img-fluid" src="https://scontent.fscl9-1.fna.fbcdn.net/v/t1.6435-9/96774015_3630861740263670_1323190908916596736_n.jpg?_nc_cat=111&ccb=1-3&_nc_sid=973b4a&_nc_ohc=4yK83J35i1gAX_F4qCg&_nc_ht=scontent.fscl9-1.fna&oh=61028eb6f28c4a81eaba58a3084c5d62&oe=60E2C706" alt="">
+                                   <img class="img-fluid" src="https://scontent.fscl26-1.fna.fbcdn.net/v/t1.6435-9/96774015_3630861740263670_1323190908916596736_n.jpg?_nc_cat=111&ccb=1-3&_nc_sid=973b4a&_nc_ohc=B8AB7hpcvJYAX-Z8kHP&_nc_ht=scontent.fscl26-1.fna&oh=3a63da24cbd7ad2f0572738ebc68457a&oe=60FC7C46" alt="">
                                 </div>
                                 </a>                               
                                     <div class="new-arrival-content text-center mt-3">
