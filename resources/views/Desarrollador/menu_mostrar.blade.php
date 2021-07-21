@@ -63,7 +63,7 @@
                                                 </p>
                                                 <p class="text-content">Breve descripción del producto</p>
                                                 <div class="shopping-cart mt-3">
-                                                    <a class="btn btn-primary btn-lg"  href="{!! url('/desarrollador/pedido/create'); !!}"><i
+                                                    <a class="btn btn-primary btn-lg"  href="{!! url('/desarrollador/menu/1/edit'); !!}"><i
                                                             class="fa fa-edit-basket mr-2"></i>Editar</a>
                                                 </div>
                                             </div>

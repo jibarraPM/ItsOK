@@ -36,7 +36,7 @@ class DesarrolladorController extends Controller
 
     public function form_element()
     {
-        $page_title = 'Form Element';
+        $page_title = 'Registrar Local';
         $page_description = 'Some description for the page';
 		
 		$action = __FUNCTION__;
@@ -181,5 +181,25 @@ class DesarrolladorController extends Controller
 
         return view('Desarrollador.atenciones_lista',compact('page_title', 'page_description','action') );
     }
+    public function clientes_lista()
+    {
+        $page_title = 'Lista de Clientes';
+        $page_description = 'Clientes ingresados en el sistema';
+		
+		$action = __FUNCTION__;
+
+        return view('Desarrollador.clientes_lista',compact('page_title', 'page_description','action') );
+    }
+    public function atenciones_local_lista()
+    {
+        $page_title = 'Atenciones';
+        $page_description = 'Menus ingresados en el sistema';
+		
+		$action = __FUNCTION__;
+
+        return view('Desarrollador.atenciones_lista',compact('page_title', 'page_description','action') );
+    }
 
 }
+
+

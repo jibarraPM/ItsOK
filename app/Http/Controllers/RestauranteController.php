@@ -33,7 +33,7 @@ class RestauranteController extends Controller
 		
 		$action = __FUNCTION__;
 
-        return view('Desarrollador.agregar_producto',compact('page_title', 'page_description','action') );
+        return view('Desarrollador.admin_register',compact('page_title', 'page_description','action') );
     }
 
     /**

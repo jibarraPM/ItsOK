@@ -19,7 +19,6 @@
                 <li class="breadcrumb-item"><a href="javascript:void(0)">Categoría Global</a></li>
                 <li class="breadcrumb-item active"><a href="javascript:void(0)">Lista</a></li>
             </ol>
-            <div class="text-right"><a href="{!! url('/desarrollador/categoria_global/create'); !!}" class="btn btn-primary ">Agregar Categoría</a></div>
         </div>
     </div>
     <!-- row -->
@@ -40,8 +39,6 @@
 
                                     <th>ID Categoria</th>
                                     <th>Nombre</th>
-
-                                    <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -49,12 +46,7 @@
 
                                     <td>12354</td>
                                     <td>Pizza</td>
-                                    <td>
-                                        <div class="d-flex">
-                                            <a href="{!! url('/desarrollador/categoria_global/1/edit'); !!}" class="btn btn-primary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
-                                            <a href="#" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
-                                        </div>
-                                    </td>
+
                                 </tr>
 
                             </tbody>
