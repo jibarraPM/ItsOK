@@ -105,6 +105,7 @@
                                     <td>
                                         <form action="{{ route('restaurant.destroy',$item->id) }}" method="POST">   
                                             <div class="d-flex">
+                                               <a href="{!! url('/desarrollador/index_local'); !!}" class="btn btn-info shadow btn-xs sharp mr-1"><i class="fa fa-info"></i></a>
                                                 <a href="{{ route('restaurant.show',$item->id) }}" class="btn btn-info shadow btn-xs sharp mr-1"><i class="fa fa-info"></i></a>
                                                 <a href="{{ route('restaurant.edit',$item->id) }}" class="btn btn-primary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
                                                 @csrf
