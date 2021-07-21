@@ -6,14 +6,13 @@ use App\Http\Controllers\Controller;
 use App\Models\Menu;
 use App\Models\Atencion;
 use App\Models\User;
+use App\Models\Restaurante;
 
 class DesarrolladorController extends Controller
 {
 	
     public function dashboard_1()
     {
-      
-     
         $page_title = 'Inicio Perfil Desarrollo';
         $page_description = 'En este perfil se podra acceder a todo el contenido del sistema';
         $logo = "images/logo.png";
@@ -24,11 +23,21 @@ class DesarrolladorController extends Controller
         $cantidadAtenciones = Atencion::all()->count();
         $valorAtenciones = Atencion::all()->sum('valorAtencion');
 		$cantidadUsuario = User::where('role', 3)->count();
+
+        $delivery = Atencion::where('idTipoAtencion', 1)->count();
+        $retiro = Atencion::where('idTipoAtencion', 2)->count();
+        $local = Atencion::where('idTipoAtencion', 3)->count();
+        $nuevasOrdenes = Atencion::where('idEstadoAtencion', 1)->count();
+            
         $data = [
             'cantidadMenus' => $cantidadMenus,
             'cantidadAtenciones' => $cantidadAtenciones,
             'valorAtenciones' => $valorAtenciones,
-            'cantidadUsuario' => $cantidadUsuario
+            'cantidadUsuario' => $cantidadUsuario,
+            'delivery' => $delivery,
+            'retiro' => $retiro,
+            'local' => $local,
+            'nuevasOrdenes' => $nuevasOrdenes
         ];
 
         return view('Desarrollador.index', compact('page_title', 'page_description','action','logo','logoText', 'data'));
@@ -130,7 +139,13 @@ class DesarrolladorController extends Controller
 		
 		$action = __FUNCTION__;
 
-        return view('Desarrollador.perfil_desarrollo',compact('page_title', 'page_description','action') );
+        $restaurantes = Restaurante::all();
+
+        $data = [
+            'restaurantes' => $restaurantes,
+        ];
+
+        return view('Desarrollador.perfil_desarrollo',compact('page_title', 'page_description','action', 'data') );
     }
     public function index_local()
     {

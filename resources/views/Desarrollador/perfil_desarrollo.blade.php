@@ -90,24 +90,43 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                @foreach ($data['menus'] as $item)
                                 <tr>
                                     <td><img class="rounded-circle" width="35" src="{{ asset('images/profile/small/pic1.jpg') }}" alt=""></td>
-                                    <td>123546</td>
-                                    <td>Top Pizza</td>
-                                    <td>Local que vende pizzas</td>
-                                    <td>4586</td>
-                                    <td>Javier Ibarra</td>
-                                    <td>info@correo.cl</td>
-                                    <td>+569 94988986</td>
-                                    <td><span class="badge light badge-success">OK</span></td>
+                                    <td>{{$item->id}}</td>
+                                    <td>{{$item->nombre}}</td>
+                                    <td>{{$item->giro}}</td>
+                                    <td>{{$item->rut}}</td>
+                                    <td> <strong> {{$item->precio}}</strong></td>
                                     <td>
-                                        <div class="d-flex">
-                                            <a href="{!! url('/desarrollador/index_local'); !!}" class="btn btn-info shadow btn-xs sharp mr-1"><i class="fa fa-info"></i></a>
-                                            <a href="{!! url('/desarrollador/menus_lista'); !!}" class="btn btn-primary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
-                                            <a href="#" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
-                                        </div>
+                                        <span class="badge light badge-success">
+                                            <i class="fa fa-circle text-suc mr-1"></i>
+                                            @if ($item->disponible)
+                                                Disponible
+                                            @else
+                                                No Disponible
+                                            @endif
+                                        </span>
                                     </td>
+                                    <td>{{$item->tiempoElavoracion}}</td>
+                                    <td>
+                                        <form action="{{ route('restaurante.destroy',$item->id) }}" method="POST">   
+                                            <div class="d-flex">
+                                                <a href="{{ route('restaurante.show',$item->id) }}" class="btn btn-info shadow btn-xs sharp mr-1"><i class="fa fa-info"></i></a>
+                                                <a href="{{ route('restaurante.edit',$item->id) }}" class="btn btn-primary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
+                                                @csrf
+                                                @method('DELETE')      
+                                                <a type="submit" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
+                                            </div>
+                                            
+                                        </form>
+
+                           
+                                
+                                    </div>
+                                    </td>												
                                 </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>

@@ -59,7 +59,11 @@
 												<td>
 													<span class="badge light badge-success">
 														<i class="fa fa-circle text-suc mr-1"></i>
-														{{$item->disponible}}
+                                                        @if ($item->disponible)
+                                                            Disponible
+                                                        @else
+                                                            No Disponible
+                                                        @endif
 													</span>
 												</td>
                                                 <td>{{$item->tiempoElavoracion}}</td>
