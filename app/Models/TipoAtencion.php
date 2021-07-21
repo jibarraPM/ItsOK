@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Menu extends Model
+class TipoAtencion extends Model
 {
     use HasFactory;
 
@@ -15,13 +15,6 @@ class Menu extends Model
      * @var array
      */
     protected $fillable = [
-        'nombre',
-        'descripcion',
-        'ingredientes',
-        'precio',
-        'tiempoElavoracion',
-        'disponible',
-        'edad18',
+        'nombre'
     ];
-
 }

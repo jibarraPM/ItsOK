@@ -49,29 +49,42 @@
                                             </tr>
                                         </thead>
                                         <tbody>
+                                            @foreach ($data['menus'] as $item)
                                             <tr>
-
-                                                <td>12354</td>
-                                                <td>Pizza Vegetariana</td>
-                                                <td>Pizza con verduras</td>
-                                                <td>Cebolla, Tomate, Apio</td>
-                                                <td> <strong> $9.990</strong></td>
+                                                <td>{{$item->id}}</td>
+                                                <td>{{$item->nombre}}</td>
+                                                <td>{{$item->descripcion}}</td>
+                                                <td>{{$item->ingredientes}}</td>
+                                                <td> <strong> {{$item->precio}}</strong></td>
 												<td>
 													<span class="badge light badge-success">
 														<i class="fa fa-circle text-suc mr-1"></i>
-														Disponible
+                                                        @if ($item->disponible)
+                                                            Disponible
+                                                        @else
+                                                            No Disponible
+                                                        @endif
 													</span>
 												</td>
-                                                <td>30 Min</td>
+                                                <td>{{$item->tiempoElavoracion}}</td>
                                                 <td>
-                                                <div class="d-flex">
-                                            <a href="{!! url('/desarrollador/menu/show'); !!}" class="btn btn-info shadow btn-xs sharp mr-1"><i class="fa fa-info"></i></a>
-                                            <a href="{!! url('/desarrollador/menu/1/edit'); !!}" class="btn btn-primary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
-                                            <a href="#" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
-                                        </div>
+                                                    <form action="{{ route('menu.destroy',$item->id) }}" method="POST">   
+                                                        <div class="d-flex">
+                                                            <a href="{{ route('menu.show',$item->id) }}" class="btn btn-info shadow btn-xs sharp mr-1"><i class="fa fa-info"></i></a>
+                                                            <a href="{{ route('menu.edit',$item->id) }}" class="btn btn-primary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
+                                                            @csrf
+                                                            @method('DELETE')      
+                                                            <a type="submit" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
+                                                        </div>
+                                                        
+                                                    </form>
+
+                                       
+                                            
+                                                </div>
 												</td>												
                                             </tr>
-                                           
+                                            @endforeach                                                                                
                                         </tbody>
                                     </table>
                                 </div>

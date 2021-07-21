@@ -87,26 +87,26 @@
 
 							<div class="card-body orders-summary">
 								<div class="d-flex order-manage p-3 align-items-center mb-4">
-									<a href="javascript:void(0);" class="btn fs-22 py-1 btn-success px-4 mr-3">25</a>
+									<a href="javascript:void(0);" class="btn fs-22 py-1 btn-success px-4 mr-3">{{$data['nuevasOrdenes']}}</a>
 									<h4 class="mb-0">Nuevas ordenes <i class="fa fa-circle text-success ml-1 fs-15"></i></h4>
 									<a href="javascript:void(0);" class="ml-auto text-primary font-w500">Gestionar Pedidos <i class="ti-angle-right ml-1"></i></a>
 								</div>
 								<div class="row">
 									<div class="col-sm-4 mb-4">
 										<div class="border px-3 py-3 rounded-xl">
-											<h2 class="fs-32 font-w600 counter">60</h2>
+											<h2 class="fs-32 font-w600 counter">{{$data['delivery']}}</h2>
 											<p class="fs-16 mb-0">Delivery</p>
 										</div>
 									</div>
 									<div class="col-sm-4 mb-4">
 										<div class="border px-3 py-3 rounded-xl">
-											<h2 class="fs-32 font-w600 counter">30</h2>
+											<h2 class="fs-32 font-w600 counter">{{$data['retiro']}}</h2>
 											<p class="fs-16 mb-0">Retiro</p>
 										</div>
 									</div>
 									<div class="col-sm-4 mb-4">
 										<div class="border px-3 py-3 rounded-xl">
-											<h2 class="fs-32 font-w600 counter">10</h2>
+											<h2 class="fs-32 font-w600 counter">{{$data['local']}}</h2>
 											<p class="fs-16 mb-0">Local</p>
 										</div>
 									</div>

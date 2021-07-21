@@ -35,11 +35,21 @@ class AdministradorController extends Controller
             $valorAtenciones = Atencion::where('idRestaurante', $restaurante->idRestaurante)->sum('valorAtencion');
         }
         $cantidadUsuario = User::where('role', 3)->count();
+
+        $delivery = Atencion::where('idTipoAtencion', 1)->count();
+        $retiro = Atencion::where('idTipoAtencion', 2)->count();
+        $local = Atencion::where('idTipoAtencion', 3)->count();
+
+
+            
         $data = [
             'cantidadMenus' => $cantidadMenus,
             'cantidadAtenciones' => $cantidadAtenciones,
             'valorAtenciones' => $valorAtenciones,
-            'cantidadUsuario' => $cantidadUsuario
+            'cantidadUsuario' => $cantidadUsuario,
+            'delivery' => $delivery,
+            'retiro' => $retiro,
+            'local' => $local
         ];
 
         return view('Desarrollador.index', compact('page_title', 'page_description','action','logo','logoText', 'data'));
