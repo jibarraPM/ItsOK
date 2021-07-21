@@ -73,7 +73,9 @@ Route::group([
     'middleware' => ['auth', 'usuario'],
     'prefix' => 'usuario'
 ], function ($router) {
-
+    Route::get('/', 'App\Http\Controllers\Usuario\UsuarioController@dashboard_1');
+    Route::get('/dashboard', 'App\Http\Controllers\Usuario\UsuarioController@dashboard_1');   
+    
 });
 
 

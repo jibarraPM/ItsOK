@@ -45,17 +45,19 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
 
-                                    <td>12354</td>
-                                    <td> Vegetariana</td>
+                                @foreach ($data['categoriasLocal'] as $item)
+                                <tr>
+                                    <td>{{$item->id}}</td>
+                                    <td>{{$item->descripcion}}</td>
                                     <td>
                                         <div class="d-flex">
                                             <a href="{!! url('/desarrollador/categoria_local/1/edit'); !!}" class="btn btn-primary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
                                             <a href="#" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
                                         </div>
-                                    </td>
+                                    </td>												
                                 </tr>
+                                @endforeach
 
                             </tbody>
                         </table>

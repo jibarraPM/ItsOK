@@ -42,12 +42,12 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                @foreach ($data['categoriasGlobal'] as $item)
                                 <tr>
-
-                                    <td>12354</td>
-                                    <td>Pizza</td>
-
+                                    <td>{{$item->id}}</td>
+                                    <td>{{$item->descripcion}}</td>											
                                 </tr>
+                                @endforeach
 
                             </tbody>
                         </table>
