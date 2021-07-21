@@ -7,6 +7,8 @@ use App\Models\Menu;
 use App\Models\Atencion;
 use App\Models\User;
 use App\Models\Restaurante;
+use App\Models\CategoriaRestaurante;
+use App\Models\CategoriaGlobal;
 
 class DesarrolladorController extends Controller
 {
@@ -163,13 +165,13 @@ class DesarrolladorController extends Controller
 		
 		$action = __FUNCTION__;
 
-        $menus = Menu::all();
+        $categoriasLocal = CategoriaRestaurante::all();
 
         $data = [
-            'menus' => $menus,
+            'categoriasLocal' => $categoriasLocal,
         ];
 
-        return view('Desarrollador.categorias_local_lista',compact('page_title', 'page_description','action') );
+        return view('Desarrollador.categorias_local_lista',compact('page_title', 'page_description','action', 'data') );
     }
     public function categorias_global_lista()
     {
@@ -178,13 +180,13 @@ class DesarrolladorController extends Controller
 		
 		$action = __FUNCTION__;
 
-        $menus = Menu::all();
+        $categoriasGlobal = CategoriaGlobal::all();
 
         $data = [
-            'menus' => $menus,
+            'categoriasGlobal' => $categoriasGlobal,
         ];
 
-        return view('Desarrollador.categorias_global_lista',compact('page_title', 'page_description','action') );
+        return view('Desarrollador.categorias_global_lista',compact('page_title', 'page_description','action', 'data') );
     }
 
     public function atenciones_lista()
