@@ -30,7 +30,6 @@ Route::group([
 ], function ($router) {
     Route::get('/', 'App\Http\Controllers\Desarrollador\DesarrolladorController@dashboard_1');
     Route::get('/dashboard', 'App\Http\Controllers\Desarrollador\DesarrolladorController@dashboard_1');
-    Route::get('menus_lista', 'App\Http\Controllers\Desarrollador\DesarrolladorController@menus_lista');
     Route::get('productos_local', 'App\Http\Controllers\Desarrollador\DesarrolladorController@productos_local');
     Route::get('perfil_desarrollo', 'App\Http\Controllers\Desarrollador\DesarrolladorController@perfil_desarrollo');
     Route::get('menu_mostrar', 'App\Http\Controllers\Desarrollador\DesarrolladorController@menu_mostrar');
@@ -50,7 +49,7 @@ Route::group([
 
 
     //Rutas de restaurante controller
-    Route::resource('restaurant', RestauranteController::class);
+    Route::resource('restaurante', RestauranteController::class);
     Route::resource('menu', MenuController::class);
     Route::resource('cliente', MenuController::class);
     Route::resource('categoria_local', CategoriaLocalController::class);

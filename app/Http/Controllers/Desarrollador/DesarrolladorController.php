@@ -30,6 +30,7 @@ class DesarrolladorController extends Controller
         $retiro = Atencion::where('idTipoAtencion', 2)->count();
         $local = Atencion::where('idTipoAtencion', 3)->count();
         $nuevasOrdenes = Atencion::where('idEstadoAtencion', 1)->count();
+   
             
         $data = [
             'cantidadMenus' => $cantidadMenus,

@@ -30,7 +30,7 @@
                 </div>
                 <div class="card-body">
                     <div class="basic-form">
-                        <form method="post" action="{{ route('restaurant.store') }}">
+                        <form method="post" action="{{ route('restaurante.store') }}">
                             @csrf
                             <div class="form-group">
                                 <label>Menus Disponibles</label>
