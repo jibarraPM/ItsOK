@@ -80,7 +80,6 @@ return [
 				],
 				'perfil_desarrollo' => [
 					'vendor/bootstrap-select/dist/css/bootstrap-select.min.css',
-
 					'vendor/datatables/css/jquery.dataTables.min.css',
 				],
 				'chart_chartist' => [
@@ -127,6 +126,7 @@ return [
 				],
 				'index' => [
 					'vendor/bootstrap-select/dist/css/bootstrap-select.min.css',
+					'vendor/datatables/css/jquery.dataTables.min.css',
 				],
 				'index_local' => [
 					'vendor/bootstrap-select/dist/css/bootstrap-select.min.css',
@@ -492,6 +492,8 @@ return [
 
 				'index' => [
 					'vendor/bootstrap-select/dist/js/bootstrap-select.min.js',
+					'vendor/datatables/js/jquery.dataTables.min.js',
+					'js/plugins-init/datatables.init.js',
 					'vendor/chart.js/Chart.bundle.min.js',
 					'vendor/apexchart/apexchart.js',
 					'vendor/highlightjs/highlight.pack.min.js',

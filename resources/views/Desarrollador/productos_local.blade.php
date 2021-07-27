@@ -33,7 +33,7 @@
                         
                             <div class="card-body">
                                 <div class="new-arrival-product">
-                                <a href="{!! url('/desarrollador/menu/show'); !!}">
+                                <a href="{!! url('/desarrollador/menu/1'); !!}">
                                 <div class="new-arrivals-img-contnent">
                                     
                                     <img class="img-fluid" src="{{ asset('images/product/1.jpg') }}" alt="">

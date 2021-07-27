@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use Symfony\Component\HttpFoundation\Request;
+use App\Models\Agregado;
 use App\Models\Menu;
 use App\Models\Atencion;
 use App\Models\User;
@@ -15,6 +17,12 @@ class AgregadoController extends Controller
      * Se debe mostrar la lista de restaurantes del sistema
      */
     public function index(){
+        $page_title = 'Detalle Pedido';
+        $page_description = 'Detalle del Pedido';
+		
+		$action = __FUNCTION__;
+
+        return view('agregado.index',compact('page_title', 'page_description','action') );
         
     }
 
@@ -23,12 +31,12 @@ class AgregadoController extends Controller
      * Se debe tener el formulario para crear un restaurante
      */
     public function create(){
-        $page_title = 'Form Element';
+        $page_title = 'Crear Agregado';
         $page_description = 'Some description for the page';
 		
 		$action = __FUNCTION__;
 
-        return view('Desarrollador.agregar_agregado',compact('page_title', 'page_description','action') );
+        return view('agregado.create',compact('page_title', 'page_description','action') );
     }
 
     /**

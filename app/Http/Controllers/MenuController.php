@@ -20,6 +20,18 @@ class MenuController extends Controller
      * Se debe mostrar la lista de restaurantes del sistema
      */
     public function index(){
+        $page_title = 'Menus';
+        $page_description = 'Menus ingresados en el sistema';
+		
+        $menus = Menu::all();
+
+        $data = [
+            'menus' => $menus,
+        ];
+
+		$action = __FUNCTION__;
+
+        return view('menu.index',compact('page_title', 'page_description','action', 'data'));
 
     }
 
@@ -43,7 +55,7 @@ class MenuController extends Controller
             'agregados' => $agregados,
         ];
 
-        return view('Desarrollador.agregar_producto',compact('page_title', 'page_description','action', 'data') );
+        return view('menu.create',compact('page_title', 'page_description','action', 'data') );
     }
 
     /**
@@ -86,7 +98,7 @@ class MenuController extends Controller
             'menu' => $menu
         ];
 
-        return view('Desarrollador.menu_mostrar',compact('page_title', 'page_description','action', 'data') );
+        return view('menu.show',compact('page_title', 'page_description','action', 'data') );
     }
 
     /**
@@ -109,7 +121,7 @@ class MenuController extends Controller
             'agregados' => $agregados,
         ];
 
-        return view('Desarrollador.editar_producto',compact('page_title', 'page_description','action', 'menu', 'data') );
+        return view('menu.edit',compact('page_title', 'page_description','action', 'menu', 'data') );
 
     }
 

@@ -75,7 +75,7 @@
                         <ul aria-expanded="false">
                             <li><a href="{!! url('/desarrollador/atenciones_lista'); !!}">Atenciones</a></li>
                             <li><a href="{!! url('/desarrollador/productos_local'); !!}">Mostrar Atención</a></li>
-                            <li><a href="{!! url('/desarrollador/categoria/create'); !!}">Editar Atención</a></li>
+                            <li><a href="{!! url('/desarrollador/pedido/create'); !!}">Editar Pedido</a></li>
                         </ul>
                     </li>
                     <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Agregados</a>
