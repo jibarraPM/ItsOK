@@ -17,7 +17,7 @@
         <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="javascript:void(0)">App</a></li>
-                <li class="breadcrumb-item active"><a href="javascript:void(0)">perfil</a></li>
+                <li class="breadcrumb-item active"><a href="javascript:void(0)">Restaurante</a></li>
             </ol>
         </div>
     </div>
@@ -56,7 +56,7 @@
                                         </g>
                                     </svg></a>
                                 <ul class="dropdown-menu dropdown-menu-right" x-placement="bottom-end" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(-169px, 30px, 0px);">
-                                    >
+                                    
                                     <li class="dropdown-item"><i class="fa fa-history text-primary mr-2"></i>Editar</li>
                                 </ul>
                             </div>
