@@ -59,6 +59,8 @@ class CategoriaGlobalController extends Controller
 		
 		$action = __FUNCTION__;
 
+        
+
         return view('Desarrollador.editar_categoria_global',compact('page_title', 'page_description','action') );
 
     }
