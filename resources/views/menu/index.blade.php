@@ -57,14 +57,19 @@
                                                 <td>{{$item->ingredientes}}</td>
                                                 <td> <strong> {{$item->precio}}</strong></td>
 												<td>
-													<span class="badge light badge-success">
-														<i class="fa fa-circle text-suc mr-1"></i>
+													
                                                         @if ($item->disponible)
+                                                        <span class="badge light badge-success">
+														    <i class="fa fa-circle text-suc mr-1"></i>
                                                             Disponible
+                                                        </span>
                                                         @else
+                                                        <span class="badge light badge-danger">
+														    <i class="fa fa-circle text-suc mr-1"></i>
                                                             No Disponible
+                                                        </span>
                                                         @endif
-													</span>
+													
 												</td>
                                                 <td>{{$item->tiempoElavoracion}}</td>
                                                 <td>
