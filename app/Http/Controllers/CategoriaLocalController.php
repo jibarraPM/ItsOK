@@ -8,6 +8,8 @@ use App\Models\CategoriaLocal;
 use App\Models\Atencion;
 use App\Models\User;
 
+use Validator;
+
 class CategoriaLocalController extends Controller
 {
 

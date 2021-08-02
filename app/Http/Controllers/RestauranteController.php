@@ -3,10 +3,18 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use Symfony\Component\HttpFoundation\Request;
 use App\Models\Menu;
 use App\Models\Atencion;
 use App\Models\User;
 use App\Models\Restaurante;
+use App\Models\RestauranteMenu;
+use App\Models\RestauranteAgregado;
+use App\Models\RestauranteMesa;
+use App\Models\RestauranteCategoriaRestaurante;
+
+
+use Validator;
 
 class RestauranteController extends Controller
 {
@@ -71,13 +79,37 @@ class RestauranteController extends Controller
      * Pagina principal de restaurante
      * Se debe mostrar la lista de restaurantes del sistema
      */
-    public function show(){
+    public function show(Restaurante $restaurante){
+        $page_title = 'Index Local';
+        $page_description = 'En esta pagina encontraras la información resumida del local seleccionado';
+		
+		$action = __FUNCTION__;
+
+        $menus = RestauranteMenu::Where('idRestaurante', $restaurante->id)->get();
+        $agregados = RestauranteAgregado::Where('idRestaurante', $restaurante->id)->get();
+        $categorias = RestauranteCategoria::Where('idRestaurante', $restaurante->id)->get();
+        $mesas = RestauranteMesa::Where('idRestaurante', $restaurante->id)->get();
+
+        $data = [
+            'restaurante' => $restaurante,
+        ];
+
+
+
+        return view('Desarrollador.index_local',compact('page_title', 'page_description','action') );
+        
+        /**
         $page_title = 'Productos Local';
         $page_description = 'Productos Disponibles';
 		
 		$action = __FUNCTION__;
 
-        return view('Desarrollador.productos_local',compact('page_title', 'page_description','action') );
+        $data = [
+            'restaurante' => $restaurante
+        ];
+
+        return view('Desarrollador.productos_local',compact('page_title', 'page_description','action', 'data') );
+        */
     }
 
     /**
@@ -85,7 +117,7 @@ class RestauranteController extends Controller
      */
     public function edit(Request $request)
     {
-
+        
     }
 
     /**

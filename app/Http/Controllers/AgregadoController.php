@@ -23,7 +23,6 @@ class AgregadoController extends Controller
 		$action = __FUNCTION__;
 
         return view('agregado.index',compact('page_title', 'page_description','action') );
-        
     }
 
     /**
