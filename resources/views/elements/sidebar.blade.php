@@ -8,7 +8,7 @@
                 </a>
                 <ul aria-expanded="false">
                     <li><a href="{!! url('/desarrollador/'); !!}">Inicio</a></li>
-                    <li><a href="{!! url('/desarrollador/perfil_desarrollo'); !!}">Locales</a></li>
+                    <li><a href="{!! url('/desarrollador/restaurante'); !!}">Restaurante</a></li>
                     <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Menus</a>
                         <ul aria-expanded="false">
                             <li><a href="{!! url('/desarrollador/menus_lista'); !!}">Menus Lista</a></li>
