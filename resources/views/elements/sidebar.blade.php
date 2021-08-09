@@ -11,24 +11,25 @@
                     <li><a href="{!! url('/desarrollador/restaurante'); !!}">Restaurante</a></li>
                     <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Menus</a>
                         <ul aria-expanded="false">
-                            <li><a href="{!! url('/desarrollador/menus_lista'); !!}">Menus Lista</a></li>
+                            <li><a href="{!! url('/desarrollador/menu/'); !!}">Menus Lista</a></li>
                             <li><a href="{!! url('/desarrollador/menu/create'); !!}">Agregar Menu</a></li>
                         </ul>
                     </li>
                     <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Categorías Local</a>
                         <ul aria-expanded="false">
-                            <li><a href="{!! url('/desarrollador/categorias_local_lista'); !!}">Categorías del Local</a></li>
-                            <li><a href="{!! url('/desarrollador/categoria_local/create'); !!}">Agregar Categoría Local</a></li>
+                            <li><a href="{!! url('/desarrollador/categoriaLocal/'); !!}">Categorías del Local</a></li>
+                            <li><a href="{!! url('/desarrollador/categoriaLocal/create'); !!}">Agregar Categoría Local</a></li>
                         </ul>
                     </li>
                     <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Categorias Global</a>
                         <ul aria-expanded="false">
-                            <li><a href="{!! url('/desarrollador/categorias_global_lista'); !!}">Categorias Globales</a></li>
+                            <li><a href="{!! url('/desarrollador/categoriaGlobal/'); !!}">Categorias Globales</a></li>
+                            <li><a href="{!! url('/desarrollador/categoriaGlobal/create'); !!}">Agregar Categoria Global</a></li>
                         </ul>
                     </li>
                     <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Atenciones</a>
                         <ul aria-expanded="false">
-                            <li><a href="{!! url('/desarrollador/atenciones_lista'); !!}">Atenciones General</a></li>
+                            <li><a href="{!! url('/desarrollador/atencion/'); !!}">Atenciones General</a></li>
                             <li><a href="{!! url('/desarrollador/atenciones_local_lista'); !!}">Atenciones Local</a></li>
                             
                             <li><a href="{!! url('/desarrollador/categoria/create'); !!}">Editar Atención</a></li>

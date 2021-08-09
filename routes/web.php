@@ -52,8 +52,8 @@ Route::group([
     Route::resource('restaurante', RestauranteController::class);
     Route::resource('menu', MenuController::class);
     Route::resource('cliente', MenuController::class);
-    Route::resource('categoria_local', CategoriaLocalController::class);
-    Route::resource('categoria_global', CategoriaGlobalController::class);
+    Route::resource('categoriaLocal', CategoriaLocalController::class);
+    Route::resource('categoriaGlobal', CategoriaGlobalController::class);
     Route::resource('pedido', PedidoController::class);
     Route::resource('agregado', AgregadoController::class);
     Route::get('/recibo', 'App\Http\Controllers\Desarrollador\DesarrolladorController@recibo');
