@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use App\Models\CategoriaLocal;
+use App\Models\CategoriaRestaurante;
 use App\Models\Atencion;
 use App\Models\User;
 
@@ -18,7 +19,18 @@ class CategoriaLocalController extends Controller
      * Se debe mostrar la lista de restaurantes del sistema
      */
     public function index(){
-        
+        $page_title = 'Categoria Local';
+        $page_description = 'En esta pagina encontraras la información resumida del local seleccionado';
+		
+		$action = __FUNCTION__;
+
+        $categoriasLocal = CategoriaRestaurante::all();
+
+        $data = [
+            'categoriasLocal' => $categoriasLocal,
+        ];
+
+        return view('categoriaLocal.index',compact('page_title', 'page_description','action', 'data') );
     }
 
     /**
@@ -31,7 +43,7 @@ class CategoriaLocalController extends Controller
 		
 		$action = __FUNCTION__;
 
-        return view('Desarrollador.agregar_categoria_local',compact('page_title', 'page_description','action') );
+        return view('categoriaLocal.create',compact('page_title', 'page_description','action') );
 
     }
 
@@ -61,7 +73,7 @@ class CategoriaLocalController extends Controller
 		
 		$action = __FUNCTION__;
 
-        return view('Desarrollador.editar_categoria_local',compact('page_title', 'page_description','action') );
+        return view('categoriaLocal.edit',compact('page_title', 'page_description','action') );
 
     }
 
