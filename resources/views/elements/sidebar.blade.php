@@ -8,7 +8,12 @@
                 </a>
                 <ul aria-expanded="false">
                     <li><a href="{!! url('/desarrollador/'); !!}">Inicio</a></li>
-                    <li><a href="{!! url('/desarrollador/restaurante'); !!}">Restaurante</a></li>
+                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Restaurante</a>
+                        <ul aria-expanded="false">
+                            <li><a href="{!! url('/desarrollador/restaurante/'); !!}">Restaurante Lista</a></li>
+                            <li><a href="{!! url('/desarrollador/restaurante/create'); !!}">Agregar Restaurante</a></li>
+                        </ul>
+                    </li>
                     <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Menus</a>
                         <ul aria-expanded="false">
                             <li><a href="{!! url('/desarrollador/menu/'); !!}">Menus Lista</a></li>

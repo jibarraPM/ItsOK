@@ -22,7 +22,7 @@
                     <h4><i class="fa fa-exclamation-triangle text-warning"></i> ¡No se ha encontrado la página que buscaba!</h4>
                     <p>Es posible que haya escrito mal la dirección o que la página se haya movido.</p>
                     <div>
-                        <a class="btn btn-primary" href="{!! url('/login'); !!}">Vovler al Inicio</a>
+                        <a class="btn btn-primary" href="{!! url('/login'); !!}">Volver al Inicio</a>
                     </div>
                 </div>
             </div>

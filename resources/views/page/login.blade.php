@@ -16,7 +16,10 @@
         <div class="authincation-content">
             <div class="row no-gutters">
                 <div class="col-xl-12">
-                    <img src="" alt="">
+                    <div class="text-center">
+                        <img src="{{ asset('images/logo-text.png') }}" alt="">
+                    </div>
+                   
                     <div class="auth-form">
                         <h4 class="text-center mb-4">Ingresa a tu Cuenta</h4>
                         <form method="POST" action="{{ route('login') }}">
