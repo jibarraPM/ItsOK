@@ -12,8 +12,6 @@ use App\Models\RestauranteMenu;
 use App\Models\RestauranteAgregado;
 use App\Models\RestauranteMesa;
 use App\Models\RestauranteCategoriaRestaurante;
-
-
 use Validator;
 
 class RestauranteController extends Controller
@@ -87,7 +85,7 @@ class RestauranteController extends Controller
 
         $menus = RestauranteMenu::Where('idRestaurante', $restaurante->id)->get();
         $agregados = RestauranteAgregado::Where('idRestaurante', $restaurante->id)->get();
-        $categorias = RestauranteCategoria::Where('idRestaurante', $restaurante->id)->get();
+        $categorias = RestauranteCategoriaRestaurante::Where('idRestaurante', $restaurante->id)->get();
         $mesas = RestauranteMesa::Where('idRestaurante', $restaurante->id)->get();
 
         $data = [
@@ -96,7 +94,7 @@ class RestauranteController extends Controller
 
 
 
-        return view('Desarrollador.index_local',compact('page_title', 'page_description','action') );
+        return view('restaurante.show',compact('page_title', 'page_description','action') );
         
         /**
         $page_title = 'Productos Local';
