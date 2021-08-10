@@ -78,6 +78,7 @@ class RestauranteController extends Controller
      * Se debe mostrar la lista de restaurantes del sistema
      */
     public function show(Restaurante $restaurante){
+        /**
         $page_title = 'Index Local';
         $page_description = 'En esta pagina encontraras la información resumida del local seleccionado';
 		
@@ -96,7 +97,7 @@ class RestauranteController extends Controller
 
         return view('restaurante.show',compact('page_title', 'page_description','action') );
         
-        /**
+        */
         $page_title = 'Productos Local';
         $page_description = 'Productos Disponibles';
 		
@@ -107,7 +108,7 @@ class RestauranteController extends Controller
         ];
 
         return view('Desarrollador.productos_local',compact('page_title', 'page_description','action', 'data') );
-        */
+        
     }
 
     /**
