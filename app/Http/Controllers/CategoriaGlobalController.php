@@ -16,7 +16,18 @@ class CategoriaGlobalController extends Controller
      * Se debe mostrar la lista de restaurantes del sistema
      */
     public function index(){
-        
+        $page_title = 'Categoria Local';
+        $page_description = 'En esta pagina encontraras la información resumida del local seleccionado';
+		
+		$action = __FUNCTION__;
+
+        $categoriasGlobal = CategoriaGlobal::all();
+
+        $data = [
+            'categoriasGlobal' => $categoriasGlobal,
+        ];
+
+        return view('categoriaGlobal.index',compact('page_title', 'page_description','action', 'data') );
     }
 
     /**
