@@ -96,7 +96,7 @@ class RestauranteController extends Controller
 
         return view('restaurante.show',compact('page_title', 'page_description','action') );
         
-        /**
+        /*
         $page_title = 'Productos Local';
         $page_description = 'Productos Disponibles';
 		
