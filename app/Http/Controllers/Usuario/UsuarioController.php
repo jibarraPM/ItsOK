@@ -44,7 +44,7 @@ class UsuarioController extends Controller
             'nuevasOrdenes' => $nuevasOrdenes
         ];
 		
-        return view('dashboard.index', compact('page_title', 'page_description','action','logo','logoText', 'data'));
+        return view('Usuario.index', compact('page_title', 'page_description','action','logo','logoText', 'data'));
     }
 
     public function form_element()

@@ -9,10 +9,11 @@
                 </a>
                 <ul aria-expanded="false">
                     <li><a href="{!! url('/desarrollador/'); !!}">Inicio</a></li>
-                    <li><a href="{!! url('/desarrollador/perfil_desarrollo'); !!}">Locales Disponibles</a></li>
-                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Menus</a>
+                    <li><a href="{!! url('/usuarios/perfil_desarrollo'); !!}">Perfil</a></li>
+                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Restaurantes</a>
                         <ul aria-expanded="false">
-                            <li><a href="{!! url('/desarrollador/productos_local'); !!}">Menus Foto</a></li>
+                            <li><a href="{!! url('/desarrollador/productos_local'); !!}">Vista</a></li>
+                            <li><a href="{!! url('/desarrollador/productos_local'); !!}">Lista</a></li>
                         </ul>
                     </li>
                     <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Categorías Local</a>

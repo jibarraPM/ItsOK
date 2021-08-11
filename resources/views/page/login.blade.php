@@ -16,7 +16,7 @@
         <div class="authincation-content">
             <div class="row no-gutters">
                 <div class="col-xl-12">
-                    <div class="text-center">
+                    <div class="text-center mt-4">
                         <img src="{{ asset('images/logo-text.png') }}" alt="">
                     </div>
                    
