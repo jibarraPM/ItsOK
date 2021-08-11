@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RestauranteController;
+
+use App\Http\Controllers\Administrador\RestauranteAdminController;
+
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\CategoriaLocalController;
 use App\Http\Controllers\CategoriaGlobalController;
@@ -64,8 +67,15 @@ Route::group([
     'middleware' => ['auth', 'administrador'],
     'prefix' => 'administrador'
 ], function ($router) {
+    //Index
+    Route::resource('restaurante', RestauranteAdminController::class);
     Route::get('/', 'App\Http\Controllers\Administrador\AdministradorController@dashboard_1');
-    Route::get('/dashboard', 'App\Http\Controllers\Administrador\AdministradorController@dashboard_1');   
+    Route::get('/dashboard', 'App\Http\Controllers\Administrador\AdministradorController@dashboard_1');  
+    //Locales
+    Route::get('/locales', 'App\Http\Controllers\Administrador\AdministradorController@index_local');
+    //Menus
+    Route::get('/menus', 'App\Http\Controllers\Administrador\AdministradorController@menus_lista');
+
 });
 
 Route::group([

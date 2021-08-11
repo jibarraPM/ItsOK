@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 
 use App\Models\UsuarioRestaurante;
 use App\Models\RestauranteMenu;
+use App\Models\Menu;
 use App\Models\Atencion;
 use App\Models\User;
 
@@ -52,7 +53,33 @@ class AdministradorController extends Controller
             'local' => $local
         ];
 
-        return view('Desarrollador.index', compact('page_title', 'page_description','action','logo','logoText', 'data'));
+        return view('Administrador.index', compact('page_title', 'page_description','action','logo','logoText', 'data'));
+    }
+
+    public function index_local()
+    {
+        $page_title = 'Locales';
+        $page_description = 'Locales Disponibles';
+		
+		$action = __FUNCTION__;
+
+        return view('Administrador.locales.index', compact('page_title', 'page_description','action') );
+    }
+
+    public function menus_lista()
+    {
+        $page_title = 'Menus Disponibles';
+        $page_description = 'Menus ingresados en el sistema';
+		
+        $menus = Menu::all();
+
+        $data = [
+            'menus' => $menus,
+        ];
+
+		$action = __FUNCTION__;
+
+        return view('Administrador.menu.index',compact('page_title', 'page_description','action', 'data'));
     }
 
 }
