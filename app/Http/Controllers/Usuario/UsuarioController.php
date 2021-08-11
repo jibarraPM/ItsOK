@@ -76,4 +76,14 @@ class UsuarioController extends Controller
         return view('Desarrollador.agregar_agregado',compact('page_title', 'page_description','action') );
     }
 
+    public function atencion()
+    {
+        $page_title = 'Detalle Pedido';
+        $page_description = 'Detalle del Pedido';
+		
+		$action = __FUNCTION__;
+
+        return view('Usuario.atencion',compact('page_title', 'page_description','action') );
+    }
+
 }

@@ -5,6 +5,10 @@ use App\Http\Controllers\RestauranteController;
 
 use App\Http\Controllers\Administrador\RestauranteAdminController;
 
+
+use App\Http\Controllers\Usuario\RestauranteUserController;
+use App\Http\Controllers\Usuario\MenuUserController;
+
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\CategoriaLocalController;
 use App\Http\Controllers\CategoriaGlobalController;
@@ -82,6 +86,13 @@ Route::group([
     'middleware' => ['auth', 'usuario'],
     'prefix' => 'usuario'
 ], function ($router) {
+
+    Route::resource('restaurante', RestauranteUserController::class);
+    Route::resource('menu', MenuUserController::class);
+
+    Route::get('/atencion', 'App\Http\Controllers\Usuario\UsuarioController@atencion');
+
+
     Route::get('/', 'App\Http\Controllers\Usuario\UsuarioController@dashboard_1');
     Route::get('/dashboard', 'App\Http\Controllers\Usuario\UsuarioController@dashboard_1');   
     
