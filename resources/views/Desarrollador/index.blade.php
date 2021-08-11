@@ -1,5 +1,5 @@
 {{-- Extends layout --}}
-@extends('layout.default')
+@extends('layout.defaultAdministrador')
 
 
 
@@ -87,7 +87,7 @@
 
 							<div class="card-body orders-summary">
 								<div class="d-flex order-manage p-3 align-items-center mb-4">
-									<a href="javascript:void(0);" class="btn fs-22 py-1 btn-success px-4 mr-3">{{$data['nuevasOrdenes']}}</a>
+									<a href="javascript:void(0);" class="btn fs-22 py-1 btn-success px-4 mr-3">1</a>
 									<h4 class="mb-0">Nuevas ordenes <i class="fa fa-circle text-success ml-1 fs-15"></i></h4>
 									<a href="javascript:void(0);" class="ml-auto text-primary font-w500">Gestionar Pedidos <i class="ti-angle-right ml-1"></i></a>
 								</div>
