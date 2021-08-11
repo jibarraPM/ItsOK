@@ -72,7 +72,7 @@
                                             </li>
                                             <a class="btn btn-primary"  href="https://www.transbankdevelopers.cl/">Pagar</a>
                                             <hr class="mb-1">
-                                            <a class="btn btn-primary"  href="{!! url('/desarrollador/recibo'); !!}">Recibo</a>
+                                            <a class="btn btn-primary"  href="{!! url('/usuario/recibo'); !!}">Recibo</a>
                                         </ul>
                                     </div>
                                     <div class="col-md-8 order-md-1">

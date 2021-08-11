@@ -86,4 +86,14 @@ class UsuarioController extends Controller
         return view('Usuario.atencion',compact('page_title', 'page_description','action') );
     }
 
+    public function recibo()
+    {
+        $page_title = 'Detalle Recibo';
+        $page_description = 'Detalle del Recibo';
+		
+		$action = __FUNCTION__;
+
+        return view('usuario.recibo',compact('page_title', 'page_description','action') );
+    }
+
 }

@@ -91,6 +91,7 @@ Route::group([
     Route::resource('menu', MenuUserController::class);
 
     Route::get('/atencion', 'App\Http\Controllers\Usuario\UsuarioController@atencion');
+    Route::get('/recibo', 'App\Http\Controllers\Usuario\UsuarioController@recibo');
 
 
     Route::get('/', 'App\Http\Controllers\Usuario\UsuarioController@dashboard_1');
