@@ -25,20 +25,20 @@
                     
                 </div>
                 <div class="row">
-
+                    @foreach($data['restaurants'] as $item)
                     <div class="col-xl-3 col-lg-6 col-md-4 col-sm-6">
                         <div class="card">
                         <div class="card-body">
                                 <div class="new-arrival-product"> 
-                                <a href="{!! url('/usuario/menu'); !!}">
+                                <a href="{{ route('restaurante.show', $item->id) }}">
                                 <div class="new-arrivals-img-contnent">
                                    <img class="img-fluid" src="{{ asset('images/logo-text.png') }}" alt="">
                                 </div>
                                 </a>                               
                                     <div class="new-arrival-content text-center mt-3">
-                                        <h4>Nombre Restaurante</h4>
-                                        <h5>Dirección</h5>
-                                        <h6>Horario</h6>
+                                        <h4>{{$item->nombre}}</h4>
+                                        <h5>{{$item->direccion}}</h5>
+                                        <h6>{{$item->horarioAtencion}}</h6>
                                         <ul class="star-rating">
                                             <li><i class="fa fa-star"></i></li>
                                             <li><i class="fa fa-star"></i></li>
@@ -54,92 +54,7 @@
                             </div>       
                         </div>
                     </div>
-                    <div class="col-xl-3 col-lg-6 col-md-4 col-sm-6">
-                        <div class="card">
-                        <div class="card-body">
-                                <div class="new-arrival-product"> 
-                                <a href="{!! url('/desarrollador/productos_local'); !!}">
-                                <div class="new-arrivals-img-contnent">
-                                   <img class="img-fluid" src="{{ asset('images/logo-text.png') }}" alt="">
-                                </div>
-                                </a>                               
-                                    <div class="new-arrival-content text-center mt-3">
-                                        <h4>Nombre Restaurante</h4>
-                                        <h5>Dirección</h5>
-                                        <h6>Horario</h6>
-                                        <ul class="star-rating">
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star-half-empty"></i></li>
-                                            <li><i class="fa fa-star-half-empty"></i></li>
-                                        </ul>
-                                        <i class="fa fa-cutlery" aria-hidden="true"></i>
-                                        <i class="fa fa-motorcycle" aria-hidden="true"></i>
-                                        <i class="fa fa-shopping-bag" aria-hidden="true"></i>
-                                    </div>
-                                </div>
-                            </div>       
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-6 col-md-4 col-sm-6">
-                        <div class="card">
-                        <div class="card-body">
-                                <div class="new-arrival-product"> 
-                                <a href="{!! url('/desarrollador/productos_local'); !!}">
-                                <div class="new-arrivals-img-contnent">
-                                   <img class="img-fluid" src="{{ asset('images/logo-text.png') }}" alt="">
-                                </div>
-                                </a>                               
-                                    <div class="new-arrival-content text-center mt-3">
-                                        <h4>Nombre Restaurante</h4>
-                                        <h5>Dirección</h5>
-                                        <h6>Horario</h6>
-                                        <ul class="star-rating">
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star-half-empty"></i></li>
-                                            <li><i class="fa fa-star-half-empty"></i></li>
-                                        </ul>
-                                        <i class="fa fa-cutlery" aria-hidden="true"></i>
-                                        <i class="fa fa-motorcycle" aria-hidden="true"></i>
-                                        <i class="fa fa-shopping-bag" aria-hidden="true"></i>
-                                    </div>
-                                </div>
-                            </div>       
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-6 col-md-4 col-sm-6">
-                        <div class="card">
-                        <div class="card-body">
-                                <div class="new-arrival-product"> 
-                                <a href="{!! url('/desarrollador/productos_local'); !!}">
-                                <div class="new-arrivals-img-contnent">
-                                   <img class="img-fluid" src="{{ asset('images/logo-text.png') }}" alt="">
-                                </div>
-                                </a>                               
-                                    <div class="new-arrival-content text-center mt-3">
-                                        <h4>Nombre Restaurante</h4>
-                                        <h5>Dirección</h5>
-                                        <h6>Horario</h6>
-                                        <ul class="star-rating">
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star-half-empty"></i></li>
-                                            <li><i class="fa fa-star-half-empty"></i></li>
-                                        </ul>
-                                        <i class="fa fa-cutlery" aria-hidden="true"></i>
-                                        <i class="fa fa-motorcycle" aria-hidden="true"></i>
-                                        <i class="fa fa-shopping-bag" aria-hidden="true"></i>
-                                    </div>
-                                </div>
-                            </div>       
-                        </div>
-                    </div>
-
+                    @endforeach
                 </div>
             </div>
-			
 @endsection			

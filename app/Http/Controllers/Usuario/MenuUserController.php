@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Usuario;
 use App\Http\Controllers\Usuario\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use App\Models\Menu;
+use App\Models\MenuCategoriaGlobal;
 use App\Models\Atencion;
 use App\Models\User;
 use App\Models\CategoriaRestaurante;
@@ -94,8 +95,16 @@ class MenuUserController extends Controller
 		
 		$action = __FUNCTION__;
 
+        $categoriasMenu = MenuCategoriaGlobal::Where('idMenu', $menu['id'])->get();
+        $menu = Menu::Where('id', $menu['id'])->get();
+        foreach($categoriasMenu as $categoriaMenu){
+            $categoriaMenu->getCategoriaGlobal();
+        }
+
         $data = [
-            'menu' => $menu
+            'menu' => $menu,
+            'categoriasMenu' => $categoriasMenu
+
         ];
 
         return view('Usuario.menu.show',compact('page_title', 'page_description','action', 'data') );

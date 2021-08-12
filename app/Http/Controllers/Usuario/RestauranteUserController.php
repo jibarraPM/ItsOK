@@ -80,27 +80,26 @@ class RestauranteUserController extends Controller
      * Se debe mostrar la lista de restaurantes del sistema
      */
     public function show(Restaurante $restaurante){
-        /*
+        
         $page_title = 'Index Local';
         $page_description = 'En esta pagina encontraras la información resumida del local seleccionado';
 		
 		$action = __FUNCTION__;
 
-        $menus = RestauranteMenu::Where('idRestaurante', $restaurante->id)->get();
-        $agregados = RestauranteAgregado::Where('idRestaurante', $restaurante->id)->get();
-        $categorias = RestauranteCategoriaRestaurante::Where('idRestaurante', $restaurante->id)->get();
-        $mesas = RestauranteMesa::Where('idRestaurante', $restaurante->id)->get();
+        $menus = RestauranteMenu::Where('idRestaurante', $restaurante['id'])->get();
+        foreach($menus as $menu){
+            $menu->getMenu();
+        }
 
         $data = [
             'restaurante' => $restaurante,
+            'menus' => $menus
         ];
 
-
-
-        return view('restaurante.show',compact('page_title', 'page_description','action') );
+        return view('Usuario.menu.index',compact('page_title', 'page_description','action', 'data') );
         
 
-        */
+        /*
         $page_title = 'Productos Local';
         $page_description = 'Productos Disponibles';
 		
@@ -111,7 +110,7 @@ class RestauranteUserController extends Controller
         ];
 
         return view('Usuario.local.index',compact('page_title', 'page_description','action', 'data') );
-        
+        */
     }
 
     /**
