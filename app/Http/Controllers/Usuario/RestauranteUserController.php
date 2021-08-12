@@ -1,8 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Usuario;
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\Usuario\Controller;
+
+
 use Symfony\Component\HttpFoundation\Request;
 use App\Models\Menu;
 use App\Models\Atencion;
@@ -14,7 +16,7 @@ use App\Models\RestauranteMesa;
 use App\Models\RestauranteCategoriaRestaurante;
 use Validator;
 
-class RestauranteController extends Controller
+class RestauranteUserController extends Controller
 {
 
     /**
@@ -22,8 +24,8 @@ class RestauranteController extends Controller
      * Se debe mostrar la lista de restaurantes del sistema
      */
     public function index(){
-        $page_title = 'Perfil del desarrollador';
-        $page_description = 'En este perfil encontraras tu informacion personal y los distintos restaurantes ingresados en el sistema';
+        $page_title = 'Restaurante Disponibles';
+        $page_description = 'Aquí encontrarás los restaurantes disponibles para ti';
 		
 		$action = __FUNCTION__;
 
@@ -33,7 +35,7 @@ class RestauranteController extends Controller
             'restaurants' => $restaurants,
         ];
 
-        return view('restaurante.index',compact('page_title', 'page_description','action', 'data') );
+        return view('Usuario.locales.index',compact('page_title', 'page_description','action', 'data') );
     }
 
     /**
@@ -97,8 +99,8 @@ class RestauranteController extends Controller
 
         return view('restaurante.show',compact('page_title', 'page_description','action') );
         
-        */
 
+        */
         $page_title = 'Productos Local';
         $page_description = 'Productos Disponibles';
 		
@@ -108,7 +110,7 @@ class RestauranteController extends Controller
             'restaurante' => $restaurante
         ];
 
-        return view('Desarrollador.productos_local',compact('page_title', 'page_description','action', 'data') );
+        return view('Usuario.local.index',compact('page_title', 'page_description','action', 'data') );
         
     }
 

@@ -8,11 +8,11 @@
                     <span class="nav-text">Usuario</span>
                 </a>
                 <ul aria-expanded="false">
-                    <li><a href="{!! url('/desarrollador/'); !!}">Inicio</a></li>
-                    <li><a href="{!! url('/desarrollador/perfil_desarrollo'); !!}">Locales Disponibles</a></li>
+                    <li><a href="{!! url('/administrador/'); !!}">Administrador</a></li>
+                    <li><a href="{!! url('/administrador/locales'); !!}">Locales Disponibles</a></li>
                     <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Menus</a>
                         <ul aria-expanded="false">
-                            <li><a href="{!! url('/desarrollador/productos_local'); !!}">Menus Foto</a></li>
+                            <li><a href="{!! url('/administrador/menus'); !!}">Menus Foto</a></li>
                         </ul>
                     </li>
                     <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Categorías Local</a>

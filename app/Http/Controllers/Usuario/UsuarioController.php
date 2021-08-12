@@ -44,7 +44,7 @@ class UsuarioController extends Controller
             'nuevasOrdenes' => $nuevasOrdenes
         ];
 		
-        return view('dashboard.index', compact('page_title', 'page_description','action','logo','logoText', 'data'));
+        return view('Usuario.index', compact('page_title', 'page_description','action','logo','logoText', 'data'));
     }
 
     public function form_element()
@@ -74,6 +74,26 @@ class UsuarioController extends Controller
 		$action = __FUNCTION__;
 
         return view('Desarrollador.agregar_agregado',compact('page_title', 'page_description','action') );
+    }
+
+    public function atencion()
+    {
+        $page_title = 'Detalle Pedido';
+        $page_description = 'Detalle del Pedido';
+		
+		$action = __FUNCTION__;
+
+        return view('Usuario.atencion',compact('page_title', 'page_description','action') );
+    }
+
+    public function recibo()
+    {
+        $page_title = 'Detalle Recibo';
+        $page_description = 'Detalle del Recibo';
+		
+		$action = __FUNCTION__;
+
+        return view('usuario.recibo',compact('page_title', 'page_description','action') );
     }
 
 }

@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Usuario;
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\Usuario\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use App\Models\Menu;
 use App\Models\Atencion;
@@ -12,7 +12,7 @@ use App\Models\CategoriaGlobal;
 use App\Models\Agregado;
 use Validator;
 
-class MenuController extends Controller
+class MenuUserController extends Controller
 {
 
     /**
@@ -21,7 +21,7 @@ class MenuController extends Controller
      */
     public function index(){
         $page_title = 'Menus';
-        $page_description = 'Menus ingresados en el sistema';
+        $page_description = 'Menus del Local';
 		
         $menus = Menu::all();
 
@@ -31,7 +31,7 @@ class MenuController extends Controller
 
 		$action = __FUNCTION__;
 
-        return view('usuario.menu.index',compact('page_title', 'page_description','action', 'data'));
+        return view('Usuario.menu.index',compact('page_title', 'page_description','action', 'data'));
 
     }
 
@@ -98,7 +98,7 @@ class MenuController extends Controller
             'menu' => $menu
         ];
 
-        return view('menu.show',compact('page_title', 'page_description','action', 'data') );
+        return view('Usuario.menu.show',compact('page_title', 'page_description','action', 'data') );
     }
 
     /**
