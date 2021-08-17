@@ -26,20 +26,20 @@
                     
                 </div>
                 <div class="row">
+                    @foreach($data['menus'] as $item)
                     <div class="col-xl-3 col-lg-6 col-md-4 col-sm-6">
                         <div class="card">
                         
                             <div class="card-body">
                                 <div class="new-arrival-product">
-                                <a href="{!! url('/usuario/menu/1'); !!}">
+                                <a href="{{ route('menu.show', $item->id) }}">
                                 <div class="new-arrivals-img-contnent">
                                     
                                     <img class="img-fluid" src="{{ asset('images/product/1.jpg') }}" alt="">
                                 </div>
                                 </a>
-                                    
                                     <div class="new-arrival-content text-center mt-3">
-                                        <h4>Bonorum et Malorum</h4>
+                                        <h4>{{$item->getMenu->nombre}}</h4>
                                         <ul class="star-rating">
                                             <li><i class="fa fa-star"></i></li>
                                             <li><i class="fa fa-star"></i></li>
@@ -47,78 +47,14 @@
                                             <li><i class="fa fa-star-half-empty"></i></li>
                                             <li><i class="fa fa-star-half-empty"></i></li>
                                         </ul>
-                                        <span class="price">$9.990</span>
+                                        <span class="price">${{$item->getMenu->precio}}</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-lg-6 col-md-4 col-sm-6">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="new-arrival-product">
-                                    <div class="new-arrivals-img-contnent">
-                                        <img class="img-fluid" src="{{ asset('images/product/2.jpg') }}" alt="">
-                                    </div>
-                                    <div class="new-arrival-content text-center mt-3">
-                                        <h4>Striped Dress</h4>
-                                        <ul class="star-rating">
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                        </ul>
-                                        <span class="price">$9.990</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-6 col-md-4 col-sm-6">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="new-arrival-product">
-                                    <div class="new-arrivals-img-contnent">
-                                        <img class="img-fluid" src="{{ asset('images/product/3.jpg') }}" alt="">
-                                    </div>
-                                    <div class="new-arrival-content text-center mt-3">
-                                        <h4>BBow polka-dot</h4>
-                                        <ul class="star-rating">
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                        </ul>
-                                        <span class="price">$9.990</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-6 col-md-4 col-sm-6">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="new-arrival-product">
-                                    <div class="new-arrivals-img-contnent">
-                                        <img class="img-fluid" src="{{ asset('images/product/4.jpg') }}" alt="">
-                                    </div>
-                                    <div class="new-arrival-content text-center mt-3">
-                                        <h4>Z Product 360</h4>
-                                        <ul class="star-rating">
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star-half-empty"></i></li>
-                                            <li><i class="fa fa-star-half-empty"></i></li>
-                                        </ul>
-                                        <span class="price">$9.990</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
+                    
 
                 </div>
             </div>
