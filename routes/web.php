@@ -5,6 +5,8 @@ use App\Http\Controllers\RestauranteController;
 
 use App\Http\Controllers\Administrador\RestauranteAdminController;
 
+use App\Http\Controllers\Desarrollador\RestauranteDevController;
+use App\Http\Controllers\Desarrollador\MenuDevController;
 
 use App\Http\Controllers\Usuario\RestauranteUserController;
 use App\Http\Controllers\Usuario\MenuUserController;
@@ -35,7 +37,13 @@ Route::group([
     'middleware' => ['auth', 'desarrollador'],
     'prefix' => 'desarrollador'
 ], function ($router) {
+
+    Route::resource('restauranteD', RestauranteDevController::class);
+    Route::resource('menuD', MenuDevController::class);
     Route::get('/', 'App\Http\Controllers\Desarrollador\DesarrolladorController@dashboard_1');
+
+    /*
+
     Route::get('/dashboard', 'App\Http\Controllers\Desarrollador\DesarrolladorController@dashboard_1');
     Route::get('productos_local', 'App\Http\Controllers\Desarrollador\DesarrolladorController@productos_local');
     Route::get('perfil_desarrollo', 'App\Http\Controllers\Desarrollador\DesarrolladorController@perfil_desarrollo');
@@ -50,14 +58,9 @@ Route::group([
     Route::get('admin_register', 'App\Http\Controllers\Desarrollador\DesarrolladorController@admin_register');
 
 
+    */
+
     
-
-
-
-
-    //Rutas de restaurante controller
-    Route::resource('restaurante', RestauranteController::class);
-    Route::resource('menu', MenuController::class);
     Route::resource('cliente', MenuController::class);
     Route::resource('categoriaLocal', CategoriaLocalController::class);
     Route::resource('categoriaGlobal', CategoriaGlobalController::class);
