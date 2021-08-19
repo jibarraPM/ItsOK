@@ -1,8 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Desarrollador;
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\Desarrollador\Controller;
+
+
 use Symfony\Component\HttpFoundation\Request;
 use App\Models\Menu;
 use App\Models\Atencion;
@@ -14,7 +16,7 @@ use App\Models\RestauranteMesa;
 use App\Models\RestauranteCategoriaRestaurante;
 use Validator;
 
-class RestauranteController extends Controller
+class RestauranteDevController extends Controller
 {
 
     /**
@@ -33,7 +35,7 @@ class RestauranteController extends Controller
             'restaurants' => $restaurants,
         ];
 
-        return view('Desarrollador/restaurante.index',compact('page_title', 'page_description','action', 'data') );
+        return view('desarrollador/restaurante.index',compact('page_title', 'page_description','action', 'data') );
     }
 
     /**
@@ -46,7 +48,7 @@ class RestauranteController extends Controller
 		
 		$action = __FUNCTION__;
 
-        return view('Desarrollador/restaurante.create',compact('page_title', 'page_description','action') );
+        return view('desarrollador.restaurante.create',compact('page_title', 'page_description','action') );
     }
 
     /**
@@ -88,7 +90,7 @@ class RestauranteController extends Controller
             'restaurante' => $restaurante
         ];
 
-        return view('Desarrollador.productos_local',compact('page_title', 'page_description','action', 'data') );
+        return view('desarrollador.restaurante.show',compact('page_title', 'page_description','action', 'data') );
         
     }
 
