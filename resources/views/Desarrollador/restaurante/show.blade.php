@@ -104,16 +104,16 @@
 					<div class="row">
 
 						<div class="col-xl-3 col-xxl-3 col-lg-6 col-md-6 col-sm-6">
-							<div class="text-center"><a href="{!! url('/desarrollador/menuD'); !!}" class="btn btn-primary my-1"><i class="fa fa-list-ul" aria-hidden="true"></i> Menus</a></div>
+							<div class="text-center"><a href="{!! url('/desarrollador/restauranteD/{{$data['restaurante']->id}}/menuD'); !!}" class="btn btn-primary my-1"><i class="fa fa-list-ul" aria-hidden="true"></i> Menus</a></div>
 						</div>
 						<div class="col-xl-3 col-xxl-3 col-lg-6 col-md-6 col-sm-6">
-							<div class="text-center"><a href="{!! url('/desarrollador/categegoria_local'); !!}" class="btn btn-primary  my-1"><i class="fa fa-cutlery" aria-hidden="true"></i> Categorias Locales</a></div>
+							<div class="text-center"><a href="{!! url('/desarrollador/categoriaLocalD'); !!}" class="btn btn-primary  my-1"><i class="fa fa-cutlery" aria-hidden="true"></i> Categorias Locales</a></div>
 						</div>
 						<div class="col-xl-3 col-xxl-3 col-lg-6 col-md-6 col-sm-6">
-							<div class="text-center"><a href="{!! url('/desarrollador/atencion'); !!}" class="btn btn-primary my-1"><i class="fa fa-ticket" aria-hidden="true"></i> Pedidos</a></div>
+							<div class="text-center"><a href="{!! url('/desarrollador/atencionD'); !!}" class="btn btn-primary my-1"><i class="fa fa-ticket" aria-hidden="true"></i> Pedidos</a></div>
 						</div>
 						<div class="col-xl-3 col-xxl-3 col-lg-6 col-md-6 col-sm-6">
-							<div class="text-center"><a href="{!! url('/desarrollador/usuario'); !!}" class="btn btn-primary my-1"><i class="fa fa-users" aria-hidden="true"></i> Clientes</a></div>
+							<div class="text-center"><a href="{!! url('/desarrollador'); !!}" class="btn btn-primary my-1"><i class="fa fa-users" aria-hidden="true"></i> Clientes</a></div>
 						</div>
 					</div>
 
