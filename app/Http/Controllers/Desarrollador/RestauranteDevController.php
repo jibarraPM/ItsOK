@@ -79,19 +79,30 @@ class RestauranteDevController extends Controller
      * Pagina principal de restaurante
      * Se debe mostrar la lista de restaurantes del sistema
      */
-    public function show(Restaurante $restaurante){
+    public function show($restaurante){
 
         $page_title = 'Productos Local';
         $page_description = 'Productos Disponibles';
 		
 		$action = __FUNCTION__;
 
+        $restaurante = Restaurante::Where('id', $restaurante)->get();
+        $restaurante = $restaurante[0];
+        $menus = RestauranteMenu::Where('idRestaurante', $restaurante)->get();
+        $agregados = RestauranteAgregado::Where('idRestaurante', $restaurante)->get();
+        $atenciones = Atencion::Where('idRestaurante', $restaurante)->get();
+        $usuarios = User::Where('role', 3)->count();
+        //$atenciones->count('idTipoAtencion', 1);
+        //$atenciones->count('idTipoAtencion', 2);
+        //$atenciones->count('idTipoAtencion', 3);
         $data = [
-            'restaurante' => $restaurante
+            'restaurante' => $restaurante,
+            'menus' => $menus,
+            'usuarios' => $usuarios,
+            'atenciones' => $atenciones
         ];
 
-        return view('desarrollador.restaurante.show',compact('page_title', 'page_description','action', 'data') );
-        
+        return view('desarrollador.restaurante.show',compact('page_title', 'page_description','action', 'data') );        
     }
 
     /**
