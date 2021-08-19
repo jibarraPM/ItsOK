@@ -7,6 +7,10 @@ use App\Http\Controllers\Administrador\RestauranteAdminController;
 
 use App\Http\Controllers\Desarrollador\RestauranteDevController;
 use App\Http\Controllers\Desarrollador\MenuDevController;
+use App\Http\Controllers\Desarrollador\CategoriaLocalDevController;
+use App\Http\Controllers\Desarrollador\CategoriaGlobalDevController;
+use App\Http\Controllers\Desarrollador\AtencionDevController;
+use App\Http\Controllers\Desarrollador\AgregadoDevController;
 
 use App\Http\Controllers\Usuario\RestauranteUserController;
 use App\Http\Controllers\Usuario\MenuUserController;
@@ -38,9 +42,21 @@ Route::group([
     'prefix' => 'desarrollador'
 ], function ($router) {
 
-    Route::resource('restauranteD', RestauranteDevController::class);
-    Route::resource('menuD', MenuDevController::class);
     Route::get('/', 'App\Http\Controllers\Desarrollador\DesarrolladorController@dashboard_1');
+
+    Route::resource('restauranteD', RestauranteDevController::class);
+
+    Route::resource('restauranteD/{id}/menuD', MenuDevController::class);
+    Route::resource('restauranteD/{id}/categoriaLocalD', CategoriaLocalDevController::class);
+    Route::resource('restauranteD/{id}/atencionD', AtencionDevController::class);
+
+    Route::resource('menuD', MenuDevController::class);
+    Route::resource('categoriaLocalD', CategoriaLocalDevController::class);
+    Route::resource('categoriaGlobalD', CategoriaGlobalDevController::class);
+    Route::resource('atencionD', AtencionDevController::class);
+    Route::resource('agregadoD', AgregadoDevController::class);
+    
+    
 
     /*
 
@@ -61,11 +77,8 @@ Route::group([
     */
 
     
-    Route::resource('cliente', MenuController::class);
-    Route::resource('categoriaLocal', CategoriaLocalController::class);
-    Route::resource('categoriaGlobal', CategoriaGlobalController::class);
-    Route::resource('pedido', PedidoController::class);
-    Route::resource('agregado', AgregadoController::class);
+   
+    
     Route::get('/recibo', 'App\Http\Controllers\Desarrollador\DesarrolladorController@recibo');
 
 });
