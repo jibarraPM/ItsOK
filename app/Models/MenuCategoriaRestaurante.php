@@ -15,13 +15,13 @@ class MenuCategoriaRestaurante extends Model
      * @var array
      */
     protected $fillable = [
-        'idRestaurante',
+        'idMenu',
         'idCategoriaRestaurante',
     ];
 
-    public function getRestaurante()
+    public function getMenu()
     {
-        return $this->belongsTo(Restaurante::class, 'idRestaurante');
+        return $this->belongsTo(Menu::class, 'idMenu');
     }
 
     public function getCategoriaRestaurante()
@@ -29,4 +29,5 @@ class MenuCategoriaRestaurante extends Model
         return $this->belongsTo(CategoriaRestaurante::class, 'idCategoriaRestaurante');
     }
 }
-}
+
+

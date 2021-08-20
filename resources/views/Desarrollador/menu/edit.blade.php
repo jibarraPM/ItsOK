@@ -68,47 +68,50 @@
                                     <label id="mayores" name="mayores" class="custom-control-label" for="customCheckBox2">Solo para mayores</label>
                                 </div>
                             </div>
-                            <div class="card-header">
-                                <h4 class="card-title">Categorias Local</h4>
-                            </div>
-                            <div class="row mt-3">
-                                @foreach ($data['categoriasLocal'] as $item)
-                                <div class="col-4">
-                                    <div class="custom-control custom-checkbox mb-3">
-                                        <input type="checkbox" class="custom-control-input" id="customCheckBox3">
-                                        <label class="custom-control-label" for="customCheckBox3">{{$item->descripcion}}</label>
+                            <div class="col-4">
+                                    <div class="card-header">
+                                        <h4 class="card-title">Categorias Local</h4>
+                                    </div>
+                                    <div class="row mt-3">
+                                        @foreach ($data['categoriasLocal'] as $item)
+                                            <div class="col-4">
+                                                <div class="custom-control custom-checkbox mb-3">
+                                                <input type="checkbox" name="categoriaslocales[]" value="{{$item->id}}"> <label>{{$item->descripcion}}</label>
+                                                </div>
+                                            </div>
+                                        @endforeach
                                     </div>
                                 </div>
-                                @endforeach
-                            </div>
 
-                            <div class="card-header">
-                                <h4 class="card-title">Categorias Globales</h4>
-                            </div>
-                            <div class="row mt-3">
-                                @foreach ($data['categoriasGlobal'] as $item)
-                                <div class="col-4">
-                                    <div class="custom-control custom-checkbox mb-3">
-                                        <input type="checkbox" class="custom-control-input" id="customCheckBox3">
-                                        <label class="custom-control-label" for="customCheckBox3">{{$item->descripcion}}</label>
-                                    </div>
-                                </div>
-                                @endforeach
-                            </div>
+                                <div class="col-12">
 
-                            <div class="card-header">
-                                <h4 class="card-title">Agregados Local</h4>
-                            </div>
-                            <div class="row mt-3">
-                                @foreach ($data['agregados'] as $item)
-                                <div class="col-4">
-                                    <div class="custom-control custom-checkbox mb-3">
-                                        <input type="checkbox" class="custom-control-input" id="customCheckBox3">
-                                        <label class="custom-control-label" for="customCheckBox3">{{$item->nombre}}</label>
+                                    <div class="card-header">
+                                        <h4 class="card-title">Categorias Globales</h4>
+                                    </div>
+                                    <div class="row mt-3">
+                                        @foreach ($data['categoriasGlobal'] as $item)
+                                            <div class="col-4">
+                                                <div class="custom-control custom-checkbox mb-3">
+                                                    <input type="checkbox" name="categoriasGlobales[]" value="{{$item->id}}"> <label>{{$item->descripcion}}</label>
+                                                </div>
+                                            </div>
+                                        @endforeach
                                     </div>
                                 </div>
-                                @endforeach
-                            </div>
+
+
+                                <div class="card-header">
+                                    <h4 class="card-title">Agregados Local</h4>
+                                </div>
+                                <div class="row mt-3">
+                                    @foreach ($data['agregados'] as $item)
+                                        <div class="col-4">
+                                            <div class="custom-control custom-checkbox mb-3">
+                                            <input type="checkbox" name="agregados[]" value="{{$item->id}}"> <label>{{$item->descripcion}}</label>
+                                            </div>
+                                        </div>
+                                    @endforeach
+                                </div>
 
                             <div class="d-flex justify-content-end mt-3">
                                 <button type="submit" class="btn btn-primary">Agregar Menu</button>
