@@ -10,7 +10,6 @@ use App\Models\Menu;
 use App\Models\Atencion;
 use App\Models\User;
 use App\Models\Restaurante;
-use App\Models\RestauranteMenu;
 use App\Models\RestauranteAgregado;
 use App\Models\RestauranteMesa;
 use App\Models\RestauranteCategoriaRestaurante;
@@ -79,19 +78,28 @@ class RestauranteDevController extends Controller
      * Pagina principal de restaurante
      * Se debe mostrar la lista de restaurantes del sistema
      */
-    public function show(Restaurante $restaurante){
+    public function show($restaurante){
 
         $page_title = 'Productos Local';
         $page_description = 'Productos Disponibles';
 		
 		$action = __FUNCTION__;
 
+        $restaurante = Restaurante::Where('id', $restaurante)->get();
+        $restaurante = $restaurante[0];
+        $menus = Menu::Where('idRestaurante', $restaurante)->get();
+        $agregados = RestauranteAgregado::Where('idRestaurante', $restaurante)->get();
+        $atenciones = Atencion::Where('idRestaurante', $restaurante)->get();
+        $usuarios = User::Where('role', 3)->count();
+        
         $data = [
-            'restaurante' => $restaurante
+            'restaurante' => $restaurante,
+            'menus' => $menus,
+            'usuarios' => $usuarios,
+            'atenciones' => $atenciones
         ];
 
-        return view('desarrollador.restaurante.show',compact('page_title', 'page_description','action', 'data') );
-        
+        return view('desarrollador.restaurante.show',compact('page_title', 'page_description','action', 'data') );        
     }
 
     /**

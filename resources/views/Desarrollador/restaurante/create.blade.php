@@ -30,7 +30,8 @@
                     </div>
                     <div class="card-body">
                         <div class="basic-form">
-                            <form>
+                            <form action="" method="POST" >
+                            @csrf
                                 <div class="form-group">
                                     <input type="text" class="form-control input-default " placeholder="Nombre del Local">
                                 </div>

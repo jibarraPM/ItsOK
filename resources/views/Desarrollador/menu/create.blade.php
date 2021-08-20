@@ -30,8 +30,9 @@
                     </div>
                     <div class="card-body">
                         <div class="basic-form">
-                            <form method="post" action="{{ route('menu.store') }}">
+                            <form method="post" action="{!! url('/desarrollador/restauranteD/'.$data['restaurante']->id.'/menuD'); !!}">
                                 @csrf
+                                <input id="idRestaurante" name="idRestaurante" type="hidden" value="{{$data['restaurante']->id}}">
                                 <div class="form-group">
                                     <input id="nombre" name="nombre" type="text" class="form-control input-default "
                                         placeholder="Nombre del Menu">

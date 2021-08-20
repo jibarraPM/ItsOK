@@ -22,6 +22,7 @@ class Menu extends Model
         'tiempoElavoracion',
         'disponible',
         'edad18',
+        'idRestaurante'
     ];
 
 }

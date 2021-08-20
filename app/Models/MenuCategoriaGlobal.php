@@ -21,11 +21,11 @@ class MenuCategoriaGlobal extends Model
 
     public function getMenu()
     {
-        return $this->belongsTo(Menu::class, 'idAtencion');
+        return $this->belongsTo(Menu::class, 'idMenu');
     }
 
     public function getCategoriaGlobal()
     {
-        return $this->belongsTo(CategoriaGlobal::class, 'idAtencion');
+        return $this->belongsTo(CategoriaGlobal::class, 'idCategoriaGlobal');
     }
 }

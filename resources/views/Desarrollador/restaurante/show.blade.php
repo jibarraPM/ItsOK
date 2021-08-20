@@ -15,7 +15,7 @@
 
 
 	</div>
-	<h2 class="text-black font-w600 mb-3">Nombre del Local</h2>
+	<h2 class="text-black font-w600 mb-3">{{ $data['restaurante']->nombre }}</h2>
 	<div class="row">
 		<div class="col-xl-3 col-xxl-3 col-lg-6 col-md-6 col-sm-6">
 			<div class="widget-stat card">
@@ -29,7 +29,7 @@
 
 						</span>
 						<div class="media-body">
-							<h3 class="mb-0 text-black"><span class="counter ml-0">12</span></h3>
+							<h3 class="mb-0 text-black"><span class="counter ml-0">{{$data['menus']->count()}}</span></h3>
 							<p class="mb-0">Menus</p>
 						</div>
 					</div>
@@ -47,7 +47,7 @@
 							</svg>
 						</span>
 						<div class="media-body">
-							<h3 class="mb-0 text-black"><span class="counter ml-0">150.235.152</span></h3>
+							<h3 class="mb-0 text-black"><span class="counter ml-0">{{$data['atenciones']->sum('valorAtencion')}}</span></h3>
 							<p class="mb-0">Ventas</p>
 						</div>
 					</div>
@@ -68,7 +68,7 @@
 							</svg>
 						</span>
 						<div class="media-body">
-							<h3 class="mb-0 text-black"><span class="counter ml-0">321</span></h3>
+							<h3 class="mb-0 text-black"><span class="counter ml-0">{{$data['atenciones']->count()}}</span></h3>
 							<p class="mb-0">Tickets</p>
 						</div>
 					</div>
@@ -88,7 +88,7 @@
 							</svg>
 						</span>
 						<div class="media-body">
-							<h3 class="mb-0 text-black"><span class="counter ml-0">32</span></h3>
+							<h3 class="mb-0 text-black"><span class="counter ml-0">{{$data['usuarios']}}</span></h3>
 							<p class="mb-0">Clientes</p>
 						</div>
 					</div>
@@ -104,7 +104,7 @@
 					<div class="row">
 
 						<div class="col-xl-3 col-xxl-3 col-lg-6 col-md-6 col-sm-6">
-							<div class="text-center"><a href="{!! url('/desarrollador/restauranteD/{{$data['restaurante']->id}}/menuD'); !!}" class="btn btn-primary my-1"><i class="fa fa-list-ul" aria-hidden="true"></i> Menus</a></div>
+							<div class="text-center"><a href="{!! url('/desarrollador/restauranteD/'.$data['restaurante']->id.'/menuD'); !!}" class="btn btn-primary my-1"><i class="fa fa-list-ul" aria-hidden="true"></i> Menus</a></div>
 						</div>
 						<div class="col-xl-3 col-xxl-3 col-lg-6 col-md-6 col-sm-6">
 							<div class="text-center"><a href="{!! url('/desarrollador/categoriaLocalD'); !!}" class="btn btn-primary  my-1"><i class="fa fa-cutlery" aria-hidden="true"></i> Categorias Locales</a></div>
@@ -131,26 +131,26 @@
 
 				<div class="card-body orders-summary">
 					<div class="d-flex order-manage p-3 align-items-center mb-4">
-						<a href="javascript:void(0);" class="btn fs-22 py-1 btn-success px-4 mr-3">25</a>
+						<a href="javascript:void(0);" class="btn fs-22 py-1 btn-success px-4 mr-3">{{ $data['atenciones']->count('idEstadoAtencion', 1) }}</a>
 						<h4 class="mb-0">Nuevas ordenes <i class="fa fa-circle text-success ml-1 fs-15"></i></h4>
 						<a href="javascript:void(0);" class="ml-auto text-primary font-w500">Gestionar Pedidos <i class="ti-angle-right ml-1"></i></a>
 					</div>
 					<div class="row">
 						<div class="col-sm-4 mb-4">
 							<div class="border px-3 py-3 rounded-xl">
-								<h2 class="fs-32 font-w600 counter">60</h2>
+								<h2 class="fs-32 font-w600 counter">{{ $data['atenciones']->count('idTipoAtencion', 1) }}</h2>
 								<p class="fs-16 mb-0">Delivery</p>
 							</div>
 						</div>
 						<div class="col-sm-4 mb-4">
 							<div class="border px-3 py-3 rounded-xl">
-								<h2 class="fs-32 font-w600 counter">30</h2>
+								<h2 class="fs-32 font-w600 counter">{{ $data['atenciones']->count('idTipoAtencion', 2) }}</h2>
 								<p class="fs-16 mb-0">Retiro</p>
 							</div>
 						</div>
 						<div class="col-sm-4 mb-4">
 							<div class="border px-3 py-3 rounded-xl">
-								<h2 class="fs-32 font-w600 counter">10</h2>
+								<h2 class="fs-32 font-w600 counter">{{ $data['atenciones']->count('idTipoAtencion', 3) }}</h2>
 								<p class="fs-16 mb-0">Local</p>
 							</div>
 						</div>

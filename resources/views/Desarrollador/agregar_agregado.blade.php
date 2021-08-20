@@ -30,7 +30,8 @@
                             </div>
                             <div class="card-body">
                                 <div class="basic-form">
-                                    <form>
+                                    <form action="{{ route('agregado.store') }}" method="POST">
+                                        @csrf
                                         <div class="form-group">
                                             <input type="text" class="form-control input-default " placeholder="Nombre del agregado">
                                         </div>
@@ -39,22 +40,21 @@
                                         </div>
 
                                         <div class="col-4">
-										<div class="custom-control custom-checkbox mt-4">
-											<input type="checkbox" class="custom-control-input" checked id="customCheckBox1" required>
-											<label class="custom-control-label" for="customCheckBox1">Disponible</label>
-										</div>
-									</div>
+                                        <div class="custom-control custom-checkbox mt-4">
+                                            <input type="checkbox" class="custom-control-input" checked id="customCheckBox1" required>
+                                            <label class="custom-control-label" for="customCheckBox1">Disponible</label>
+                                        </div>
+                                        </div>
 
-                                    <div class="d-flex justify-content-end">
-                                     <button type="submit" class="btn btn-primary">Agregar Agregado</button>
-                                    </div>
+                                        <div class="d-flex justify-content-end">
+                                            <button type="submit" class="btn btn-primary">Agregar Agregado</button>
+                                        </div>
                                     
                                     </form>
                                 </div>
                             </div>
                         </div>
-					</div>
-
+                    </div>
                 </div>
             </div>
 			
