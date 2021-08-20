@@ -22,6 +22,8 @@ class CreateMenusTable extends Migration
             $table->string('tiempoElavoracion');
             $table->boolean('disponible');
             $table->string('edad18');
+            $table->bigInteger('idRestaurante')->unsigned();
+            $table->foreign('idRestaurante')->references('id')->on('restaurantes');
             $table->timestamps();
         });
     }

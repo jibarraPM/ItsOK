@@ -19,7 +19,7 @@
                             <li class="breadcrumb-item"><a href="javascript:void(0)">Menus</a></li>
                             <li class="breadcrumb-item active"><a href="javascript:void(0)">Lista</a></li>
                         </ol>
-                        <div class="text-right"><a href="{!! url('/desarrollador/menuD/create'); !!}" class="btn btn-primary ">Agregar Menu</a></div>
+                        <div class="text-right"><a href="{!! url('/desarrollador/restauranteD/'.$data['restaurante']->id.'/menuD/create'); !!}" class="btn btn-primary ">Agregar Menu</a></div>
                     </div>
                 </div>
                 <!-- row -->
@@ -73,13 +73,13 @@
 												</td>
                                                 <td>{{$item->tiempoElavoracion}}</td>
                                                 <td>
-                                                    <form action="{{ route('menu.destroy',$item->id) }}" method="POST">   
+                                                    <form action="{!! url('/desarrollador/restauranteD/'.$data['restaurante']->id.'/menuD/'.$item->id); !!}" method="POST">   
                                                         <div class="d-flex">
-                                                            <a href="{{ route('menuD.show',$item->id) }}" class="btn btn-info shadow btn-xs sharp mr-1"><i class="fa fa-info"></i></a>
-                                                            <a href="{{ route('menuD.edit',$item->id) }}" class="btn btn-primary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
+                                                            <a href="{!! url('/desarrollador/restauranteD/'.$data['restaurante']->id.'/menuD/'.$item->id); !!}" class="btn btn-info shadow btn-xs sharp mr-1"><i class="fa fa-info"></i></a>
+                                                            <a href="{!! url('/desarrollador/restauranteD/'.$data['restaurante']->id.'/menuD/'.$item->id.'/edit'); !!}" class="btn btn-primary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
                                                             @csrf
                                                             @method('DELETE')      
-                                                            <a type="submit" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
+                                                            <button type="submit" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></button>
                                                         </div>
                                                         
                                                     </form>

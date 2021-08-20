@@ -10,7 +10,6 @@ use App\Models\Menu;
 use App\Models\Atencion;
 use App\Models\User;
 use App\Models\Restaurante;
-use App\Models\RestauranteMenu;
 use App\Models\RestauranteAgregado;
 use App\Models\RestauranteMesa;
 use App\Models\RestauranteCategoriaRestaurante;
@@ -88,13 +87,11 @@ class RestauranteDevController extends Controller
 
         $restaurante = Restaurante::Where('id', $restaurante)->get();
         $restaurante = $restaurante[0];
-        $menus = RestauranteMenu::Where('idRestaurante', $restaurante)->get();
+        $menus = Menu::Where('idRestaurante', $restaurante)->get();
         $agregados = RestauranteAgregado::Where('idRestaurante', $restaurante)->get();
         $atenciones = Atencion::Where('idRestaurante', $restaurante)->get();
         $usuarios = User::Where('role', 3)->count();
-        //$atenciones->count('idTipoAtencion', 1);
-        //$atenciones->count('idTipoAtencion', 2);
-        //$atenciones->count('idTipoAtencion', 3);
+        
         $data = [
             'restaurante' => $restaurante,
             'menus' => $menus,

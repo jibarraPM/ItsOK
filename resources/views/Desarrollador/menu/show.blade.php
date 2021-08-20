@@ -41,7 +41,7 @@
                                         <div class="product-detail-content">
                                             <!--Product details-->
                                             <div class="new-arrival-content pr">
-                                                <h4>Nombre Producto</h4>
+                                                <h4>{{ $data['menu']->nombre }}</h4>
                                                 <div class="star-rating mb-2">
                                                     <ul class="produtct-detail-tag">
                                                         <li><i class="fa fa-star"></i></li>
@@ -52,18 +52,17 @@
                                                     </ul>
                                                     
                                                 </div>
-                                                <p class="price">$9.990</p>
+                                                <p class="price">${{ $data['menu']->precio }}</p>
 
-                                                <p>ID Producto: <span class="item">0405689</span> </p>
+                                                <p>ID Producto: <span class="item">{{ $data['menu']->id }}</span> </p>
                                                 <p>Categorias:&nbsp;&nbsp;
-                                                    <span class="badge badge-primary light">Vegetariana</span>
-                                                    <span class="badge badge-primary light">Sin Gluten</span>
-                                                    <span class="badge badge-primary light">Vegana</span>
-                                                    <span class="badge badge-primary light">Producto Express</span>
+                                                @foreach($data['categorias'] as $categoria)
+                                                    <span class="badge badge-primary light">{{$categoria->descripcion}}</span>
+                                                @endforeach
                                                 </p>
-                                                <p class="text-content">Breve descripción del producto</p>
+                                                <p class="text-content">{{ $data['menu']->descripcion }}</p>
                                                 <div class="shopping-cart mt-3">
-                                                    <a class="btn btn-primary btn-lg"  href="{!! url('/desarrollador/menuD/1/edit'); !!}"><i
+                                                    <a class="btn btn-primary btn-lg"  href="{!! url('/desarrollador/restauranteD/'.$data['restaurante']->id.'/menuD/'.$data['menu']->id.'/edit'); !!}"><i
                                                             class="fa fa-edit-basket mr-2"></i>Editar</a>
                                                 </div>
                                             </div>

@@ -30,7 +30,7 @@
                 </div>
                 <div class="card-body">
                     <div class="basic-form">
-                        <form method="POST" action="{{ route('menuD.update',$menu->id) }}">
+                        <form method="POST" action="{!! url('/desarrollador/restauranteD/'.$data['restaurante']->id.'/menuD/'.$data['menu']->id); !!}">
                             @csrf
                             @method('PUT')
                             <input id="id" name="id" type="text" value="{{$menu->id}}" hidden>
