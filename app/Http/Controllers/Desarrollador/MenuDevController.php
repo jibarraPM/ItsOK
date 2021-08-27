@@ -169,7 +169,7 @@ class MenuDevController extends Controller{
         $categoriasLocal = CategoriaRestaurante::all();
         $categoriasGlobal = CategoriaGlobal::all();
         $agregados = Agregado::all();
-
+        
         $data = [
             'categoriasLocal' => $categoriasLocal,
             'categoriasGlobal' => $categoriasGlobal,

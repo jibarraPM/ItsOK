@@ -97,6 +97,7 @@ class MenuUserController extends Controller
 
         $categoriasMenu = MenuCategoriaGlobal::Where('idMenu', $menu['id'])->get();
         $menu = Menu::Where('id', $menu['id'])->get();
+        $menu = $menu[0];
         foreach($categoriasMenu as $categoriaMenu){
             $categoriaMenu->getCategoriaGlobal();
         }
