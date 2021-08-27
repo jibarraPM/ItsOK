@@ -19,6 +19,10 @@
                 <li class="breadcrumb-item"><a href="javascript:void(0)">App</a></li>
                 <li class="breadcrumb-item active"><a href="javascript:void(0)">Restaurante</a></li>
             </ol>
+            <div class="text-right">
+                <a href="{{ URL::previous() }}" class="btn btn-primary" >Volver</a>
+            </div>
+            
         </div>
     </div>
     <!-- row -->

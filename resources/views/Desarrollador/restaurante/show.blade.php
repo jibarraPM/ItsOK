@@ -13,6 +13,11 @@
 			<p class="mb-0">Página de Bienvenida</p>
 		</div>
 
+		<div class="text-right">
+			<a href="{{ URL::previous() }}" class="btn btn-primary" >Volver</a>
+		</div>
+		
+
 
 	</div>
 	<h2 class="text-black font-w600 mb-3">{{ $data['restaurante']->nombre }}</h2>

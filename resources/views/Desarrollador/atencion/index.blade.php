@@ -19,6 +19,9 @@
                 <li class="breadcrumb-item"><a href="javascript:void(0)">Atenciones</a></li>
                 <li class="breadcrumb-item active"><a href="javascript:void(0)">Lista</a></li>
             </ol>
+            <div class="text-right">
+                <a href="{{ URL::previous() }}" class="btn btn-primary" >Volver</a>
+            </div>
         </div>
     </div>
     <!-- row -->
