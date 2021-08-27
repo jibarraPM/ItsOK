@@ -27,10 +27,23 @@ class CartController extends Controller
         $user = Auth::user();
 
         $carts = Cart::session($user->id)->getContent();
+        $cantidad = 0;
+        $subTotal = 0;
+        $cobroPorServicio = 0;
+        $total = 0;
+        foreach ($carts as $item) {
+            $cantidad = $cantidad + $item->quantity;
+            $subTotal = $subTotal + $item->quantity*$item->price;
+        }
+        $cobroPorServicio = $subTotal*0.1;
+        $total = $subTotal + $cobroPorServicio;
 
         $data = [
-            'carts' => $carts
-
+            'carts' => $carts,
+            'cantidad' => $cantidad,
+            'subTotal' => $subTotal,
+            'cobroPorServicio' => $cobroPorServicio,
+            'total' => $total
         ];
 
         return view('Usuario.Cart.index',compact('page_title', 'page_description','action', 'data') );

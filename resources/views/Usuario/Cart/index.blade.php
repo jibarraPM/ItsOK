@@ -29,7 +29,7 @@
                                     <div class="col-md-4 order-md-2 mb-4">
                                         <h4 class="d-flex justify-content-between align-items-center mb-3">
                                             <span class="text-muted">Tu Pedido</span>
-                                            <span class="badge badge-primary badge-pill">3</span>
+                                            <span class="badge badge-primary badge-pill">{{($data['cantidad'])}}</span>
                                         </h4>
                                         <ul class="list-group mb-3">
                                             @foreach ($data['carts'] as $item)
@@ -45,17 +45,17 @@
                                             
                                             <li class="list-group-item d-flex justify-content-between">
                                                 <span>Sub Total</span>
-                                                <strong>$29.970</strong>
+                                                <strong>${{$data['subTotal']}}</strong>
                                             </li>
 
                                             <li class="list-group-item d-flex justify-content-between">
                                                 <span>Cobro por servicio</span>
-                                                <strong>$1.499</strong>
+                                                <strong>${{$data['cobroPorServicio']}}</strong>
                                             </li>
 
                                             <li class="list-group-item d-flex justify-content-between">
                                                 <span>Total (CLP)</span>
-                                                <strong>$31.469</strong>
+                                                <strong>${{$data['total']}}</strong>
                                             </li>
                                             <a class="btn btn-primary"  href="https://www.transbankdevelopers.cl/">Pagar</a>
                                             <hr class="mb-1">
