@@ -4,6 +4,11 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RestauranteController;
 
 use App\Http\Controllers\Administrador\RestauranteAdminController;
+use App\Http\Controllers\Administrador\MenuAdminController;
+use App\Http\Controllers\Administrador\AgregadoAdminController;
+use App\Http\Controllers\Administrador\CategoriaLocalAdminController;
+use App\Http\Controllers\Administrador\AtencionAdminController;
+use App\Http\Controllers\Administrador\UsuarioAdminController;
 
 use App\Http\Controllers\Desarrollador\RestauranteDevController;
 use App\Http\Controllers\Desarrollador\MenuDevController;
@@ -11,6 +16,7 @@ use App\Http\Controllers\Desarrollador\CategoriaLocalDevController;
 use App\Http\Controllers\Desarrollador\CategoriaGlobalDevController;
 use App\Http\Controllers\Desarrollador\AtencionDevController;
 use App\Http\Controllers\Desarrollador\AgregadoDevController;
+use App\Http\Controllers\Desarrollador\UsuarioDevController;
 
 use App\Http\Controllers\Usuario\RestauranteUserController;
 use App\Http\Controllers\Usuario\MenuUserController;
@@ -60,6 +66,7 @@ Route::group([
     Route::resource('categoriaGlobalD', CategoriaGlobalDevController::class);
     Route::resource('atencionD', AtencionDevController::class);
     Route::resource('agregadoD', AgregadoDevController::class);
+    Route::resource('usuarioD', UsuarioDevController::class);
     
     
 
@@ -92,13 +99,21 @@ Route::group([
     'middleware' => ['auth', 'administrador'],
     'prefix' => 'administrador'
 ], function ($router) {
-    //Index
-    Route::resource('restaurante', RestauranteAdminController::class);
+
     Route::get('/', 'App\Http\Controllers\Administrador\AdministradorController@dashboard_1');
+
+    Route::resource('menuA', MenuAdminController::class);
+    Route::resource('agregadoA', AgregadoAdminController::class);
+    Route::resource('categoriaLocalA', CategoriaLocalAdminController::class);
+    Route::resource('atencionA', AtencionAdminController::class);
+    Route::resource('usuarioA', UsuarioAdminController::class);
+
+    Route::resource('restaurante', RestauranteAdminController::class);
+    
     Route::get('/dashboard', 'App\Http\Controllers\Administrador\AdministradorController@dashboard_1');  
-    //Locales
+
     Route::get('/locales', 'App\Http\Controllers\Administrador\AdministradorController@index_local');
-    //Menus
+
     Route::get('/menus', 'App\Http\Controllers\Administrador\AdministradorController@menus_lista');
 
 });

@@ -72,23 +72,6 @@
                                         <h4 class="mb-3">Editar Pedido</h4>
                                         <form class="needs-validation" novalidate="">
 
-                                            <div class="mb-3">
-                                                <label for="producto">Producto</label>
-                                                <input type="number" class="form-control" id="email"  min="0" value="1">
-                                            </div>
-                                            <div class="mb-3">
-                                                <label for="producto">Producto</label>
-                                                <input type="number" class="form-control" id="email" min="0" value="1">
-                                            </div>
-                                            <div class="mb-3">
-                                                <label for="producto">Producto</label>
-                                                <input type="number" class="form-control" id="email"  min="0" value="1">
-                                            </div>
-
-                                            <hr class="mb-4">
-                                            <a class="btn btn-primary"  href="#">Actualizar Pedido</a>
-                                        </form>
-                                    </div>
                                 </div>
                             </div>
                         </div>

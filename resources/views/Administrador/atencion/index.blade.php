@@ -1,5 +1,5 @@
 {{-- Extends layout --}}
-@extends('layout.defaultDesarrollador')
+@extends('layout.defaultAdministrador')
 
 
 
@@ -19,9 +19,6 @@
                 <li class="breadcrumb-item"><a href="javascript:void(0)">Atenciones</a></li>
                 <li class="breadcrumb-item active"><a href="javascript:void(0)">Lista</a></li>
             </ol>
-            <div class="text-right">
-                <a href="{{ URL::previous() }}" class="btn btn-primary" >Volver</a>
-            </div>
         </div>
     </div>
     <!-- row -->
@@ -69,8 +66,8 @@
                                     <td>30.990</td>
                                     <td>
                                         <div class="d-flex">
-                                            <a href="{!! url('/desarrollador/atencionD/show'); !!}" class="btn btn-info shadow btn-xs sharp mr-1"><i class="fa fa-info"></i></a>
-                                            <a href="{!! url('/desarrollador/atencionD/edit'); !!}" class="btn btn-primary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
+                                            <a href="{!! url('/administrador/atencionA/show'); !!}" class="btn btn-info shadow btn-xs sharp mr-1"><i class="fa fa-info"></i></a>
+                                            <a href="{!! url('/administrador/atencionA/edit'); !!}" class="btn btn-primary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
                                             <a href="#" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
                                         </div>
                                     </td>

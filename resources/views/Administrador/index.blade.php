@@ -88,7 +88,7 @@
 								<div class="d-flex order-manage p-3 align-items-center mb-4">
 									<a href="javascript:void(0);" class="btn fs-22 py-1 btn-success px-4 mr-3">25</a>
 									<h4 class="mb-0">Nuevas ordenes <i class="fa fa-circle text-success ml-1 fs-15"></i></h4>
-									<a href="javascript:void(0);" class="ml-auto text-primary font-w500">Gestionar Pedidos <i class="ti-angle-right ml-1"></i></a>
+									<a href="{!! url('/administrador/usuarioA') !!}" class="ml-auto text-primary font-w500">Gestionar Atención <i class="ti-angle-right ml-1"></i></a>
 								</div>
 								<div class="row">
 									<div class="col-sm-4 mb-4">
@@ -110,42 +110,7 @@
 										</div>
 									</div>
 								</div>
-								<div class="widget-timeline-icon">
-									<div class="row align-items-center">
-										<div class="col-xl-3 col-lg-2 col-xxl-4 col-sm-3 col-md-3 my-2 text-center text-sm-left">
-											 <div id="chart" class="d-inline-block"></div>
-										</div>	
-										<div class="col-xl-9 col-lg-10 col-xxl-8 col-sm-9 col-md-9">
-											<div class="d-flex align-items-center mb-3">
-												<p class="mb-0 fs-14 mr-2 col-4 col-xxl-5 px-0">Delivery (60%)</p>
-												<div class="progress mb-0" style="height:8px; width:100%;">
-													<div class="progress-bar bg-warning progress-animated" style="width:60%; height:8px;" role="progressbar">
-														<span class="sr-only">60% Complete</span>
-													</div>
-												</div>	
-												<span class="pull-right ml-auto col-1 col-xxl-2 px-0 text-right">60</span>
-											</div>
-											<div class="d-flex align-items-center  mb-3">
-												<p class="mb-0 fs-14 mr-2 col-4 col-xxl-5 px-0">Retiro (30%)</p>
-												<div class="progress mb-0" style="height:8px; width:100%;">
-													<div class="progress-bar bg-success progress-animated" style="width:30%; height:8px;" role="progressbar">
-														<span class="sr-only">60% Complete</span>
-													</div>
-												</div>
-												<span class="pull-right ml-auto col-1 col-xxl-2 px-0 text-right">30</span>
-											</div>
-											<div class="d-flex align-items-center">
-												<p class="mb-0 fs-14 mr-2 col-4 col-xxl-5 px-0">Local (10%)</p>
-												<div class="progress mb-0" style="height:8px; width:100%;">
-													<div class="progress-bar bg-dark progress-animated" style="width:10%; height:8px;" role="progressbar">
-														<span class="sr-only">60% Complete</span>
-													</div>
-												</div>
-												<span class="pull-right ml-auto col-1 col-xxl-2 px-0 text-right">10</span>
-											</div>
-										</div>	
-									</div>	
-								</div>
+
 							</div>
 						</div>
 					</div>

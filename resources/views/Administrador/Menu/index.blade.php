@@ -10,70 +10,93 @@
                 <div class="row page-titles mx-0">
                     <div class="col-sm-6 p-md-0">
                         <div class="welcome-text">
-                            <h4>Detalle del Producto</h4>
-                            <p class="mb-0">Detalle del Producto</p>
+                            <h4>Menus Ingresados en el Sistema</h4>
+                            <span>Base de Datos de los menus disponibles</span>
                         </div>
                     </div>
                     <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="javascript:void(0)">Producto</a></li>
-                            <li class="breadcrumb-item active"><a href="javascript:void(0)">Detalle</a></li>
+                            <li class="breadcrumb-item"><a href="javascript:void(0)">Menus</a></li>
+                            <li class="breadcrumb-item active"><a href="javascript:void(0)">Lista</a></li>
                         </ol>
+                        <div class="text-right"><a href="{!! url('/administrador/menuA/create'); !!}" class="btn btn-primary ">Agregar Menu</a></div>
                     </div>
                 </div>
+                <!-- row -->
+
+
                 <div class="row">
-                    <div class="col-lg-12">
+
+					<div class="col-12">
                         <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title">Menus Disponibles</h4>
+                            </div>
                             <div class="card-body">
-                                <div class="row">
-                                    <div class="col-xl-3 ">
-                                        <!-- Tab panes -->
-                                        <div class="tab-content">
-                                            <div role="tabpanel" class="tab-pane fade show active" id="first">
-                                                <img class="img-fluid" src="{{ asset('images/product/1.jpg') }}" alt="">
-                                            </div>
+                                <div class="table-responsive">
+                                    <table id="example5" class="display" style="min-width: 845px">
+                                        <thead>
+                                            <tr>
 
-                                        </div>
+                                                <th>ID Menu</th>
+                                                <th>Nombre</th>
+                                                <th>Descripción</th>
+                                                <th>Ingredientes</th>
+                                                <th>Precio</th>
+                                                <th>Disponible</th>
+                                                <th>Tiempo Elaboración</th>
+                                                <th>Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach ($data['menus'] as $item)
+                                            <tr>
+                                                <td>{{$item->id}}</td>
+                                                <td>{{$item->nombre}}</td>
+                                                <td>{{$item->descripcion}}</td>
+                                                <td>{{$item->ingredientes}}</td>
+                                                <td> <strong> {{$item->precio}}</strong></td>
+												<td>
+													
+                                                        @if ($item->disponible)
+                                                        <span class="badge light badge-success">
+														    <i class="fa fa-circle text-suc mr-1"></i>
+                                                            Disponible
+                                                        </span>
+                                                        @else
+                                                        <span class="badge light badge-danger">
+														    <i class="fa fa-circle text-suc mr-1"></i>
+                                                            No Disponible
+                                                        </span>
+                                                        @endif
+													
+												</td>
+                                                <td>{{$item->tiempoElavoracion}}</td>
+                                                <td>
+                                                    <form action="{{ route('menuA.destroy',$item->id) }}" method="POST">   
+                                                        <div class="d-flex">
+                                                            <a href="{{ route('menuA.show',$item->id) }}" class="btn btn-info shadow btn-xs sharp mr-1"><i class="fa fa-info"></i></a>
+                                                            <a href="{{ route('menuA.edit',$item->id) }}" class="btn btn-primary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
+                                                            @csrf
+                                                            @method('DELETE')      
+                                                            <a type="submit" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
+                                                        </div>
+                                                        
+                                                    </form>
 
-                                    </div>
-                                    <!--Tab slider End-->
-                                    <div class="col-xl-9 col-sm-12">
-                                        <div class="product-detail-content">
-                                            <!--Product details-->
-                                            <div class="new-arrival-content pr">
-                                                <h4>Nombre Producto</h4>
-                                                <div class="star-rating mb-2">
-                                                    <ul class="produtct-detail-tag">
-                                                        <li><i class="fa fa-star"></i></li>
-                                                        <li><i class="fa fa-star"></i></li>
-                                                        <li><i class="fa fa-star"></i></li>
-                                                        <li><i class="fa fa-star"></i></li>
-                                                        <li><i class="fa fa-star"></i></li>
-                                                    </ul>
-                                                    
+                                       
+                                            
                                                 </div>
-                                                <p class="price">$9.990</p>
-
-                                                <p>ID Producto: <span class="item">0405689</span> </p>
-                                                <p>Categorias:&nbsp;&nbsp;
-                                                    <span class="badge badge-primary light">Vegetariana</span>
-                                                    <span class="badge badge-primary light">Sin Gluten</span>
-                                                    <span class="badge badge-primary light">Vegana</span>
-                                                    <span class="badge badge-primary light">Producto Express</span>
-                                                </p>
-                                                <p class="text-content">Breve descripción del producto</p>
-                                                <div class="shopping-cart mt-3">
-                                                    <a class="btn btn-primary btn-lg"  href="{!! url('/desarrollador/menu/1/edit'); !!}"><i
-                                                            class="fa fa-edit-basket mr-2"></i>Editar</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+												</td>												
+                                            </tr>
+                                            @endforeach                                                                                
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
+				</div>
             </div>
 			
-@endsection			
+@endsection

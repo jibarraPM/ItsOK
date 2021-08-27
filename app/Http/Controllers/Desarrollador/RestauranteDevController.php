@@ -107,6 +107,12 @@ class RestauranteDevController extends Controller
      */
     public function edit(Request $request)
     {
+        $page_title = 'Editar Restaurante';
+        $page_description = 'Some description for the page';
+		
+		$action = __FUNCTION__;
+
+        return view('desarrollador.restaurante.edit',compact('page_title', 'page_description','action') );
         
     }
 

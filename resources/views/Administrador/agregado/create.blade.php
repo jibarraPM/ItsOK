@@ -37,8 +37,13 @@
                                         <div class="form-group">
                                             <input type="text" class="form-control input-default" placeholder="Descripción">
                                         </div>
+                                        <div class="form-group">
+                                            <input type="number" class="form-control input-default" placeholder="Precio">
+                                        </div>
 
                                         <div class="col-4">
+
+                                            {{-- EN LA BASE DE DATOS ESTA LA VARIABLE EDAD 18, PERO NO SE VA A USAR, SI PUEDES BORRARLA MEJOR --}}
 										<div class="custom-control custom-checkbox mt-4">
 											<input type="checkbox" class="custom-control-input" checked id="customCheckBox1" required>
 											<label class="custom-control-label" for="customCheckBox1">Disponible</label>

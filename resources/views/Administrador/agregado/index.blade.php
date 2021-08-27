@@ -19,7 +19,7 @@
                             <li class="breadcrumb-item"><a href="javascript:void(0)">Agregados</a></li>
                             <li class="breadcrumb-item active"><a href="javascript:void(0)">Lista</a></li>
                         </ol>
-                        <div class="text-right"><a href="{!! url('/desarrollador/agregado/create'); !!}" class="btn btn-primary ">Agregar Agregado</a></div>
+                        <div class="text-right"><a href="{!! url('/administrador/agregadoA/create'); !!}" class="btn btn-primary ">Agregar Agregado</a></div>
                     </div>
                 </div>
                 <!-- row -->
@@ -62,8 +62,8 @@
                                                 <td>
                                                     <form action="" method="POST">   
                                                         <div class="d-flex">
-                                                            <a href="" class="btn btn-info shadow btn-xs sharp mr-1"><i class="fa fa-info"></i></a>
-                                                            <a href="" class="btn btn-primary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>  
+                                                            <a href="{!! url('/administrador/agregadoA/show'); !!}" class="btn btn-info shadow btn-xs sharp mr-1"><i class="fa fa-info"></i></a>
+                                                            <a href="{!! url('/administrador/agregadoA/edit'); !!}" class="btn btn-primary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>  
                                                             <a type="submit" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
                                                         </div>
                                                         
