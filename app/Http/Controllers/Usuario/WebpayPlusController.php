@@ -89,7 +89,13 @@ class WebpayPlusController extends Controller
         unset($user['password']);
 
         $carts = Cart::session($user->id)->getContent();
-        $restaurante = Restaurante::find($carts[1]->associatedModel->idRestaurante);
+        
+        foreach ($carts as $item) {
+            $restaurante = Restaurante::find($item->associatedModel->idRestaurante);
+            break;
+        }
+        
+        
         $cantidad = 0;
         $subTotal = 0;
         $cobroPorServicio = 0;

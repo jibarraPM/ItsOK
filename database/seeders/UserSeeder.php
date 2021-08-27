@@ -33,6 +33,15 @@ class UserSeeder extends Seeder
             'telefono' => '+56994049789',
             'nacimiento' => '1992-07-08'
         ]);
+        User::create([
+            'name' => 'Benjamin Obrador',
+            'email' => 'bobrador@proyectomapache.cl',
+            'password' => bcrypt('Sterek64'),
+            'role' => 1,
+            'apellido' => 'Obrador',
+            'telefono' => '+56994049789',
+            'nacimiento' => '1992-07-08'
+        ]);
 
         User::create([
             'name' => 'Administrador',

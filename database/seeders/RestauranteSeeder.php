@@ -15,19 +15,19 @@ class RestauranteSeeder extends Seeder
     public function run()
     {
         Restaurante::create([
-            'nombre' => 'test 1',
-            'rut' => '11.111.111-1',
-            'razonSocial' => 'razonSocial',
-            'giro' => 'giro',
-            'correo' => 'test1@gmail.com',
-            'descripcion' => 'descripcion',
-            'direccion' => 'direccion',
-            'horarioAtencion' => 'horarioAtencion',
-            'ubicacionGps' => 'ubicacionGps',
+            'nombre' => 'Top Pizza',
+            'rut' => '76.974.486-K',
+            'razonSocial' => 'Grupo Andes SPA',
+            'giro' => 'SN',
+            'correo' => 'toppizzacurico@gmail.com',
+            'descripcion' => 'Local especializado en la venta de pizzas',
+            'direccion' => 'Manuel Montt 410',
+            'horarioAtencion' => '12:00 - 23:00',
+            'ubicacionGps' => '-34.98246748153115, -71.24058125815952',
             'logo' => 'logo',
-            'entidadFinanciera' => 'entidadFinanciera',
-            'tipoCuenta' => 'tipoCuenta',
-            'numeroCuenta' => 'numeroCuenta'
+            'entidadFinanciera' => 'Banco Santander',
+            'tipoCuenta' => 'Cuenta Corriente',
+            'numeroCuenta' => 'SN'
         ]);
 
         Restaurante::create([
