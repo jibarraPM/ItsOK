@@ -26,7 +26,7 @@
                 <span class="nav-text">Pedidos</span>
             </a>
             <ul aria-expanded="false">
-                <li><a href="{!! url('/usuario/atencion'); !!}">Carrito</a></li>
+                <li><a href="{!! url('/usuario/cart'); !!}">Carrito</a></li>
                 <li><a href="{!! url('/usuario/restaurante'); !!}">Restaurantes</a></li>
                 <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Categorías Local</a>
                     <ul aria-expanded="false">

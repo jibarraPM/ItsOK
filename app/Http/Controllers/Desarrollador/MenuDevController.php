@@ -17,8 +17,7 @@ use Validator;
 use Illuminate\Support\Facades\Redirect;
 
 
-class MenuDevController extends Controller
-{
+class MenuDevController extends Controller{
 
     /**
      * Pagina principal de restaurante
@@ -74,8 +73,8 @@ class MenuDevController extends Controller
     /**
      * Logica que permite registrar un restaurante en la base de datos
      */
-    public function store(Request $request)
-    {
+    public function store(Request $request){
+        
         $request->validate([
             'nombre'=>'required',
             'descripcion'=>'required',
@@ -97,6 +96,26 @@ class MenuDevController extends Controller
         $menu->idRestaurante = $request->get('idRestaurante');
         $menu->save();
 
+        foreach ($request->get('categoriasGlobales') as $item) {
+            $categoriaGlobal = new MenuCategoriaGlobal();
+            $categoriaGlobal->idCategoriaGlobal = $item;
+            $categoriaGlobal->idMenu = $menu->id;
+            $categoriaGlobal->save();
+        }
+        /** 
+        foreach ($request->get('agregados') as $item) {
+            $agregado = new MenuAgregado();
+            $agregado->idAgregado = $item;
+            $agregado->idMenu = $menu->id;
+            $agregado->save();
+        }
+        foreach ($request->get('categoriaslocales') as $item) {
+            $CategoriaRestaurante = new MenuCategoriaRestaurante();
+            $CategoriaRestaurante->idCategoriaRestaurante = $item;
+            $CategoriaRestaurante->idMenu = $menu->id;
+            $CategoriaRestaurante->save();
+        }
+        */
         return redirect('desarrollador/restauranteD/'.$menu->idRestaurante.'/menuD');
     }
 
@@ -134,8 +153,7 @@ class MenuDevController extends Controller
     /**
      * Logica que permite registrar un restaurante en la base de datos
      */
-    public function edit($restaurante, $menu)
-    {
+    public function edit($restaurante, $menu){
         $page_title = 'Editar Menu';
         $page_description = 'Detalle del productos';
 
@@ -151,7 +169,7 @@ class MenuDevController extends Controller
         $categoriasLocal = CategoriaRestaurante::all();
         $categoriasGlobal = CategoriaGlobal::all();
         $agregados = Agregado::all();
-
+        
         $data = [
             'categoriasLocal' => $categoriasLocal,
             'categoriasGlobal' => $categoriasGlobal,
@@ -168,8 +186,7 @@ class MenuDevController extends Controller
     /**
      * Logica que permite registrar un restaurante en la base de datos
      */
-    public function update(Request $request)
-    {
+    public function update(Request $request){
      
         $request->validate([
             'nombre'=>'required',
@@ -189,22 +206,48 @@ class MenuDevController extends Controller
         $menu->disponible = '1';
         $menu->edad18 = '0';
         $menu->save();
-    
-        $url= url()->previous(); 
+
+        $pivote = MenuCategoriaGlobal::Where('idMenu', $menu->id)->get();
+        foreach ($pivote as $item) {
+            $item->delete();
+        }
+
+        foreach ($request->get('categoriasGlobales') as $item) {
+            $categoriaGlobal = new MenuCategoriaGlobal();
+            $categoriaGlobal->idCategoriaGlobal = $item;
+            $categoriaGlobal->idMenu = $menu->id;
+            $categoriaGlobal->save();
+        }
+
+        /** 
+        foreach ($request->get('agregados') as $item) {
+            $agregado = new MenuAgregado();
+            $agregado->idAgregado = $item;
+            $agregado->idMenu = $menu->id;
+            $agregado->save();
+        }
+
+        foreach ($request->get('categoriaslocales') as $item) {
+            $CategoriaRestaurante = new MenuCategoriaRestaurante();
+            $CategoriaRestaurante->idCategoriaRestaurante = $item;
+            $CategoriaRestaurante->idMenu = $menu->id;
+            $CategoriaRestaurante->save();
+        }
+        */
+        
         return redirect('desarrollador/restauranteD/'.$menu->idRestaurante.'/menuD');
     }
 
     /**
      * Logica que permite registrar un restaurante en la base de datos
      */
-    public function destroy($restaurante, $menu)
-    {
+    public function destroy($restaurante, $menu){
         $menu = Menu::find($menu);
         if ($menu == null) {
             //no existe
         }else{
             $menu->delete();
-            return redirect('desarrollador/restauranteD/'.$menu->idRestaurante.'/menuD');
         }
+        return redirect('desarrollador/restauranteD/'.$menu->idRestaurante.'/menuD');
     }
 }

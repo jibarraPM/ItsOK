@@ -15,8 +15,8 @@ class CreateMenuCategoriaRestaurantesTable extends Migration
     {
         Schema::create('menu_categoria_restaurantes', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('idRestaurante')->unsigned();
-            $table->foreign('idRestaurante')->references('id')->on('restaurantes');
+            $table->bigInteger('idMenu')->unsigned();
+            $table->foreign('idMenu')->references('id')->on('menus');
             $table->bigInteger('idCategoriaRestaurante')->unsigned();
             $table->foreign('idCategoriaRestaurante')->references('id')->on('categoria_restaurantes');
             $table->timestamps();

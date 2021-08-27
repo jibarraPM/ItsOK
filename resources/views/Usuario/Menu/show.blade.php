@@ -23,55 +23,59 @@
                 </div>
                 <div class="row">
                     <div class="col-lg-12">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-xl-3 ">
-                                        <!-- Tab panes -->
-                                        <div class="tab-content">
-                                            <div role="tabpanel" class="tab-pane fade show active" id="first">
-                                                <img class="img-fluid" src="{{ asset('images/product/1.jpg') }}" alt="">
+                        <form method="post" action="{!! url('/usuario/cart'); !!}">
+                        @csrf
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-xl-3 ">
+                                            <!-- Tab panes -->
+                                            <div class="tab-content">
+                                                <div role="tabpanel" class="tab-pane fade show active" id="first">
+                                                    <img class="img-fluid" src="{{ asset('images/product/1.jpg') }}" alt="">
+                                                </div>
+
                                             </div>
 
                                         </div>
+                                        <!--Tab slider End-->
+                                        <div class="col-xl-9 col-sm-12">
+                                            <div class="product-detail-content">
+                                                <!--Product details-->
+                                                <input id="id" name="id" type="hidden" value="{{ $data['menu']->id }}">
+                                                <div class="new-arrival-content pr">
+                                                    <h4>{{ $data['menu']->nombre }}</h4>
+                                                    <div class="star-rating mb-2">
+                                                        <ul class="produtct-detail-tag">
+                                                            <li><i class="fa fa-star"></i></li>
+                                                            <li><i class="fa fa-star"></i></li>
+                                                            <li><i class="fa fa-star"></i></li>
+                                                            <li><i class="fa fa-star"></i></li>
+                                                            <li><i class="fa fa-star"></i></li>
+                                                        </ul>
+                                                        
+                                                    </div>
+                                                    <p class="price">${{ $data['menu']->precio }}</p>
 
-                                    </div>
-                                    <!--Tab slider End-->
-                                    <div class="col-xl-9 col-sm-12">
-                                        <div class="product-detail-content">
-                                            <!--Product details-->
-                                            <div class="new-arrival-content pr">
-                                                <h4>{{ $data['menu'][0]->nombre }}</h4>
-                                                <div class="star-rating mb-2">
-                                                    <ul class="produtct-detail-tag">
-                                                        <li><i class="fa fa-star"></i></li>
-                                                        <li><i class="fa fa-star"></i></li>
-                                                        <li><i class="fa fa-star"></i></li>
-                                                        <li><i class="fa fa-star"></i></li>
-                                                        <li><i class="fa fa-star"></i></li>
-                                                    </ul>
-                                                    
-                                                </div>
-                                                <p class="price">${{ $data['menu'][0]->precio }}</p>
+                                                    <p>ID Producto: <span class="item">{{ $data['menu']->id }}</span> </p>
+                                                    <p>Categorias:&nbsp;&nbsp;
+                                                        <span class="badge badge-primary light">Vegetariana</span>
+                                                        <span class="badge badge-primary light">Sin Gluten</span>
+                                                        <span class="badge badge-primary light">Vegana</span>
+                                                        <span class="badge badge-primary light">Producto Express</span>
+                                                    </p>
+                                                    <p class="text-content">{{ $data['menu']->descripcion }}</p>
+                                                    <div class="shopping-cart mt-3">
+                                                        <button class="btn btn-primary btn-lg" type="submit"><i class="fa fa-edit-basket mr-2"></i>Añadir</button>
 
-                                                <p>ID Producto: <span class="item">{{ $data['menu'][0]->id }}</span> </p>
-                                                <p>Categorias:&nbsp;&nbsp;
-                                                    <span class="badge badge-primary light">Vegetariana</span>
-                                                    <span class="badge badge-primary light">Sin Gluten</span>
-                                                    <span class="badge badge-primary light">Vegana</span>
-                                                    <span class="badge badge-primary light">Producto Express</span>
-                                                </p>
-                                                <p class="text-content">{{ $data['menu'][0]->descripcion }}</p>
-                                                <div class="shopping-cart mt-3">
-                                                    <a class="btn btn-primary btn-lg"  href="{!! url('/usuario/atencion/'); !!}"><i
-                                                            class="fa fa-edit-basket mr-2"></i>Añadir</a>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </form>
                     </div>
                 </div>
             </div>

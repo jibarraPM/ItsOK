@@ -86,11 +86,8 @@ class RestauranteUserController extends Controller
 		
 		$action = __FUNCTION__;
 
-        $menus = RestauranteMenu::Where('idRestaurante', $restaurante['id'])->get();
-        foreach($menus as $menu){
-            $menu->getMenu();
-        }
-
+        $menus = Menu::Where('idRestaurante', $restaurante['id'])->get();
+        
         $data = [
             'restaurante' => $restaurante,
             'menus' => $menus

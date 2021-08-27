@@ -39,7 +39,7 @@
                                 </div>
                                 </a>
                                     <div class="new-arrival-content text-center mt-3">
-                                        <h4>{{$item->getMenu->nombre}}</h4>
+                                        <h4>{{$item->nombre}}</h4>
                                         <ul class="star-rating">
                                             <li><i class="fa fa-star"></i></li>
                                             <li><i class="fa fa-star"></i></li>
@@ -47,7 +47,7 @@
                                             <li><i class="fa fa-star-half-empty"></i></li>
                                             <li><i class="fa fa-star-half-empty"></i></li>
                                         </ul>
-                                        <span class="price">${{$item->getMenu->precio}}</span>
+                                        <span class="price">${{$item->precio}}</span>
                                     </div>
                                 </div>
                             </div>

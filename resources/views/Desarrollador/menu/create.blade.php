@@ -81,10 +81,7 @@
                                         @foreach ($data['categoriasLocal'] as $item)
                                             <div class="col-4">
                                                 <div class="custom-control custom-checkbox mb-3">
-                                                    <input type="checkbox" class="custom-control-input"
-                                                        id="customCheckBox3">
-                                                    <label class="custom-control-label"
-                                                        for="customCheckBox3">{{ $item->descripcion }}</label>
+                                                <input type="checkbox" name="categoriaslocales[]" value="{{$item->id}}"> <label>{{$item->descripcion}}</label>
                                                 </div>
                                             </div>
                                         @endforeach
@@ -100,10 +97,7 @@
                                         @foreach ($data['categoriasGlobal'] as $item)
                                             <div class="col-4">
                                                 <div class="custom-control custom-checkbox mb-3">
-                                                    <input type="checkbox" class="custom-control-input"
-                                                        id="customCheckBox4">
-                                                    <label class="custom-control-label"
-                                                        for="customCheckBox4">{{ $item->descripcion }}</label>
+                                                    <input type="checkbox" name="categoriasGlobales[]" value="{{$item->id}}"> <label>{{$item->descripcion}}</label>
                                                 </div>
                                             </div>
                                         @endforeach
@@ -118,9 +112,7 @@
                                     @foreach ($data['agregados'] as $item)
                                         <div class="col-4">
                                             <div class="custom-control custom-checkbox mb-3">
-                                                <input type="checkbox" class="custom-control-input" id="customCheckBox3">
-                                                <label class="custom-control-label"
-                                                    for="customCheckBox3">{{ $item->nombre }}</label>
+                                            <input type="checkbox" name="agregados[]" value="{{$item->id}}"> <label>{{$item->descripcion}}</label>
                                             </div>
                                         </div>
                                     @endforeach

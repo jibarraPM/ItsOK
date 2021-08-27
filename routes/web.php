@@ -27,6 +27,7 @@ use App\Http\Controllers\CategoriaGlobalController;
 use App\Http\Controllers\PedidoController;
 use App\Http\Controllers\AgregadoController;
 use App\Http\Controllers\Usuario\UsuarioController;
+use App\Http\Controllers\Usuario\CartController;
 
 /*
 |--------------------------------------------------------------------------
@@ -120,6 +121,7 @@ Route::group([
 
     Route::resource('restaurante', RestauranteUserController::class);
     Route::resource('menu', MenuUserController::class);
+    Route::resource('cart', CartController::class);
 
     Route::get('/atencion', 'App\Http\Controllers\Usuario\UsuarioController@atencion');
     Route::get('/recibo', 'App\Http\Controllers\Usuario\UsuarioController@recibo');
