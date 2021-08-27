@@ -26,42 +26,48 @@
                         <div class="card">
                             <div class="card-body">
                                 <div class="row">
-                                    <div class="col-md-4 order-md-2 mb-4">
-                                        <h4 class="d-flex justify-content-between align-items-center mb-3">
-                                            <span class="text-muted">Tu Pedido</span>
-                                            <span class="badge badge-primary badge-pill">{{($data['cantidad'])}}</span>
-                                        </h4>
-                                        <ul class="list-group mb-3">
-                                            @foreach ($data['carts'] as $item)
-                                            <li class="list-group-item d-flex justify-content-between lh-condensed">
-                                                <div>
-                                                    <h6 class="my-0">{{$item->name}}</h6>
-                                                    <small class="text-muted">{{$item->associatedModel->descripcion}}</small> <br>
-                                                    <small class="text-muted">Cantidad: {{$item->quantity}}</small>
-                                                </div>
-                                                <span class="text-muted">${{$item->price}}</span>
-                                            </li>
-                                            @endforeach
-                                            
-                                            <li class="list-group-item d-flex justify-content-between">
-                                                <span>Sub Total</span>
-                                                <strong>${{$data['subTotal']}}</strong>
-                                            </li>
+                                    
+                                        <div class="col-md-4 order-md-2 mb-4">
+                                            <h4 class="d-flex justify-content-between align-items-center mb-3">
+                                                <span class="text-muted">Tu Pedido</span>
+                                                <span class="badge badge-primary badge-pill">{{($data['cantidad'])}}</span>
+                                            </h4>
+                                            <ul class="list-group mb-3">
+                                                @foreach ($data['carts'] as $item)
+                                                <li class="list-group-item d-flex justify-content-between lh-condensed">
+                                                    <div>
+                                                        <h6 class="my-0">{{$item->name}}</h6>
+                                                        <small class="text-muted">{{$item->associatedModel->descripcion}}</small> <br>
+                                                        <small class="text-muted">Cantidad: {{$item->quantity}}</small>
+                                                    </div>
+                                                    <span class="text-muted">${{$item->price}}</span>
+                                                </li>
+                                                @endforeach
+                                                <form method="post" action="{!! url('/usuario/webpayplus/create'); !!}">
+                                                @csrf
+                                                    <li class="list-group-item d-flex justify-content-between">
+                                                        <span>Sub Total</span>
+                                                        <strong>${{$data['subTotal']}}</strong>
+                                                    </li>
 
-                                            <li class="list-group-item d-flex justify-content-between">
-                                                <span>Cobro por servicio</span>
-                                                <strong>${{$data['cobroPorServicio']}}</strong>
-                                            </li>
+                                                    <li class="list-group-item d-flex justify-content-between">
+                                                        <span>Cobro por servicio</span>
+                                                        <strong>${{$data['cobroPorServicio']}}</strong>
+                                                    </li>
 
-                                            <li class="list-group-item d-flex justify-content-between">
-                                                <span>Total (CLP)</span>
-                                                <strong>${{$data['total']}}</strong>
-                                            </li>
-                                            <a class="btn btn-primary"  href="https://www.transbankdevelopers.cl/">Pagar</a>
-                                            <hr class="mb-1">
-                                            <a class="btn btn-primary"  href="{!! url('/usuario/recibo'); !!}">Recibo</a>
-                                        </ul>
-                                    </div>
+                                                    <li class="list-group-item d-flex justify-content-between">
+                                                        <span>Total (CLP)</span>
+                                                        <strong>${{$data['total']}}</strong>
+                                                        <input id="total" name="total" type="hidden" value="{{$data['total']}}">
+
+                                                    </li>
+                                                    <button class="btn btn-primary"  type="submit" >Pagar</button>
+                                                    <hr class="mb-1">
+                                                    <a class="btn btn-primary"  href="{!! url('/usuario/recibo'); !!}">Recibo</a>
+                                                </form>
+                                            </ul>
+                                        </div>
+
                                     <div class="col-md-8 order-md-1">
                                         <h4 class="mb-3">Editar Pedido</h4>
                                         <form class="needs-validation" novalidate="">

@@ -23,6 +23,10 @@ use App\Http\Controllers\AgregadoController;
 use App\Http\Controllers\Usuario\UsuarioController;
 use App\Http\Controllers\Usuario\CartController;
 
+use App\Http\Controllers\Usuario\WebpayPlusController;
+
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -109,12 +113,19 @@ Route::group([
     Route::resource('cart', CartController::class);
 
     Route::get('/atencion', 'App\Http\Controllers\Usuario\UsuarioController@atencion');
-    Route::get('/recibo', 'App\Http\Controllers\Usuario\UsuarioController@recibo');
 
 
     Route::get('/', 'App\Http\Controllers\Usuario\UsuarioController@dashboard_1');
     Route::get('/dashboard', 'App\Http\Controllers\Usuario\UsuarioController@dashboard_1');   
+
     
+    Route::post('/webpayplus/create/', 'App\Http\Controllers\Usuario\WebpayPlusController@createdTransaction');
+    Route::get('/webpayplus/returnUrl', 'App\Http\Controllers\Usuario\WebpayPlusController@commitTransaction');
+    Route::get('/webpayplus/refund', 'App\Http\Controllers\Usuario\WebpayPlusController@showRefund');
+    Route::post('/webpayplus/refund', 'App\Http\Controllers\Usuario\WebpayPlusController@refundTransaction');
+    Route::get('/recibo', 'App\Http\Controllers\Usuario\WebpayPlusController@recibo');
+    Route::post('/webpayplus/transactionStatus', 'App\Http\Controllers\Usuario\WebpayPlusController@getTransactionStatus');
+
 });
 
 

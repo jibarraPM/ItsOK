@@ -25,25 +25,29 @@
                     <div class="col-lg-12">
 
                         <div class="card mt-3">
-                            <div class="card-header"> Recibo: ID <strong>01/01/06/2021</strong> <span class="float-right">
-                                    <strong>Status:</strong> Completado</span> </div>
+                            <div class="card-header"> Recibo: {{$data['compra']->buy_order}} <strong>{{$data['compra']->created_at}}</strong> <span class="float-right">
+                                @if ($data['compra']->status == 1)
+                                    <strong>Compra:</strong> Exitosa</span> </div>
+                                @else
+                                    <strong>Compra:</strong> Fallida</span> </div>
+                                @endif
                             <div class="card-body">
                                 <div class="row mb-5">
                                     <div class="mt-4 col-xl-3 col-lg-3 col-md-6 col-sm-12">
                                         <h6>De:</h6>
-                                        <div> <strong>Nombre Local</strong> </div>
-                                        <div>Id Local</div>
-                                        <div>Giro</div>
-                                        <div>Correo: info@webz.com.pl</div>
-                                        <div>Telefono: +48 444 666 3333</div>
+                                        <div> <strong>Restaurante: {{$data['restaurante']->nombre}}</strong> </div>
+                                        <div>ID: {{$data['restaurante']->id}}</div>
+                                        <div>Giro: {{$data['restaurante']->giro}}</div>
+                                        <div>Correo: {{$data['restaurante']->correo}}</div>
+                                        <div>Telefono: +{{$data['restaurante']->telefono}}</div>
                                     </div>
                                     <div class="mt-4 col-xl-3 col-lg-3 col-md-6 col-sm-12">
                                         <h6>Para:</h6>
-                                        <div> <strong>Nombre Cliente</strong> </div>
-                                        <div>ID Cliente</div>
-                                        <div>Direccion</div>
-                                        <div>Correo: marek@daniel.com</div>
-                                        <div>Telefono: +48 123 456 789</div>
+                                        <div> <strong>Cliente: {{$data['user']->name}}</strong> </div>
+                                        <div>ID: {{$data['user']->id}}</div>
+                                        <div>Direccion: {{$data['user']->direccion}}</div>
+                                        <div>Correo: {{$data['user']->email}}</div>
+                                        <div>Telefono: +{{$data['user']->telefono}}</div>
                                     </div>
                                     <div class="mt-4 col-xl-6 col-lg-6 col-md-12 col-sm-12 d-flex justify-content-lg-end justify-content-md-center justify-content-xs-start">
                                         <div class="row align-items-center" style="font-size: 0.9rem;">
@@ -67,30 +71,16 @@
                                             </tr>
                                         </thead>
                                         <tbody>
+                                        @foreach ($data['carts'] as $item)
                                             <tr>
-                                                <td class="center">1</td>
-                                                <td class="left strong">5698</td>
-                                                <td class="left">Pizza Clasica</td>
-                                                <td class="right">$9.990</td>
-                                                <td class="center">1</td>
-                                                <td class="right">$9.990</td>
+                                                <td class="center">{{$item->id}}</td>
+                                                <td class="left strong">{{$item->associatedModel->id}}</td>
+                                                <td class="left">{{$item->associatedModel->nombre}}</td>
+                                                <td class="right">${{$item->price}}</td>
+                                                <td class="center">{{$item->quantity}}</td>
+                                                <td class="right">${{$item->quantity*$item->price}}</td>
                                             </tr>
-                                            <tr>
-                                                <td class="center">2</td>
-                                                <td class="left">7985</td>
-                                                <td class="left">Pizza Vegetariana</td>
-                                                <td class="right">$9.990</td>
-                                                <td class="center">1</td>
-                                                <td class="right">$9.990</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="center">3</td>
-                                                <td class="left">4659</td>
-                                                <td class="left">Pizza Sin Gluten</td>
-                                                <td class="right">$9.990</td>
-                                                <td class="center">1</td>
-                                                <td class="right">$9.990</td>
-                                            </tr>
+                                        @endforeach
 
                                         </tbody>
                                     </table>
@@ -102,12 +92,17 @@
                                             <tbody>
                                                 <tr>
                                                     <td class="left"><strong>Subtotal</strong></td>
-                                                    <td class="right">$29.970</td>
+                                                    <td class="right">${{$data['subTotal']}}</td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td class="left"><strong>Cobro por servicio</strong></td>
+                                                    <td class="right">${{$data['cobroPorServicio']}}</td>
                                                 </tr>
 
                                                 <tr>
                                                     <td class="left"><strong>Total</strong></td>
-                                                    <td class="right"><strong>$9.990</strong></td>
+                                                    <td class="right"><strong>${{$data['total']}}</strong></td>
                                                 </tr>
                                             </tbody>
                                         </table>
