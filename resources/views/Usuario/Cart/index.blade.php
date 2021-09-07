@@ -39,6 +39,8 @@
                                                         <h6 class="my-0">{{$item->name}}</h6>
                                                         <small class="text-muted">{{$item->associatedModel->descripcion}}</small> <br>
                                                         <small class="text-muted">Cantidad: {{$item->quantity}}</small>
+                                                        <a href="{!! url('/desarrollador/atencionD/show'); !!}" class="btn btn-primary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
+                                                        <a href="{!! url('/desarrollador/atencionD/show'); !!}" class="btn btn-danger shadow btn-xs sharp mr-1"><i class="fa fa-trash"></i></a>
                                                     </div>
                                                     <span class="text-muted">${{$item->price}}</span>
                                                 </li>
