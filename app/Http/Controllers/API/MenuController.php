@@ -4,6 +4,7 @@ namespace App\Http\Controllers\API;
 
 use Illuminate\Http\Request;
 use App\Models\Menu;
+use App\Models\Restaurante;
 
 use Validator;
 
