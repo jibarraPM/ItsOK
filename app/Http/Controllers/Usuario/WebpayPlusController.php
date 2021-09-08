@@ -8,6 +8,7 @@ use Transbank\Webpay\WebpayPlus\Transaction;
 use Illuminate\Support\Facades\Auth;
 
 use App\Models\Compra;
+use App\Models\Carrito;
 use App\Models\Restaurante;
 use Cart;
 
@@ -24,7 +25,6 @@ class WebpayPlusController extends Controller
     public function createdTransaction(Request $request)
     {
         $req = $request->except('_token');
-        
 
         $user = Auth::user();
 
@@ -34,6 +34,23 @@ class WebpayPlusController extends Controller
         $compra->amount = (int) $req['total'];
         $compra->status = 0;
         $compra->save();
+
+        $carts = Cart::session($user->id)->getContent();
+        
+        foreach ($carts as $item) {
+            $carrito = new Carrito();
+            $carrito->nombre = $item->associatedModel->nombre;
+            $carrito->descripcion = $item->associatedModel->descripcion;
+            $carrito->ingredientes = $item->associatedModel->ingredientes;
+            $carrito->precio = $item->associatedModel->precio;
+            $carrito->tiempoElavoracion = $item->associatedModel->tiempoElavoracion;
+            $carrito->disponible = $item->associatedModel->disponible;
+            $carrito->edad18 = $item->associatedModel->edad18;
+            $carrito->idRestaurante = $item->associatedModel->idRestaurante;
+            $carrito->buy_order = $compra->id;
+            $carrito->save();
+        }
+
 
         $return_url = "http://127.0.0.1:8000/usuario/recibo";
 

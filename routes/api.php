@@ -9,6 +9,8 @@ use App\Http\Controllers\API\AgregadoController;
 use App\Http\Controllers\API\AtencionController;
 use App\Http\Controllers\API\MesaController;
 use App\Http\Controllers\API\TarjetaController;
+use App\Http\Controllers\API\CategoriaGlobalController;
+use App\Http\Controllers\API\CategoriaLocalController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,4 +40,6 @@ Route::group(['middleware' => ['jwt.verify']], function() {
     Route::resource('atenciones', AtencionController::class);
     Route::resource('mesas', MesaController::class);
     Route::resource('tarjetas', TarjetaController::class);
+    Route::resource('categoriaGlobal', CategoriaGlobalController::class);
+    Route::resource('categoriaLocal', CategoriaLocalController::class);
 });

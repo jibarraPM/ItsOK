@@ -95,7 +95,16 @@ class MenuController extends Controller
      */
     public function show($id)
     {
-        //
+        $restaurante = Restaurante::where('id', $id)->get();
+        $restaurante = $restaurante[0];
+        $menus = Menu::where('idRestaurante', $id)->get();
+        
+        return response()->json([
+            'success' => true,
+            'message' => "done",
+            'data' => ['restaurante'=>$restaurante,
+                'menus'=>$menus]
+        ], 200);
     }
 
     /**

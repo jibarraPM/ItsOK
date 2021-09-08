@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\API;
 
 use Illuminate\Http\Request;
-use App\Models\Atencion;
+use App\Models\User;
+use App\Models\Compra;
+use App\Models\Carrito;
 
 use Validator;
 
@@ -16,11 +18,19 @@ class AtencionController extends Controller
      */
     public function index()
     {
-        $atenciones =  Atencion::all();
+        $usuarios =  User::all();
+        foreach ($usuarios as $usuario) {
+            # code...
+            $compras =  Compra::where('session_id', $usuario->id)->get();
+            foreach ($compras as $compra) {
+                $compra->detalle =  Carrito::where('buy_order', $compra->id)->get();
+            }
+            $usuario->compras = $compras;
+        }
         return response()->json([
             'success' => true,
             'message' => "done",
-            'data' => ['atenciones'=>$atenciones]
+            'data' => ['usuarios'=>$usuarios]
         ], 200);
     }
 
