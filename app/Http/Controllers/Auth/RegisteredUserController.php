@@ -40,14 +40,18 @@ class RegisteredUserController extends Controller
             'apellido' => 'required|string|max:255',
             'nacimiento' => 'required|date',
             'telefono' => 'required|string|max:255',
+            'direccion' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
+
+ 
 
         $user = User::create([
             'name' => $request->name,
             'apellido' => $request->apellido,
             'role' => 3,
+            'direccion' => $request->direccion,
             'nacimiento' => $request->nacimiento,
             'telefono' => $request->telefono,
             'email' => $request->email,

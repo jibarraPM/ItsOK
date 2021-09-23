@@ -19,6 +19,7 @@ class UserSeeder extends Seeder
             'email' => 'xebaelvemgador@gmail.com',
             'password' => bcrypt('Sterek64'),
             'role' => 1,
+            'direccion' => 'direccion',
             'apellido' => 'Ibarra',
             'telefono' => '+5699404978 9',
             'nacimiento' => '1996-09-06'
@@ -29,6 +30,7 @@ class UserSeeder extends Seeder
             'email' => 'jibarra@proyectomapache.cl',
             'password' => bcrypt('Sterek64'),
             'role' => 1,
+            'direccion' => 'direccion',
             'apellido' => 'Ibarra',
             'telefono' => '+56994049789',
             'nacimiento' => '1992-07-08'
@@ -39,6 +41,7 @@ class UserSeeder extends Seeder
             'email' => 'administrador@proyectomapache.cl',
             'password' => bcrypt('Sterek64'),
             'role' => 2,
+            'direccion' => 'direccion',
             'apellido' => 'Administrador',
             'telefono' => '+56994049789',
             'nacimiento' => '1996-09-06'
@@ -49,6 +52,7 @@ class UserSeeder extends Seeder
             'email' => 'usuario@proyectomapache.cl',
             'password' => bcrypt('Sterek64'),
             'role' => 3,
+            'direccion' => 'direccion',
             'apellido' => 'Usuario',
             'telefono' => '+56994049789',
             'nacimiento' => '1996-09-06'
