@@ -5,6 +5,8 @@ namespace App\Http\Controllers\API;
 use Illuminate\Http\Request;
 use App\Models\Menu;
 use App\Models\Restaurante;
+use App\Models\MenuMenuImagen;
+use App\Models\MenuIngrediente;
 
 use Validator;
 
@@ -99,7 +101,18 @@ class MenuController extends Controller
         $restaurante = Restaurante::where('id', $id)->get();
         $restaurante = $restaurante[0];
         $menus = Menu::where('idRestaurante', $id)->get();
-        
+        foreach ($menus as $menu){
+            $imagenes = MenuMenuImagen::where('idMenu', $menu->id);
+            foreach ($imagenes as $imagen){
+                $imagen->imagen = $imagen->getMenuImagen();
+            }
+            $menus->imagenes = $imagenes;
+            $ingredientes = MenuIngrediente::where('idMenu', $menu->id);
+            foreach ($ingredientes as $ingrediente){
+                $ingrediente->nombre = $ingrediente->getIngrediente();
+            }
+            $menus->ingredientes = $ingredientes;
+        }
         return response()->json([
             'success' => true,
             'message' => "done",
