@@ -18,7 +18,7 @@ class CreateMenuIngredientesTable extends Migration
             $table->bigInteger('idMenu')->unsigned();
             $table->foreign('idMenu')->references('id')->on('menus');
             $table->bigInteger('idIngrediente')->unsigned();
-            $table->foreign('idIngrediente')->references('id')->on('Ingredientes');
+            $table->foreign('idIngrediente')->references('id')->on('ingredientes');
             $table->timestamps();
         });
     }

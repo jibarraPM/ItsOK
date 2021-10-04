@@ -7,6 +7,7 @@ use App\Models\Menu;
 use App\Models\Restaurante;
 use App\Models\MenuMenuImagen;
 use App\Models\MenuIngrediente;
+use App\Models\Ingrediente;
 
 use Validator;
 
@@ -102,16 +103,16 @@ class MenuController extends Controller
         $restaurante = $restaurante[0];
         $menus = Menu::where('idRestaurante', $id)->get();
         foreach ($menus as $menu){
-            $imagenes = MenuMenuImagen::where('idMenu', $menu->id);
+            $imagenes = MenuMenuImagen::where('idMenu', $menu->id)->get();
             foreach ($imagenes as $imagen){
-                $imagen->imagen = $imagen->getMenuImagen();
+                $imagen->detalle = Imagen::where('id', $imagen->idImagen)->get();
             }
-            $menus->imagenes = $imagenes;
-            $ingredientes = MenuIngrediente::where('idMenu', $menu->id);
+            $menu->imagenes = $imagenes;
+            $ingredientes = MenuIngrediente::where('idMenu', $menu->id)->get();
             foreach ($ingredientes as $ingrediente){
-                $ingrediente->nombre = $ingrediente->getIngrediente();
+                $ingrediente->detalle = Ingrediente::where('id', $ingrediente->idIngrediente)->get();
             }
-            $menus->ingredientes = $ingredientes;
+            $menu->ingredientes = $ingredientes;
         }
         return response()->json([
             'success' => true,
@@ -228,7 +229,7 @@ class MenuController extends Controller
 
     /**
      * Este metodo se encarga de rellenar los datos faltantes que pueden venir en la peticion https
-     * Motivo: solicionar el problema al momento de crear añadir un elemento, este puede no existir
+     * Motivo: solicionar el problema al momento de crear a���adir un elemento, este puede no existir
      */
     private function rellenarDatosFaltantes($array, $entradas){
         if($array==null){
