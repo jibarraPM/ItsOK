@@ -8,6 +8,7 @@ use App\Models\Restaurante;
 use App\Models\MenuMenuImagen;
 use App\Models\MenuIngrediente;
 use App\Models\Ingrediente;
+use App\Models\MenuImagen;
 
 use Validator;
 
@@ -105,7 +106,7 @@ class MenuController extends Controller
         foreach ($menus as $menu){
             $imagenes = MenuMenuImagen::where('idMenu', $menu->id)->get();
             foreach ($imagenes as $imagen){
-                $imagen->detalle = Imagen::where('id', $imagen->idImagen)->get();
+                $imagen->detalle = MenuImagen::where('id', $imagen->idMenuImagen)->get();
             }
             $menu->imagenes = $imagenes;
             $ingredientes = MenuIngrediente::where('idMenu', $menu->id)->get();
@@ -286,3 +287,4 @@ class MenuController extends Controller
         return $entradas;
     }
 }
+
