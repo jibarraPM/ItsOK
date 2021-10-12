@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Usuario;
+namespace App\Http\Controllers\API;
 
 use Illuminate\Http\Request;
 use Transbank\Webpay\WebpayPlus;
@@ -26,15 +26,14 @@ class WebpayPlusController extends Controller
     {
         $req = $request->except('_token');
 
-        $user = Auth::user();
-
         $compra = new Compra();
-        $compra->session_id = $user->id;
+        $compra->session_id = $req['session_id'];
         $compra->buy_order = $this->generateRandomNumber();
-        $compra->amount = (int) $req['total'];
+        $compra->amount = (int) $req['amount'];
         $compra->status = 0;
         $compra->save();
 
+        /**
         $carts = Cart::session($user->id)->getContent();
         
         foreach ($carts as $item) {
@@ -50,24 +49,16 @@ class WebpayPlusController extends Controller
             $carrito->buy_order = $compra->id;
             $carrito->save();
         }
+        */
 
 
-        $return_url = "http://127.0.0.1:8000/usuario/recibo";
+        $resp = (new Transaction)->create($compra["buy_order"], $compra["session_id"], $compra["amount"], $req['return_url']);
 
-        $resp = (new Transaction)->create($compra["buy_order"], $compra["session_id"], $compra["amount"], $return_url);
-
-        $url = $resp->url;
-        $dataForPost = array('token_ws'=>$resp->token);
-        $options = array(
-            'http' => array(
-                'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
-                'method'  => 'POST',
-                'content' => http_build_query($dataForPost),
-            )
-        );
-        $context  = stream_context_create($options);
-        $result = file_get_contents($url, false, $context);
-        return $result;
+        return response()->json([
+            'success' => true,
+            'message' => "done",
+            'data' => ['transaccion'=>$resp]
+        ], 200);
     }
 
     public function commitTransaction(Request $request)
@@ -95,33 +86,9 @@ class WebpayPlusController extends Controller
 
     public function recibo(request $request)
     {
-        dd($request);
         $resp = (new Transaction)->status($request->token_ws);
-
-        $page_title = 'Detalle Recibo';
-        $page_description = 'Detalle del Recibo';
-		
-		$action = __FUNCTION__;
-
-        $user = Auth::user();
-        unset($user['password']);
-
-        $carts = Cart::session($user->id)->getContent();
-        $restaurante = Restaurante::find($carts[1]->associatedModel->idRestaurante);
-        $cantidad = 0;
-        $subTotal = 0;
-        $cobroPorServicio = 0;
-        $total = 0;
-        foreach ($carts as $item) {
-            $cantidad = $cantidad + $item->quantity;
-            $subTotal = $subTotal + $item->quantity*$item->price;
-        }
-        $cobroPorServicio = $subTotal*0.1;
-        $total = $subTotal + $cobroPorServicio;
-
         $compra = Compra::where('buy_order', $resp->buyOrder)->get();
         $compra = $compra[0];
-
         if($resp->vci == "TSY"){
             $compra->status = 1;
         }else{
@@ -129,19 +96,19 @@ class WebpayPlusController extends Controller
         }
         $compra->save();
 
-        $data = [
-            'carts' => $carts,
-            'cantidad' => $cantidad,
-            'subTotal' => $subTotal,
-            'cobroPorServicio' => $cobroPorServicio,
-            'total' => $total,
-            'compra' => $compra,
-            'user' => $user,
-            'restaurante' => $restaurante
-        ];
-
-
-        return view('usuario.recibo',compact('page_title', 'page_description','action', 'data') );
+        if($compra->status == 1){
+            return response()->json([
+                'success' => true,
+                'message' => "done",
+                'data' => ['transaccion'=>'registrada con exito']
+            ], 200);
+        }else{
+            return response()->json([
+                'success' => true,
+                'message' => "done",
+                'data' => ['transaccion'=>'no se logro pagar con exito']
+            ], 200);
+        }
     }
 
     public function generateRandomNumber($length = 8)

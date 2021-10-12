@@ -42,4 +42,5 @@ Route::group(['middleware' => ['jwt.verify']], function() {
     Route::resource('tarjetas', TarjetaController::class);
     Route::resource('categoriaGlobal', CategoriaGlobalController::class);
     Route::resource('categoriaLocal', CategoriaLocalController::class);
+    Route::post('webpayplus/create/', 'App\Http\Controllers\API\WebpayPlusController@createdTransaction');
 });
